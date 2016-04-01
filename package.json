@@ -1,0 +1,26 @@
+{
+  "name": "ecclesmosque.github.io",
+  "version": "1.0.0",
+  "description": "Eccles Mosque Website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecclesmosque/ecclesmosque.github.io.git"
+  },
+  "keywords": [
+    "Eccles",
+    "Mosque",
+    "Website"
+  ],
+  "author": "Azizur Rahman (@azizur)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecclesmosque/ecclesmosque.github.io/issues"
+  },
+  "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
+  "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.2"
+  }
+}
