@@ -17,5 +17,11 @@ url: "http://ecclesmosque.org.uk" # the base hostname & protocol for your site
 twitter:
   username: EcclesMosque
 
+
 # Build settings
+
+include: [
+  '_pages'
+]
+
 markdown: kramdown
