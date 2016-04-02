@@ -9,8 +9,7 @@
 title: Eccles Mosque
 subtitle: The Eccles and Salford Islamic Society
 email: info@ecclesmosque.org.uk
-description: > # this means to ignore newlines until "baseurl:"
-  Eccles Mosque also known as The Eccles and Salford Islamic Society.
+description: Eccles Mosque also known as The Eccles and Salford Islamic Society.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ecclesmosque.org.uk" # the base hostname & protocol for your site
 
@@ -22,6 +21,14 @@ twitter:
 
 include: [
   '_pages'
+]
+
+exclude: [
+  'README.md',
+  'Gemfile',
+  'Gemfile.lock',
+  'package.json',
+  'node_modules'
 ]
 
 markdown: kramdown
