@@ -25,3 +25,7 @@ include: [
 ]
 
 markdown: kramdown
+
+sass:
+    sass_dir: _assets/_sass
+    style: :compressed

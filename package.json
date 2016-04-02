@@ -20,6 +20,10 @@
     "url": "https://github.com/ecclesmosque/ecclesmosque.github.io/issues"
   },
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
+  "scripts": {
+    "preinstall": "./_tools/npm-preinstall.sh",
+    "postinstall": "./_tools/npm-postinstall.sh"
+  },
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.2"
   }
