@@ -13,6 +13,9 @@ description: Eccles Mosque also known as The Eccles and Salford Islamic Society.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ecclesmosque.org.uk" # the base hostname & protocol for your site
 
+charity:
+  number: 516270
+
 twitter:
   username: EcclesMosque
 
