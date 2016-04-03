@@ -1,3 +1,4 @@
 #!/bin/bash
 
-rm -rf _assets/_sass/vendor/;
+rm -rf _sass/vendor/;
+rm -rf assets/js/vendor/;

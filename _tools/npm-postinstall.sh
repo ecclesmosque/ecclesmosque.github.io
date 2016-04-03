@@ -1,4 +1,7 @@
 #!/bin/bash
 
-mkdir -p _assets/_sass/vendor/bootstrap;
-cp -r node_modules/bootstrap/scss/ _assets/_sass/vendor/bootstrap/;
+mkdir -p _sass/vendor/bootstrap;
+cp -r node_modules/bootstrap/scss/ _sass/vendor/bootstrap/;
+
+mkdir -p assets/js/vendor/bootstrap;
+cp -r node_modules/bootstrap/dist/js/bootstrap.min.js assets/js/vendor/bootstrap/;
