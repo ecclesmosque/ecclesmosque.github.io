@@ -12,6 +12,8 @@
     <!-- Bootstrap core CSS + our css in single bundle -->
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
 
+    {% include google/analytics.html %}
+
   </head>
 
   <body>
@@ -42,7 +44,7 @@
 
     </div>
 
-    {% include google/analytics.html %}
+
     {% include google/tagmanager.html %}
 
 
