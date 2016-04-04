@@ -17,6 +17,9 @@ enforce_ssl: ecclesmosque.org.uk
 charity:
   number: 516270
 
+author:
+  twitter: EcclesMosque
+
 twitter:
   username: EcclesMosque
 
@@ -44,3 +47,4 @@ sass:
 gems:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
