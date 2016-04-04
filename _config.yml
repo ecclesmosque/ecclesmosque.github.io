@@ -11,7 +11,8 @@ subtitle: The Eccles and Salford Islamic Society
 email: info@ecclesmosque.org.uk
 description: Eccles Mosque also known as The Eccles and Salford Islamic Society.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://ecclesmosque.org.uk" # the base hostname & protocol for your site
+url: "https://ecclesmosque.org.uk" # the base hostname & protocol for your site
+enforce_ssl: ecclesmosque.org.uk
 
 charity:
   number: 516270
@@ -39,3 +40,7 @@ markdown: kramdown
 sass:
     sass_dir: _sass
     style: :compressed
+
+gems:
+  - jekyll-seo-tag
+  - jekyll-sitemap
