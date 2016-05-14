@@ -44,6 +44,7 @@ sass:
     style: :compressed
 
 gems:
+  - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
