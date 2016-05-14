@@ -5,7 +5,7 @@ rvm:
 before_script:
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
-script: jekyll build && htmlproofer ./_site
+script: bundle exec jekyll build && htmlproofer ./_site
 
 # branch whitelist, only for GitHub Pages
 # branches:
