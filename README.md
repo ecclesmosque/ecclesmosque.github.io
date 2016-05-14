@@ -1,6 +1,7 @@
 # ecclesmosque.github.io
 See http://ecclesmosque.org.uk/
 
+[![Build Status](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io.svg?branch=update-github-pages-gem)](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io)
 
 # How to preview a draft post
 
