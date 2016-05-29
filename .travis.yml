@@ -8,7 +8,7 @@ install:
  - bundle install
 
 script:
-  - bundle exec jekyll build && bundle exec htmlproofer ./_site
+  # - bundle exec jekyll build && bundle exec htmlproofer ./_site
   - ./node_modules/.bin/gulp
 
 env:
