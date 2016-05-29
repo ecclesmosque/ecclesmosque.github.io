@@ -1,4 +1,7 @@
 language: node_js
+rvm:
+ - 2.2
+
 node_js:
   - "4"
 
