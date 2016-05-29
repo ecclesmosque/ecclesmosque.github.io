@@ -9,7 +9,7 @@ before_script:
   
 script:
   # - bundle exec jekyll build && bundle exec htmlproofer ./_site
-  - gulp
+  - ./node_modules/.bin/gulp
 
 env:
   global:
