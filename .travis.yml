@@ -2,10 +2,23 @@ language: ruby
 rvm:
 - 2.2
 
+env:
+  - TRAVIS_NODE_VERSION="4.4.5"
+  - TRAVIS_NODE_VERSION="6.2.0"
+  
+install:
+- nvm install 6.2
+- npm install
+
+
+
 before_script:
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
-script: bundle exec jekyll build && bundle exec htmlproofer ./_site
+
+script:
+  - npm test
+  - bundle exec jekyll build && bundle exec htmlproofer ./_site
 
 # branch whitelist, only for GitHub Pages
 # branches:
