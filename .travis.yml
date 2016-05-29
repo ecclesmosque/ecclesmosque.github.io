@@ -10,8 +10,8 @@ before_script:
 # the `install` step will run `bundle install` by default.
 script:
   - npm install
-  - bundle install
-  - bundle exec jekyll build 
+  - bundle install --path vendor/bundle
+  - bundle exec jekyll build
   - bundle exec htmlproofer ./_site
 
 # branch whitelist, only for GitHub Pages
