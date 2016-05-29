@@ -10,7 +10,7 @@ before_script:
 # the `install` step will run `bundle install` by default.
 script:
   - npm install
-  - bundle install --path vendor/bundle
+  - bundle install
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site
 
