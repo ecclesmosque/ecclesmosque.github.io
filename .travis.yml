@@ -2,10 +2,23 @@ language: ruby
 rvm:
 - 2.2
 
+env:
+  - TRAVIS_NODE_VERSION="4.4.5"
+  - TRAVIS_NODE_VERSION="6.2.0"
+  
+install:
+- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+- npm install
+
+
+
 before_script:
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
-script: bundle exec jekyll build && bundle exec htmlproofer ./_site
+
+script:
+  - npm test
+  - bundle exec jekyll build && bundle exec htmlproofer ./_site
 
 # branch whitelist, only for GitHub Pages
 # branches:
