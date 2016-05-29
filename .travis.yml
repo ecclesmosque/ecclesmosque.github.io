@@ -3,10 +3,10 @@ rvm:
 - 2.2
 
 before_script:
-# Assume bundler is being used, therefore
-# the `install` step will run `bundle install` by default.
+  # Assume bundler is being used, therefore
+  # the `install` step will run `bundle install` by default.
   - npm install -g gulp
-  - npm install
+  - npm set progress=false && npm install
   
 script:
   # - bundle exec jekyll build && bundle exec htmlproofer ./_site
