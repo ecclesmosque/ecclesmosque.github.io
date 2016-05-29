@@ -33,6 +33,15 @@ gulp.task('jekyll-build', function (gulpCallBack) {
   });
 });
 
+gulp.task('html-proofer', function (gulpCallBack) {
+  var spawn = require('child_process').spawn;
+  var htmlproofer = spawn('bundle', ['exec', 'htmlproofer','./_site'], { stdio: 'inherit' });
+
+  htmlproofer.on('exit', function (code) {
+    gulpCallBack(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
+  });
+});
+
 gulp.task('browser-sync', function () {
   browserSync({
     server: {
@@ -117,7 +126,9 @@ gulp.task('scripts', function () {
 gulp.task('dev', ['jekyll-watch', 'styles', 'eslint', 'scripts', 'browser-sync'], function () {
   gulp.watch('_assets/styles/**/*.scss', ['styles', 'bs-reload']);
   gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts', 'bs-reload']);
-  gulp.watch('*.html', ['bs-reload']);
+  gulp.watch('*.html', ['html-proofer', 'bs-reload']);
 });
 
-gulp.task('test', ['jekyll-build', 'styles', 'eslint', 'scripts']);
+gulp.task('test', ['jekyll-build', 'html-proofer', 'styles', 'eslint', 'scripts']);
+
+gulp.task('default', ['test']);
