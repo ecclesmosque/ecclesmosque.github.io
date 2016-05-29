@@ -39,11 +39,8 @@ exclude:
 
 markdown: kramdown
 
-sass:
-    sass_dir: _sass
-    style: :compressed
-
 gems:
+  - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed

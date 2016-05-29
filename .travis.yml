@@ -2,16 +2,14 @@ language: ruby
 rvm:
 - 2.2
 
-before_script:
-# Assume bundler is being used, therefore
-# the `install` step will run `bundle install` by default.
-script: bundle exec jekyll build && bundle exec htmlproofer ./_site
+install:
+ - nvm install 6.2
+ - npm set progress=false && npm install
+ - bundle install
 
-# branch whitelist, only for GitHub Pages
-# branches:
-  # only:
-  # - gh-pages     # test the gh-pages branch
-  # - /pages-(.*)/ # test every branch which starts with "pages-"
+script:
+  # - bundle exec jekyll build && bundle exec htmlproofer ./_site
+  - ./node_modules/.bin/gulp
 
 env:
   global:
