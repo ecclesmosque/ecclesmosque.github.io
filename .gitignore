@@ -3,4 +3,6 @@ _site/
 .jekyll-metadata
 node_modules/
 
-/assets/**/*.map
+assets/**/*.map
+assets/scripts/app.js
+assets/styles/app.css

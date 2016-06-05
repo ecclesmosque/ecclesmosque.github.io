@@ -5,6 +5,8 @@ var browserSync = require('browser-sync');
 var buffer = require('vinyl-buffer');
 var cache = require('gulp-cache');
 var cleanCSS = require('gulp-clean-css');
+var del = require('del'); // rm -rf
+var eslint = require('gulp-eslint');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
@@ -13,18 +15,16 @@ var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
-var eslint = require('gulp-eslint');
 
-gulp.task('jekyll-watch', function (gulpCallBack) {
-  var spawn = require('child_process').spawn;
-  var jekyll = spawn('bundle', ['exec', 'jekyll','build', '--incremental', '--watch'], { stdio: 'inherit' });
+var config = {
+  jekyll: ['pages', 'posts', 'layouts', 'includes']
+};
 
-  jekyll.on('exit', function (code) {
-    gulpCallBack(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
-  });
+gulp.task('clean', function () {
+  return del(['_site']);
 });
 
-gulp.task('jekyll-build', function (gulpCallBack) {
+gulp.task('jekyll-compile', function (gulpCallBack) {
   var spawn = require('child_process').spawn;
   var jekyll = spawn('bundle', ['exec', 'jekyll','build', '--incremental'], { stdio: 'inherit' });
 
@@ -33,16 +33,23 @@ gulp.task('jekyll-build', function (gulpCallBack) {
   });
 });
 
-gulp.task('html-proofer', function (gulpCallBack) {
+gulp.task('html-proofer', ['jekyll-compile'], function (gulpCallBack) {
   var spawn = require('child_process').spawn;
-  var htmlproofer = spawn('bundle', ['exec', 'htmlproofer','./_site'], { stdio: 'inherit' });
+  var htmlproofer = spawn('bundle',
+    [
+      'exec',
+      'htmlproofer',
+      '--url-swap',
+      '.*ecclesmosque.org.uk/:/',
+      './_site'
+    ], { stdio: 'inherit' });
 
   htmlproofer.on('exit', function (code) {
     gulpCallBack(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
   });
 });
 
-gulp.task('browser-sync', function () {
+gulp.task('browser-sync', ['jekyll-compile'], function () {
   browserSync({
     server: {
       baseDir: '_site/'
@@ -123,12 +130,17 @@ gulp.task('scripts', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('dev', ['jekyll-watch', 'styles', 'eslint', 'scripts', 'browser-sync'], function () {
-  gulp.watch('_assets/styles/**/*.scss', ['styles', 'bs-reload']);
-  gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts', 'bs-reload']);
-  gulp.watch('*.html', ['html-proofer', 'bs-reload']);
+gulp.task('build', ['clean', 'jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
+
+gulp.task('dev', ['build', 'browser-sync'], function () {
+  config.jekyll.forEach(function (conentType) {
+    gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
+  });
+  gulp.watch('_assets/styles/**/*.scss', ['styles']);
+  gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
+  gulp.watch('_site/**/*.*', ['bs-reload']);
 });
 
-gulp.task('test', ['jekyll-build', 'html-proofer', 'styles', 'eslint', 'scripts']);
+gulp.task('test', ['build']);
 
 gulp.task('default', ['test']);
