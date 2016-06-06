@@ -1,0 +1,48 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {% include enforce-ssl.html %}
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+    {% seo %}
+    {% feed_meta %}
+    
+    {% if jekyll.environment == "production" %}
+      {% assign isMin = '.min' %}
+    {% endif %}
+
+    <!-- Bootstrap core CSS + our css in single bundle -->
+    <link rel="stylesheet" href="{{ "/assets/styles/app" | prepend: site.baseurl | append: isMin | append: ".css" }}">
+    {% include google/analytics.html %}
+
+</head>
+
+<body class="posts {{ page.path | remove: 'html' | remove: 'md' | slugify }}">
+
+    <div class="masthead clearfix">
+        <div class="inner">
+            <h3 class="masthead-brand">{{ site.title }}</h3>
+        </div>
+    </div>
+
+    {{ content }}
+
+    <div class="mastfoot">
+        <div class="inner">
+            <p>Copyright &copy; 2006&mdash;{{ site.time | date: '%Y' }} {{ site.title }}. Registered Charity Number <strong>{{ site.charity.number }}</strong>.</p>
+        </div>
+    </div>
+
+
+    {% include google/tagmanager.html %}
+
+    <script src="{{ "/assets/scripts/app" | prepend: site.baseurl | append: isMin | append: ".js" }}"></script>
+</body>
+
+</html>

@@ -21,7 +21,7 @@ var config = {
 };
 
 gulp.task('clean', function () {
-  return del(['_site']);
+  return del(['_site', 'assets/styles', 'assets/scripts']);
 });
 
 gulp.task('jekyll-compile', function (gulpCallBack) {
