@@ -33,7 +33,7 @@ gulp.task('jekyll-compile',['clean'], function (gulpCallBack) {
   });
 });
 
-gulp.task('html-proofer', ['clean', 'jekyll-compile'], function (gulpCallBack) {
+gulp.task('html-proofer', ['clean', 'jekyll-compile', 'styles', 'scripts'], function (gulpCallBack) {
   var spawn = require('child_process').spawn;
   var htmlproofer = spawn('bundle',
     [
