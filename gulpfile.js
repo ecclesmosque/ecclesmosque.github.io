@@ -34,19 +34,23 @@ gulp.task('jekyll-compile',['clean'], function (gulpCallBack) {
 });
 
 gulp.task('html-proofer', ['clean', 'jekyll-compile', 'styles', 'scripts'], function (gulpCallBack) {
-  var spawn = require('child_process').spawn;
-  var htmlproofer = spawn('bundle',
-    [
-      'exec',
-      'htmlproofer',
-      '--url-swap',
-      '.*ecclesmosque.org.uk/:/',
-      './_site'
-    ], { stdio: 'inherit' });
+  if (process.env.JEKYLL_ENV === 'production') {
+    gulpCallBack(null);
+  } else {
+    var spawn = require('child_process').spawn;
+    var htmlproofer = spawn('bundle',
+      [
+        'exec',
+        'htmlproofer',
+        '--url-swap',
+        '.*ecclesmosque.org.uk/:/',
+        './_site'
+      ], { stdio: 'inherit' });
 
-  htmlproofer.on('exit', function (code) {
-    gulpCallBack(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
-  });
+    htmlproofer.on('exit', function (code) {
+      gulpCallBack(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
+    });
+  }
 });
 
 gulp.task('browser-sync', ['clean', 'jekyll-compile'], function () {
