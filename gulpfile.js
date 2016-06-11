@@ -24,7 +24,7 @@ gulp.task('clean', function () {
   return del(['_site', 'assets/styles', 'assets/scripts']);
 });
 
-gulp.task('jekyll-compile', function (gulpCallBack) {
+gulp.task('jekyll-compile',['clean'], function (gulpCallBack) {
   var spawn = require('child_process').spawn;
   var jekyll = spawn('bundle', ['exec', 'jekyll','build', '--incremental'], { stdio: 'inherit' });
 
@@ -33,23 +33,27 @@ gulp.task('jekyll-compile', function (gulpCallBack) {
   });
 });
 
-gulp.task('html-proofer', ['jekyll-compile'], function (gulpCallBack) {
-  var spawn = require('child_process').spawn;
-  var htmlproofer = spawn('bundle',
-    [
-      'exec',
-      'htmlproofer',
-      '--url-swap',
-      '.*ecclesmosque.org.uk/:/',
-      './_site'
-    ], { stdio: 'inherit' });
+gulp.task('html-proofer', ['clean', 'jekyll-compile', 'styles', 'scripts'], function (gulpCallBack) {
+  if (process.env.JEKYLL_ENV === 'production') {
+    gulpCallBack(null);
+  } else {
+    var spawn = require('child_process').spawn;
+    var htmlproofer = spawn('bundle',
+      [
+        'exec',
+        'htmlproofer',
+        '--url-swap',
+        '.*ecclesmosque.org.uk/:/',
+        './_site'
+      ], { stdio: 'inherit' });
 
-  htmlproofer.on('exit', function (code) {
-    gulpCallBack(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
-  });
+    htmlproofer.on('exit', function (code) {
+      gulpCallBack(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
+    });
+  }
 });
 
-gulp.task('browser-sync', ['jekyll-compile'], function () {
+gulp.task('browser-sync', ['clean', 'jekyll-compile'], function () {
   browserSync({
     server: {
       baseDir: '_site/'
@@ -67,7 +71,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest('assets/images/'));
 });
 
-gulp.task('styles', function () {
+gulp.task('styles', ['clean'], function () {
   gulp.src(['_assets/styles/**/*.scss'])
     .pipe(plumber({
       errorHandler: function (error) {
@@ -86,7 +90,7 @@ gulp.task('styles', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('eslint', function () {
+gulp.task('eslint', ['clean'], function () {
   // ESLint ignores files with "node_modules" paths.
   // So, it's best to have gulp ignore the directory as well.
   // Also, Be sure to return the stream from the task;
@@ -103,7 +107,7 @@ gulp.task('eslint', function () {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('scripts', function () {
+gulp.task('scripts', ['clean'], function () {
   // set up the browserify instance on a task basis
   var b = browserify({
     entries: '_assets/scripts/entry.js',
@@ -132,7 +136,7 @@ gulp.task('scripts', function () {
 
 gulp.task('build', ['clean', 'jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
 
-gulp.task('dev', ['build', 'browser-sync'], function () {
+gulp.task('dev', ['clean', 'build', 'browser-sync'], function () {
   config.jekyll.forEach(function (conentType) {
     gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
   });
