@@ -33,7 +33,7 @@ I’tikaf refers to going into seclusion in the mosque for the sole purpose of w
 
 ## Eid prayers
 
-We will be holding five Eid prayers this year: 8.30am and 9.30am.
+We will be holding two Eid prayers this year: 8.30am and 9.30am.
 
 ## Zakatul Fitr
 
