@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Eid al-Fitr Announcement 2016
-date:   2016-07-02 18:00:00 BST
+date:   2016-07-02 18:00:00 GMT
 categories: announcements
 ---
 
