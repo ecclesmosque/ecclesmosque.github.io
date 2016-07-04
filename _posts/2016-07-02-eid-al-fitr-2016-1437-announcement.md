@@ -9,7 +9,7 @@ categories: announcements
 
 **May Allah accept our fasting and prayers during Ramadan.**
 
-Don’t forget to pay your [Zakat al-Fitr](#zakatul-fitr). The minimum amount is £4 per person, which can be paid at the collection box at the back of Main Prayer Hall. It MUST be paid BEFORE you perform your Eid prayer.
+Don’t forget to pay your **[Zakat al-Fitr](#zakatul-fitr)**. The minimum amount is £4 per person, which can be paid at the collection box at the back of Main Prayer Hall. It MUST be paid BEFORE you perform your Eid prayer.
 
 ## Eid prayers
 
