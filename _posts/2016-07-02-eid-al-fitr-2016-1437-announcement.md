@@ -5,9 +5,11 @@ date:   2016-07-02 18:00:00 +0100
 categories: announcements
 ---
 
-**Due to expected difficulty citing the moon on Monday July 4, Eid al-Fitr announcement is expected to be made after 10pm on Monday, July 4, 2016, In-Shaa- Allah.**
+**The Management Committee of the {{ site.title }} have agreed that Eid al-Fitr will be on Wednesday 6th July 2016.**
 
-Don’t forget to pay your [Zakat al-Fitr](#zakatul-fitr). The minimum amount is £4 per person, which can be paid at the collection box at the back of Main Prayer Hall. It MUST be paid BEFORE you perform your Eid prayer.
+**May Allah accept our fasting and prayers during Ramadan.**
+
+Don’t forget to pay your **[Zakat al-Fitr](#zakatul-fitr)**. The minimum amount is £4 per person, which can be paid at the collection box at the back of Main Prayer Hall. It MUST be paid BEFORE you perform your Eid prayer.
 
 ## Eid prayers
 
