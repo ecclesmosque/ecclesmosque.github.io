@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "Eid ul-Adha 2016-1437 Announcement"
+date:   2016-09-01 19:00:00 +0100
+categories: announcements
+---
+
+The 1st of Dhū Al-Hijjah 1437 is Saturday 3rd September 2016. The day of Arafat is on Sunday 11th September 2016 and Monday 12th September 2016 is Eid day.
+
+According to scholars of the Qur’an, the first ten days of Dhul-Hijjah are significant enough for Allah to swear by them.
+
+Describing how these ten days are among the best, the Prophet (peace and blessings of Allah be upon him) said:
+> "There are no days on which righteous deeds are more beloved to Allah than these ten days."
+
+They said:
+> "Not even jihad for the sake of Allah?” He said: “Not even jihad for the sake of Allah, unless a man goes out himself for jihad taking his wealth with him and does not come back with anything."
+
+-- [Bukhari, 2/457]
+
+## Eid prayers
+
+Eid ul-Adha, will be on Monday 12th September 2016, insha'Allah.
+
+We will be holding two Eid prayers at the {{ site.title }} this year.
+
+* 8.30 AM - 1st Eid Salah
+* 9.30 AM - 2nd Eid Salah
+
+## Eid prayer location
+{{ site.subtitle }}<br/>
+5 Liverpool Road<br/>
+Eccles<br/>
+M30 0WB
+
+[Direction to {{ site.title }}](https://www.google.co.uk/maps/dir//Eccles+Mosque,+5+Liverpool+Road,+Eccles,+Salford+M30+0WB,+United+Kingdom/).
+
+
+# Fasting on the Day of 'Arafah
+
+The ninth day of Dhul-Hijjah (the 12th and final month of the Islamic calendar) is the Day of 'Arafah. It is the day when pilgrims stand on the plain of 'Arafah to pray. On this day, Muslims all over the world who do not witness the annual Hajj should spend the day in fasting, in preparation for the three days festivity following 'Eid ul-Adha (the celebration marking the end of the Hajj commemorating the Prophet Ibrahim's willingness of sacrifice).
+
+Abu Hafsah, may Allah be pleased with him, reported that the Prophet, upon whom be peace, said:
+
+> "Fasting on the Day of 'Arafah absolves the sins for two years: the previous year and the coming year, and fasting on 'Ashura, (the tenth day of Muharram) atones for the sins of previous years."
+
+-- Reported by all except Al-Bukhari and At-Tirmidhi
+
+In another saying the Prophet's wife Hafsah, may Allah be pleased with her, said:
+
+> "Four things the Messenger of Allâh never neglected: Observing fast on the day of 'Ashura, 'Arafat, three days every month, and offering fajr sunnah prayers early in the morning."
+
+-- Muslim
+
+These statements are proof that fasting on the ninth of Dhul-Hijjah, the day before 'Eid ul-Adha was a lifelong practice of the Prophet, peace be upon him, as his wife reported.
+
+There are some reports that fasting is prohibited on the Day of 'Arafah. However, it must be understood that this refers to a person performing the Hajj. If a person is on the Hajj, there is no fast for him or her on the day of 'Arafah. That is undoubtedly a blessing for him because of the hardships of the pilgrimage. In a saying reported by Umm Al-Fadl, may Allah be pleased with her, she said:
+
+> "The companions doubted whether the Prophet was fasting on 'Arafah or not. She decided to prove to them that he was not, so she said, 'I sent to him milk, which he drank while he was delivering the khutbah (sermon) on 'Arafah.' "
+
+-- Recorded by Al-Bukhari
+
+Prohibiting the pilgrims from fasting on these days is a great mercy for them, for fasting will exert undue hardship on the person performing the Hajj, while they are primarily concerned with their pilgrimage. Above all, the pilgrim would not be fasting anyway because he is traveling.
