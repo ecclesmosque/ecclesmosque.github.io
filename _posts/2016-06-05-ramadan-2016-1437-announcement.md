@@ -9,7 +9,7 @@ categories: announcements
 
 The Management Committee of the {{ site.title }} have agreed that 1st Ramadan 1437 will be on Monday 6th June 2016.
 
-You can <a href="https://docs.google.com/uc?id=0B119XqSF0tTIWUc0cjNvYWFqUzg&export=download">**download a copy of the Ramadan Timetable**</a>.
+{% include prayer-timetable-download-button.html for="2016-06" %}
 
 The tarawih salah will commence from Sunday 5th June 2016, starting at 11.15PM.
 

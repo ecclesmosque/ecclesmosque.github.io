@@ -10,6 +10,12 @@ a:hover {
 }
 
 /* Custom default button */
+.btn {
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+}
+
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
@@ -29,11 +35,15 @@ html,
 body {
   height: 100%;
   background-color: #333;
+  font-family: Freesans, Helvetica, Arial, sans-serif;
+  margin: 0;
 }
+
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  // text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  @include gel-typography('pica');
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -111,9 +121,11 @@ body {
 .cover {
   padding: 0 1.5rem;
 }
-.cover .btn-lg {
+
+.btn-lg {
   padding: .75rem 1.25rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 hr {

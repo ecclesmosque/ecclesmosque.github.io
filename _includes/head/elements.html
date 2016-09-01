@@ -1,0 +1,17 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% include enforce-ssl.html %}
+  <!-- <link rel="icon" href="../../favicon.ico"> -->
+  {% seo %}
+  {% feed_meta %}
+
+  {% if jekyll.environment == "production" %}
+    {% assign isMin = '.min' %}
+  {% endif %}
+
+  <!-- Bootstrap core CSS + our css in single bundle -->
+  <link rel="stylesheet" href="{{ "/assets/styles/app" | prepend: site.baseurl | append: isMin | append: ".css" }}">
+  {% include google/analytics.html %}
+</head>

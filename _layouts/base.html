@@ -1,0 +1,27 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include head/elements.html %}
+  <body class="pages {{ page.path | remove: 'html' | remove: 'md' | slugify }}">
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          {% include header/container.html %}
+
+          {{ content }}
+
+        </div>
+
+      </div>
+
+    </div>
+    {% include footer/container.html %}
+  </body>
+</html>

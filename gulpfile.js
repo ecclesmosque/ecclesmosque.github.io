@@ -1,3 +1,4 @@
+
 var autoprefixer = require('gulp-autoprefixer');
 var babel = require('gulp-babel');
 var browserify = require('browserify');
@@ -15,6 +16,9 @@ var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var watchify = require('watchify');
+
+require('gulp-graph')(gulp);
 
 var config = {
   jekyll: ['pages', 'posts', 'layouts', 'includes']
@@ -24,7 +28,7 @@ gulp.task('clean', function () {
   return del(['_site', 'assets/styles', 'assets/scripts']);
 });
 
-gulp.task('jekyll-compile',['clean'], function (gulpCallBack) {
+gulp.task('jekyll-compile', [], function (gulpCallBack) {
   var spawn = require('child_process').spawn;
   var jekyll = spawn('bundle', ['exec', 'jekyll','build', '--incremental'], { stdio: 'inherit' });
 
@@ -33,7 +37,7 @@ gulp.task('jekyll-compile',['clean'], function (gulpCallBack) {
   });
 });
 
-gulp.task('html-proofer', ['clean', 'jekyll-compile', 'styles', 'scripts'], function (gulpCallBack) {
+gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (gulpCallBack) {
   if (process.env.JEKYLL_ENV === 'production') {
     gulpCallBack(null);
   } else {
@@ -53,7 +57,7 @@ gulp.task('html-proofer', ['clean', 'jekyll-compile', 'styles', 'scripts'], func
   }
 });
 
-gulp.task('browser-sync', ['clean', 'jekyll-compile'], function () {
+gulp.task('browser-sync', ['jekyll-compile'], function () {
   browserSync({
     server: {
       baseDir: '_site/'
@@ -71,7 +75,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest('assets/images/'));
 });
 
-gulp.task('styles', ['clean'], function () {
+gulp.task('styles', function () {
   gulp.src(['_assets/styles/**/*.scss'])
     .pipe(plumber({
       errorHandler: function (error) {
@@ -82,15 +86,19 @@ gulp.task('styles', ['clean'], function () {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer('last 2 versions'))
+    // .pipe(sourcemaps.write('.', {sourceRoot: null}))
+    // .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(gulp.dest('assets/styles/'))
+    .pipe(gulp.dest('_site/assets/styles/'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/styles/'))
+    .pipe(gulp.dest('_site/assets/styles/'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('eslint', ['clean'], function () {
+gulp.task('eslint', function () {
   // ESLint ignores files with "node_modules" paths.
   // So, it's best to have gulp ignore the directory as well.
   // Also, Be sure to return the stream from the task;
@@ -107,9 +115,12 @@ gulp.task('eslint', ['clean'], function () {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('scripts', ['clean'], function () {
+gulp.task('scripts', function () {
   // set up the browserify instance on a task basis
   var b = browserify({
+    cache: {},
+    packageCache: {},
+    plugin: [watchify],
     entries: '_assets/scripts/entry.js',
     debug: true
   });
@@ -125,18 +136,20 @@ gulp.task('scripts', ['clean'], function () {
     .pipe(buffer())
     .pipe(babel())
     .pipe(gulp.dest('assets/scripts/'))
+    .pipe(gulp.dest('_site/assets/scripts/'))
     .pipe(sourcemaps.init({ loadMaps: true }))
     // Add transformation tasks to the pipeline here.
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('assets/scripts/'))
+    .pipe(gulp.dest('_site/assets/scripts/'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('build', ['clean', 'jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
+gulp.task('build', ['jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
 
-gulp.task('dev', ['clean', 'build', 'browser-sync'], function () {
+gulp.task('dev', ['build', 'browser-sync'], function () {
   config.jekyll.forEach(function (conentType) {
     gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
   });
