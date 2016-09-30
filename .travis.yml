@@ -1,9 +1,9 @@
 language: ruby
 rvm:
-- 2.2
+- 2.3
 
 install:
- - nvm install 6.2
+ - nvm install 6.7
  - npm set progress=false && npm install
  - bundle install
 
