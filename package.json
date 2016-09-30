@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
+    "bootstrap": "4.0.0-alpha.4",
     "browser-sync": "^2.12.10",
     "browserify": "^13.0.1",
     "del": "^2.2.0",
