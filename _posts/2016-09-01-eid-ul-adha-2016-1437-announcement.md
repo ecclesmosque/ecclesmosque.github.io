@@ -10,9 +10,11 @@ The 1st of Dhū Al-Hijjah 1437 is Saturday 3rd September 2016. The day of Arafat
 According to scholars of the Qur’an, the first ten days of Dhul-Hijjah are significant enough for Allah to swear by them.
 
 Describing how these ten days are among the best, the Prophet (peace and blessings of Allah be upon him) said:
+
 > "There are no days on which righteous deeds are more beloved to Allah than these ten days."
 
 They said:
+
 > "Not even jihad for the sake of Allah?” He said: “Not even jihad for the sake of Allah, unless a man goes out himself for jihad taking his wealth with him and does not come back with anything."
 
 -- [Bukhari, 2/457]
