@@ -21,25 +21,31 @@ var watchify = require('watchify');
 require('gulp-graph')(gulp);
 
 var config = {
-  jekyll: ['pages', 'posts', 'layouts', 'includes']
+  jekyll: ['pages', 'posts', 'layouts', 'includes'],
+  jekyll_env: 'development'
 };
 
 gulp.task('clean', function () {
   return del(['_site', 'assets/styles', 'assets/scripts']);
 });
 
-gulp.task('jekyll-compile', [], function (gulpCallBack) {
+gulp.task('jekyll-compile', [], function (next) {
   var spawn = require('child_process').spawn;
-  var jekyll = spawn('bundle', ['exec', 'jekyll','build', '--incremental'], { stdio: 'inherit' });
+
+  // clone the actual env vars to avoid overrides
+  var envs = Object.create( process.env );
+  envs.JEKYLL_ENV = config.jekyll_env;
+
+  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], { stdio: 'inherit', env: envs });
 
   jekyll.on('exit', function (code) {
-    gulpCallBack(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
+    next(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
   });
 });
 
-gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (gulpCallBack) {
+gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (next) {
   if (process.env.JEKYLL_ENV === 'production') {
-    gulpCallBack(null);
+    next(null);
   } else {
     var spawn = require('child_process').spawn;
     var htmlproofer = spawn('bundle',
@@ -52,7 +58,7 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (gul
       ], { stdio: 'inherit' });
 
     htmlproofer.on('exit', function (code) {
-      gulpCallBack(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
+      next(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
     });
   }
 });
@@ -149,6 +155,19 @@ gulp.task('scripts', function () {
 
 gulp.task('build', ['jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
 
+gulp.task('setup-environment', function() {
+  config.jekyll_env = 'production';
+});
+
+function terminate() {
+  gulp.on('stop', () => { process.exit(0); });
+  gulp.on('err', () => { process.exit(1); });
+}
+
+gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
+  next(terminate());
+});
+
 gulp.task('dev', ['build', 'browser-sync'], function () {
   config.jekyll.forEach(function (conentType) {
     gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
@@ -158,6 +177,8 @@ gulp.task('dev', ['build', 'browser-sync'], function () {
   gulp.watch('_site/**/*.*', ['bs-reload']);
 });
 
-gulp.task('test', ['build']);
+gulp.task('test', ['build'], function (next) {
+  next(terminate());
+});
 
 gulp.task('default', ['test']);
