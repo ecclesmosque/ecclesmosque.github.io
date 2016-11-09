@@ -1,9 +1,3 @@
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import 'node_modules/gel-sass-tools/sass-tools';
-@import 'node_modules/sass-mq/mq';
-@import 'node_modules/gel-grid/grid';
-@import 'node_modules/gel-typography/typography';
-
-@import 'cover';
-@import 'posts';
+@import "reset";
+@import "gel";

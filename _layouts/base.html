@@ -4,24 +4,18 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
-  {% include head/elements.html %}
-  <body class="pages {{ page.path | remove: 'html' | remove: 'md' | slugify }}">
+{% include head/elements.html %}
 
-    <div class="site-wrapper">
+<body class="em-modules pages {{ page.path | remove: 'html' | remove: 'md' | slugify }}">
 
-      <div class="site-wrapper-inner">
+    <section class="em-module">
+      {% include header/container.html %}
+    </section>
 
-        <div class="cover-container">
+    {{ content }}
 
-          {% include header/container.html %}
-
-          {{ content }}
-
-        </div>
-
-      </div>
-
-    </div>
-    {% include footer/container.html %}
-  </body>
+    <section class="em-module em-footer">
+        {% include footer/container.html %}
+    </section>
+</body>
 </html>
