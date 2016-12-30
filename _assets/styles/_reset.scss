@@ -1,2 +1,10 @@
 // Normalize.css Imports
 @import 'node_modules/normalize.css/normalize';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+}

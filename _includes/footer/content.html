@@ -1,1 +1,25 @@
-<p>Copyright &copy; 2006&mdash;{{ site.time | date: '%Y' }} {{ site.title }}. Registered Charity Number <strong>{{ site.charity.number }}</strong>.</p>
+<footer class="em-module em-footer">
+  <div class="em-module__content">
+    
+    <div class="em-layout em-footer-info-addresses">
+      <div class="em-layout__item em-footer__column em-footer__column--info">
+        <h2 class="footer-heading">{{ site.title }}</h2>
+        <p>{{ site.description }}</p>
+        {% include charity-commission.html %}
+      </div>
+      <div class="em-layout__item em-footer__column em-footer__column--addresses">
+         {% include contacts.html %}
+      </div>
+    </div>
+
+    <div class="em-layout em-footer-navigation-copyright">
+      <div class="em-layout__item em-footer__column em-footer__column--navigation">
+        {% include navigation/footer.html %}
+      </div>
+      <div class="em-layout__item em-footer__column em-footer__column--copyright">
+         <p>Copyright &copy; 2006&mdash;{{ site.time | date: '%Y' }} {{ site.title }}.</p>
+      </div>
+    </div>
+
+  </div>
+</footer>

@@ -1,3 +1,10 @@
+@import "settings";
+@import "variables";
+@import "functions";
 
 @import "reset";
 @import "gel";
+
+
+@import "partials/base";
+@import "partials/header";

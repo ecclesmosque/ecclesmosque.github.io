@@ -1,0 +1,9 @@
+.em-module {
+    box-sizing: border-box;
+}
+
+.em-module__content {
+    padding: 0 em-spacing(base-spacing-unit);
+    position: relative;
+    margin: 0 auto;
+}

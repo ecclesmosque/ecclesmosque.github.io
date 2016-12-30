@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ramadan 2016/1437 Announcement"
+title:  Ramadan 2016/1437 Announcement
 date:   2016-06-05 17:00:00 +0100
 categories: announcements
 ---

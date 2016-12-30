@@ -1,0 +1,17 @@
+{% assign has_subnav = (nav.nav != "") %}
+{% if has_subnav %}
+  {% assign subnav_class = 'em-header-nav__item--has-subnav' %}
+{% else %}
+  {% assign subnav_class = '' %}
+{% endif %}
+
+<li class="em-header-nav__item {{ subnav_class }} em-header-nav__item-{{ nav.title | slugify}}">
+  <a class="em-header-nav__item-link {{ subnav_class }}-link em-header-nav__item-{{ nav.title | slugify}}-link{% if page.url == nav.url %} em-header-nav__item-link--curent{% endif %}" href="{{ nav.url }}">{{ nav.title }}</a>
+  {% if nav.nav == 'site.projects' %}
+  <ul class="em-header-nav-sub">
+    {% for nav in site.projects | sort: 'title' %}
+      {% include navigation-header-link.html %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>

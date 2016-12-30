@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Eid ul-Adha 2016-1437 Announcement"
+title:  Eid ul-Adha 2016-1437 Announcement
 date:   2016-09-01 19:00:00 +0100
 categories: announcements
 ---

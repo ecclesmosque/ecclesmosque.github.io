@@ -22,7 +22,7 @@ require('gulp-graph')(gulp);
 
 var config = {
   jekyll: ['pages', 'posts', 'layouts', 'includes'],
-  jekyll_env: 'development'
+  JEKYLL_ENV: 'development'
 };
 
 gulp.task('clean', function () {
@@ -33,8 +33,8 @@ gulp.task('jekyll-compile', [], function (next) {
   var spawn = require('child_process').spawn;
 
   // clone the actual env vars to avoid overrides
-  var envs = Object.create( process.env );
-  envs.JEKYLL_ENV = config.jekyll_env;
+  var envs = Object.create(process.env);
+  envs.JEKYLL_ENV = config.JEKYLL_ENV;
 
   var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], { stdio: 'inherit', env: envs });
 
@@ -92,8 +92,8 @@ gulp.task('styles', function () {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer('last 2 versions'))
-    // .pipe(sourcemaps.write('.', {sourceRoot: null}))
-    // .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.write('.', {sourceRoot: null}))
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(gulp.dest('assets/styles/'))
     .pipe(gulp.dest('_site/assets/styles/'))
     .pipe(rename({ suffix: '.min' }))
@@ -155,8 +155,8 @@ gulp.task('scripts', function () {
 
 gulp.task('build', ['jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
 
-gulp.task('setup-environment', function() {
-  config.jekyll_env = 'production';
+gulp.task('setup-environment', function () {
+  config.JEKYLL_ENV = 'production';
 });
 
 function terminate() {
@@ -172,6 +172,7 @@ gulp.task('dev', ['build', 'browser-sync'], function () {
   config.jekyll.forEach(function (conentType) {
     gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
   });
+  gulp.watch('_config.yml', ['jekyll-compile']);
   gulp.watch('_assets/styles/**/*.scss', ['styles']);
   gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
   gulp.watch('_site/**/*.*', ['bs-reload']);

@@ -1,0 +1,19 @@
+<div id="{{ site.baseurl }}" class="vcard hcard-{{ site.title | slugify }}" itemscope itemtype="http://schema.org/Organization">
+  <div class="org em-contacts-info__org" itemprop="name">{{ site.subtitle }}</div>
+  <div>
+    <i class="fa fa-envelope"></i> Email <div><a class="email em-contacts-info__email" href="mailto:{{ contact.email }}" itemprop="email">{{ contact.email }}</a></div>
+  </div>
+  <div class="em-contacts-info__tel">
+    <i class="fa fa-phone-square"></i> Telephone <div class="tel" itemprop="telephone">{{ contact.telephone }}</div>
+  </div>
+  {% if contact.address %}
+  <div class="adr em-contacts-info__address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <div><i class="fa fa-map-marker"></i> Postal Address</div>
+    <div class="street-address" itemprop="streetAddress">{{ contact.address.street }}</div>
+    <span class="locality" itemprop="addressLocality">{{ contact.address.town }}</span>,
+    <span class="locality" itemprop="addressRegion">{{ contact.address.city }}</span>
+    <div class="postal-code" itemprop="postalCode">{{ contact.address.postcode }}</div>
+    <div class="country-name" itemprop="addressCountry">{{ contact.address.country }}</div>
+  </div>
+  {% endif %}
+</div>

@@ -2,15 +2,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  {% include enforce-ssl.html %}
+  {% include base/enforce-ssl.html %}
   <!-- <link rel="icon" href="../../favicon.ico"> -->
   {% seo %}
   {% feed_meta %}
 
   {% if jekyll.environment == "production" %}
     {% assign isMin = '.min' %}
+    {% assign isProduction = true %}
   {% endif %}
   
   <link rel="stylesheet" href="{{ "/assets/styles/app" | prepend: site.baseurl | append: isMin | append: ".css" }}">
-  {% include google/analytics.html %}
+  {% if isProduction %}
+    {% include google/analytics.html %}
+  {% endif %}
 </head>

@@ -1,2 +1,4 @@
-{% include google/tagmanager.html %}
+{% if isProduction %}
+    {% include google/tagmanager.html %}
+{% endif %}
 <script src="{{ "/assets/scripts/app" | prepend: site.baseurl | append: isMin | append: ".js" }}"></script>
