@@ -9,6 +9,7 @@ var cleanCSS = require('gulp-clean-css');
 var del = require('del'); // rm -rf
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
@@ -26,8 +27,12 @@ var config = {
   JEKYLL_ENV: 'development'
 };
 
+function isProduction() {
+  return config.JEKYLL_ENV === 'production';
+}
+
 gulp.task('clean', function () {
-  return del(['_site', 'assets/styles', 'assets/scripts']);
+  return del.sync(['_site', 'assets/styles', 'assets/scripts']);
 });
 
 gulp.task('jekyll-compile', [], function (next) {
@@ -45,7 +50,7 @@ gulp.task('jekyll-compile', [], function (next) {
 });
 
 gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (next) {
-  if (process.env.JEKYLL_ENV === 'production') {
+  if (config.JEKYLL_ENV === 'production') {
     next(null);
   } else {
     var spawn = require('child_process').spawn;
@@ -86,7 +91,7 @@ gulp.task('styles', function () {
   gulp.src(['_assets/styles/**/*.scss'])
     .pipe(plumber({
       errorHandler: function (error) {
-        console.log(error.message);
+        console.log('Task - styles:', error);
         this.emit('end');
       }
     }))
@@ -94,15 +99,11 @@ gulp.task('styles', function () {
     .pipe(sass())
     .pipe(replace(/\.\.\/font\//igm, '/assets/fonts/')) // fix for https://github.com/fontello/fontello/issues/573
     .pipe(autoprefixer('last 2 versions'))
-    .pipe(sourcemaps.write('.', {sourceRoot: null}))
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(gulp.dest('assets/styles/'))
-    .pipe(gulp.dest('_site/assets/styles/'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(cleanCSS())
+    .pipe(sourcemaps.init())
+    .pipe(gulpif(isProduction, rename({ suffix: '.min' })))
+    .pipe(gulpif(isProduction, cleanCSS()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/styles/'))
-    .pipe(gulp.dest('_site/assets/styles/'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -143,15 +144,12 @@ gulp.task('scripts', function () {
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(babel())
-    .pipe(gulp.dest('assets/scripts/'))
-    .pipe(gulp.dest('_site/assets/scripts/'))
-    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.init())
     // Add transformation tasks to the pipeline here.
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    .pipe(gulpif(isProduction, rename({ suffix: '.min' })))
+    .pipe(gulpif(isProduction, uglify()))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/scripts/'))
-    .pipe(gulp.dest('_site/assets/scripts/'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -183,7 +181,7 @@ gulp.task('icons-download', [], function (next) {
   });
 });
 
-gulp.task('build', ['jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
+gulp.task('build', ['clean', 'jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
 
 gulp.task('setup-environment', function () {
   config.JEKYLL_ENV = 'production';
@@ -198,7 +196,7 @@ gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
   next(terminate());
 });
 
-gulp.task('dev', ['build', 'browser-sync'], function () {
+gulp.task('dev', ['clean', 'build', 'browser-sync'], function () {
   config.jekyll.forEach(function (conentType) {
     gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
   });
