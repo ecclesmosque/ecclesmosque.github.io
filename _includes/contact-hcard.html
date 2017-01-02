@@ -1,24 +1,31 @@
-<div id="{{ site.baseurl }}" class="vcard hcard-{{ site.title | slugify }}" itemscope itemtype="http://schema.org/Organization">
-  <div class="org em-contacts-info__org" itemprop="name">{{ site.subtitle }}</div>
-  <div class="em-contacts-info__email">
-    <i class="em-icons icon-mail-alt"></i> Email <div class="em-contacts-info__email-detail"><a class="email em-contacts-info__email" href="mailto:{{ contact.email }}" itemprop="email">{{ contact.email }}</a></div>
-  </div>
-  <div class="em-contacts-info__tel">
-    <i class="em-icons icon-phone-squared"></i> Telephone <div class="tel em-contacts-info__tel-details" itemprop="telephone">{{ contact.telephone }}</div>
-  </div>
-  {% if contact.address %}
-  <div class="adr em-contacts-info__address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-    <div class="em-contacts-info__address-heading"><i class="em-icons icon-location"></i> Postal Address</div>
-    
-    <div class="em-contacts-info__address-details">
-      <div class="street-address" itemprop="streetAddress">{{ contact.address.street }}</div>
-      <span class="locality" itemprop="addressLocality">{{ contact.address.town }}</span>,
-      <span class="locality" itemprop="addressRegion">{{ contact.address.city }}</span>
-      <div class="postal-code" itemprop="postalCode">{{ contact.address.postcode }}</div>
-      <div class="country-name" itemprop="addressCountry">{{ contact.address.country }}</div>
+<div id="{{ site.baseurl }}" class="vcard hcard-{{ site.title | slugify }} em-layout" itemscope itemtype="http://schema.org/Organization">
+  
+  <div class="em-layout__item em-1/2@l">
+    <div class="em-contacts-info__email">
+      <div class="em-contacts-info__email-heading"><i class="em-icons icon-mail"></i> Email</div>
+      <div class="em-contacts-info__email-detail"><a class="email em-contacts-info__email" href="mailto:{{ contact.email }}" itemprop="email">{{ contact.email }}</a></div>
     </div>
-    
-    <div class="em-contacts-info__address-get-direction"><i class="em-icons icon-direction"></i> <a href="https://www.google.co.uk/maps/dir/''/{{ contact.address.street }},+{{ contact.address.town }},+{{ contact.address.city }}+{{ contact.address.postcode }}" target="_google-maps">Get directions in Google Maps</a></div>
+    <div class="em-contacts-info__tel">
+      <div class="em-contacts-info__tel-heading"><i class="em-icons icon-phone"></i> Telephone</div>
+      <div class="tel em-contacts-info__tel-details" itemprop="telephone">{{ contact.telephone }}</div>
+    </div>
+  </div>
+
+  {% if contact.address %}
+  <div class="em-layout__item em-1/2@l">
+    <div class="adr em-contacts-info__address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <div class="em-contacts-info__address-heading"><i class="em-icons icon-location"></i> Postal Address</div>
+      
+      <div class="em-contacts-info__address-details">
+        <div class="street-address" itemprop="streetAddress">{{ contact.address.street }}</div>
+        <span class="locality" itemprop="addressLocality">{{ contact.address.town }}</span>,
+        <span class="locality" itemprop="addressRegion">{{ contact.address.city }}</span>
+        <div class="postal-code" itemprop="postalCode">{{ contact.address.postcode }}</div>
+        <div class="country-name" itemprop="addressCountry">{{ contact.address.country }}</div>
+      </div>
+      
+      <div class="em-contacts-info__address-get-direction"><i class="em-icons icon-direction"></i> <a href="https://www.google.co.uk/maps/dir/''/{{ contact.address.street }},+{{ contact.address.town }},+{{ contact.address.city }}+{{ contact.address.postcode }}" target="_google-maps">Get directions in Google Maps</a></div>
+    </div>
   </div>
   {% endif %}
 </div>

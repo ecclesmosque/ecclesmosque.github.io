@@ -51,12 +51,12 @@ navigation:
   footer:
     - title: About us
       url: /about-us/
-    - title: Terms of Service
-      url: /terms/
-    - title: Privacy
-      url: /privacy/
     - title: Contact us
       url: /contact-us/
+    - title: Privacy
+      url: /privacy/
+    - title: Terms of Service
+      url: /terms/
 
 social-links:
   - label: Follow us on Twitter

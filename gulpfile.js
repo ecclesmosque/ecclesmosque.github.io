@@ -2,7 +2,7 @@
 var autoprefixer = require('gulp-autoprefixer');
 var babel = require('gulp-babel');
 var browserify = require('browserify');
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();;
 var buffer = require('vinyl-buffer');
 var cache = require('gulp-cache');
 var cleanCSS = require('gulp-clean-css');
@@ -13,6 +13,7 @@ var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
+var reload = browserSync.reload;
 var replace = require('gulp-replace');
 var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
@@ -70,15 +71,19 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
 });
 
 gulp.task('browser-sync', ['jekyll-compile'], function () {
-  browserSync({
+  browserSync.init({
     server: {
       baseDir: '_site/'
     }
   });
-});
 
-gulp.task('bs-reload', function () {
-  browserSync.reload();
+  config.jekyll.forEach(function (conentType) {
+    gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
+  });
+  gulp.watch('_config.yml', ['jekyll-compile']);
+  gulp.watch('_assets/styles/**/*.scss', ['styles']);
+  gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
+  // gulp.watch('_site/**/*.html'); //.on('change', reload);
 });
 
 gulp.task('images', function () {
@@ -104,7 +109,8 @@ gulp.task('styles', function () {
     .pipe(gulpif(isProduction, cleanCSS()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/styles/'))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(reload({ stream: true }));
+    // .on('end', reload);
 });
 
 gulp.task('eslint', function () {
@@ -150,7 +156,7 @@ gulp.task('scripts', function () {
     .pipe(gulpif(isProduction, uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/scripts/'))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(reload({ stream: true }));
 });
 
 gulp.task('icons-update', [], function (next) {
@@ -196,15 +202,7 @@ gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
   next(terminate());
 });
 
-gulp.task('dev', ['clean', 'build', 'browser-sync'], function () {
-  config.jekyll.forEach(function (conentType) {
-    gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
-  });
-  gulp.watch('_config.yml', ['jekyll-compile']);
-  gulp.watch(['_assets/styles/**/*.scss','_assets/styles/**/*.css'], ['styles']);
-  gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
-  gulp.watch('_site/**/*.*', ['bs-reload']);
-});
+gulp.task('dev', ['clean', 'build', 'browser-sync']);
 
 gulp.task('test', ['build'], function (next) {
   next(terminate());
