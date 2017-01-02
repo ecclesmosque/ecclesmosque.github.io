@@ -20,8 +20,28 @@
 
 .em-footer-info-addresses a {
     color: #666666;
-    text-decoration: none;
-    border-bottom: 1px solid #666666;
+    text-decoration: underline;
+ }
+
+ .em-contacts-info__email,
+ .em-contacts-info__tel,
+ .em-contacts-info__address {
+     padding: 0 0 em-spacing(base-spacing-unit);
+ }
+
+.em-contacts-info__email-detail,
+.em-contacts-info__tel-details,
+.em-contacts-info__address-details {
+     padding: 0 em-spacing(base-spacing-unit);
+ }
+
+ .em-contacts-info__address-heading,
+ .em-contacts-info__address-get-direction {
+     @include gel-typography('pica');
+ }
+
+ .em-contacts-info__address-get-direction {
+     padding: em-spacing(base-spacing-unit) 0;
  }
 
 .em-footer-navigation-copyright {
