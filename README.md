@@ -1,14 +1,23 @@
 <h1 align="center">Eccles Mosque</h1>
 <p align="center">
-  [![Build Status](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io.svg)](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io)
-</p>
-<p align="center">
      The Eccles and Salford Islāmic Society<br/>
     See http://ecclesmosque.org.uk/
 </p>
 
+[![Build Status](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io.svg?branch=master)](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io)
 
-# What is this
+
+## What is this?
+
+This is repo contains the soruce code for The Eccles and Salford Islāmic Society website see the deployed website at [ecclesmosque.org.uk](https://ecclesmosque.org.uk/).
+
+
+## Getting Started
+
+Install node dependencies:
+
+* `npm install -g fontello-cli` -- to generate/update icons fonts.
+
 
 
 ## How To Preview a draft post
