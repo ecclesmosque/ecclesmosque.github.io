@@ -83,7 +83,7 @@ gulp.task('browser-sync', ['jekyll-compile'], function () {
   gulp.watch('_config.yml', ['jekyll-compile']);
   gulp.watch('_assets/styles/**/*.scss', ['styles']);
   gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
-  // gulp.watch('_site/**/*.html'); //.on('change', reload);
+  gulp.watch('_site/**/*.html').on('change', reload);
 });
 
 gulp.task('images', function () {
@@ -109,8 +109,8 @@ gulp.task('styles', function () {
     .pipe(gulpif(isProduction, cleanCSS()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/styles/'))
-    .pipe(reload({ stream: true }));
-    // .on('end', reload);
+    // .pipe(reload({ stream: true }));
+    .on('end', reload);
 });
 
 gulp.task('eslint', function () {

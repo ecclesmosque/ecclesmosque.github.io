@@ -1,6 +1,6 @@
 ---
 title: The Eccles and Salford Islāmic Society
-layout: hero
+layout: home
 permalink: /
 ---
 

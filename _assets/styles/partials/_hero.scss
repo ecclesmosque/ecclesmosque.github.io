@@ -1,0 +1,9 @@
+.em-hero .em-module__content {
+  padding: 0 em-spacing(base-spacing-unit);
+}
+
+@include mq($from: $gel-grid-margin-change) {
+  .em-hero .em-module__content {
+    padding: 0 em-spacing(double-spacing-unit);
+  }
+}

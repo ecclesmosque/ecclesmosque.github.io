@@ -3,12 +3,6 @@
     color: #999999;
 }
 
-.em-footer-contact .em-module__content,
-.em-footer .em-module__content {
-    padding-top: em-spacing(quad-spacing-unit);
-    padding-bottom: em-spacing(quad-spacing-unit);
-}
-
 .em-footer-contact {
     background: #f0f0f0;
     color: #666666;
@@ -74,5 +68,11 @@
 @include mq($until: em-bp-s) {
     .em-footer-nav-menu__item {
         width: 50%;
+    }
+}
+
+@include mq($from: em-bp-l) {
+    .em-footer-copyright-details {
+        text-align: right;
     }
 }

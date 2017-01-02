@@ -3,15 +3,14 @@ p {
 }
 
 .em-module__content {
-    padding: 0 em-spacing(base-spacing-unit);
+    padding: em-spacing(quad-spacing-unit) em-spacing(base-spacing-unit);
     position: relative;
     margin: 0 auto;
     max-width: $gel-grid-max-width-1280;
 }
 
-
 @include mq($from: $gel-grid-margin-change) {
   .em-module__content {
-    padding: 0 em-spacing(double-spacing-unit);
+    padding: em-spacing(quad-spacing-unit) em-spacing(double-spacing-unit);
   }
 }
