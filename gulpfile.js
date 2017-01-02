@@ -12,6 +12,7 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
@@ -91,6 +92,7 @@ gulp.task('styles', function () {
     }))
     .pipe(sourcemaps.init())
     .pipe(sass())
+    .pipe(replace(/\.\.\/font\//igm, '/assets/fonts/')) // fix for https://github.com/fontello/fontello/issues/573
     .pipe(autoprefixer('last 2 versions'))
     .pipe(sourcemaps.write('.', {sourceRoot: null}))
     .pipe(sourcemaps.init({loadMaps: true}))
@@ -153,6 +155,34 @@ gulp.task('scripts', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('icons-update', [], function (next) {
+  var spawn = require('child_process').spawn;
+
+  var fontello = spawn('fontello-cli', [
+    'open',
+    '--config', './_assets/icons/config.json'
+  ]);
+
+  fontello.on('exit', function (code) {
+    next(code === 0 ? null : 'ERROR: fontello-cli process exited with code: ' + code);
+  });
+});
+
+gulp.task('icons-download', [], function (next) {
+  var spawn = require('child_process').spawn;
+
+  var fontello = spawn('fontello-cli', [
+    'install',
+    '--config', './_assets/icons/config.json',
+    '--font', './assets/fonts',
+    '--css', './_assets/styles/icons'
+  ]);
+
+  fontello.on('exit', function (code) {
+    next(code === 0 ? null : 'ERROR: fontello-cli process exited with code: ' + code);
+  });
+});
+
 gulp.task('build', ['jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
 
 gulp.task('setup-environment', function () {
@@ -173,7 +203,7 @@ gulp.task('dev', ['build', 'browser-sync'], function () {
     gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
   });
   gulp.watch('_config.yml', ['jekyll-compile']);
-  gulp.watch('_assets/styles/**/*.scss', ['styles']);
+  gulp.watch(['_assets/styles/**/*.scss','_assets/styles/**/*.css'], ['styles']);
   gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
   gulp.watch('_site/**/*.*', ['bs-reload']);
 });

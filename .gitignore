@@ -8,3 +8,4 @@ assets/**/*.map
 assets/scripts/app.js
 assets/styles/app.css
 assets/styles/app.css.map
+_assets/styles/icons

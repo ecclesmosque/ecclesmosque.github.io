@@ -1,3 +1,7 @@
+p {
+    @include gel-typography('body-copy');
+}
+
 .em-module {
     box-sizing: border-box;
 }

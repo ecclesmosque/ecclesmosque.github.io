@@ -1,0 +1,60 @@
+.em-footer {
+    // border-top: 2px solid #f0f0f0;
+}
+
+.em-footer .em-module__content {
+    padding-top: em-spacing(quad-spacing-unit);
+}
+
+
+.em-contacts-info_heading {
+    @include gel-typography('great-primer');
+}
+
+.em-footer-info-addresses {
+    @include gel-typography('body-copy');
+    background: #f0f0f0;
+    color: #666666;
+    padding: em-spacing(triple-spacing-unit) 0;
+}
+
+.em-footer-info-addresses a {
+    color: #666666;
+    text-decoration: none;
+    border-bottom: 1px solid #666666;
+ }
+
+.em-footer-navigation-copyright {
+    background: #d7d7d7;
+    color: #999999;
+    padding: em-spacing(triple-spacing-unit) 0;
+}
+
+.em-footer-nav-menu__items {
+    @include gel-typography('body-copy');
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.em-footer-nav-menu__item a {
+    display: inline-block;
+    min-height: $size-of-human-thumb;
+    line-height: $size-of-human-thumb;
+    padding: 0 em-spacing(base-spacing-unit) 0 0;
+
+    color: #777777;
+    text-decoration: none;
+}
+
+
+.em-footer-nav-menu__item {
+    display: inline-block;
+
+    @include mq($until: 'em-bp-s') {
+        // padding-left: double($gel-spacing-unit);
+        // padding-right: double($gel-spacing-unit);
+        width: 50%;
+    }
+    
+}
