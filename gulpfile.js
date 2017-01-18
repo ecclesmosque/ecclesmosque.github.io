@@ -2,7 +2,7 @@
 var autoprefixer = require('gulp-autoprefixer');
 var babel = require('gulp-babel');
 var browserify = require('browserify');
-var browserSync = require('browser-sync').create();;
+var browserSync = require('browser-sync').create();
 var buffer = require('vinyl-buffer');
 var cache = require('gulp-cache');
 var cleanCSS = require('gulp-clean-css');
@@ -13,7 +13,6 @@ var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
-var reload = browserSync.reload;
 var replace = require('gulp-replace');
 var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
@@ -24,7 +23,7 @@ var watchify = require('watchify');
 require('gulp-graph')(gulp);
 
 var config = {
-  jekyll: ['pages', 'posts', 'layouts', 'includes'],
+  jekyll: ['pages', 'posts', 'layouts', 'includes', 'data'],
   JEKYLL_ENV: 'development'
 };
 
@@ -70,20 +69,20 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
   }
 });
 
-gulp.task('browser-sync', ['jekyll-compile'], function () {
+gulp.task('serve', ['build'], function () {
   browserSync.init({
-    server: {
-      baseDir: '_site/'
-    }
+    server: '_site'
   });
 
   config.jekyll.forEach(function (conentType) {
     gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
   });
+
   gulp.watch('_config.yml', ['jekyll-compile']);
   gulp.watch('_assets/styles/**/*.scss', ['styles']);
   gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
-  gulp.watch('_site/**/*.html').on('change', reload);
+
+  gulp.watch('_site/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('images', function () {
@@ -108,9 +107,9 @@ gulp.task('styles', function () {
     .pipe(gulpif(isProduction, rename({ suffix: '.min' })))
     .pipe(gulpif(isProduction, cleanCSS()))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/styles/'))
-    // .pipe(reload({ stream: true }));
-    .on('end', reload);
+    .pipe(gulp.dest('_site/assets/styles/')) // for BrowserSync
+    .pipe(gulp.dest('assets/styles/')) // for pruduction
+    .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 gulp.task('eslint', function () {
@@ -156,7 +155,7 @@ gulp.task('scripts', function () {
     .pipe(gulpif(isProduction, uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/scripts/'))
-    .pipe(reload({ stream: true }));
+    .pipe(browserSync.stream({match: '**/*.js'}));
 });
 
 gulp.task('icons-update', [], function (next) {
@@ -202,10 +201,8 @@ gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
   next(terminate());
 });
 
-gulp.task('dev', ['clean', 'build', 'browser-sync']);
-
 gulp.task('test', ['build'], function (next) {
   next(terminate());
 });
 
-gulp.task('default', ['test']);
+gulp.task('default', ['serve']);
