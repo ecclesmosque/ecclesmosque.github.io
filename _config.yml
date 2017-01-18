@@ -61,16 +61,16 @@ navigation:
 social-links:
   - label: Follow us on Twitter
     url: https://twitter.com/EcclesMosque
-    icon: twitter
+    icon: twitter-squared
   - label: Like us on Facebook
     url: https://en-gb.facebook.com/EcclesMosque
-    icon: facebook
+    icon: facebook-official
   - label: Follow us on Google+
     url: https://plus.google.com/100811637505570907565
-    icon: google
-  # - label: Watch, Share and Subscribe on YouTube
-  #   url: https://www.youtube.com/channel/{{you-tube-chnnel-name}}
-  #   icon: youtube
+    icon: gplus-squared
+  - label: Watch, Share and Subscribe on YouTube
+    url: https://www.youtube.com/channel/UCAg5HU_BAlEU2Oo0tlhq96g?sub_confirmation=1
+    icon: youtube-squared
 
 
 # Build settings do not modify anything below this line
