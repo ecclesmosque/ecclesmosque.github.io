@@ -33,10 +33,10 @@ contact:
 
 
 # navigation settings
-navigation:
-  header:
-    - title: Home
-      url: /
+# navigation:
+#   header:
+#     - title: Home
+#       url: /
     # - title: About us
     #   url: /about-us/
     # - title: Projects
@@ -48,15 +48,15 @@ navigation:
     #   url: /donate/
     # - title: Contact us
     #   url: /contact-us/
-  footer:
-    - title: About us
-      url: /about-us/
-    - title: Contact us
-      url: /contact-us/
-    - title: Privacy
-      url: /privacy/
-    - title: Terms of Service
-      url: /terms/
+  # footer:
+  #   - title: About us
+  #     url: /about-us/
+  #   - title: Contact us
+  #     url: /contact-us/
+  #   - title: Privacy
+  #     url: /privacy/
+  #   - title: Terms of Service
+  #     url: /terms/
 
 social-links:
   - label: Follow us on Twitter
@@ -77,10 +77,22 @@ social-links:
 # unless you know what you are doings
 
 # Outputting
-permalink: none #pretty
+permalink: /:categories/:title/
+# paginate: 1
+# paginate_path: '/news/page/:num/'
+timezone: Europe/London
 
 include:
   - _pages
+
+defaults:
+  -
+    scope:
+      type: posts
+    values:
+      layout: posts-entry
+      thumbnail: least-i-forgot-ramadan
+
 
 exclude:
   - Gemfile
@@ -95,6 +107,7 @@ markdown: kramdown
 
 gems:
   - jekyll-feed
+  # - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
