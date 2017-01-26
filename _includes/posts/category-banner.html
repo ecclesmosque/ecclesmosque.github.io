@@ -1,0 +1,10 @@
+{% assign thumbnail = site.data.images | where: "id", include.image-id | first %}
+<section class="em-module em-post-category-banner" {% if thumbnail %}style="background-image: url({{thumbnail.url}})" {% endif %}>
+  <div class="em-module__content">
+    <div class="em-post-category-banner__title-wrapper">
+      <div class="em-post-category-banner__title em-double-pica">
+        {{ page.categories | first | capitalize }}
+      </div>
+    </div>
+  </div>
+</section>

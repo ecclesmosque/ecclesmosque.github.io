@@ -1,0 +1,18 @@
+.em-post-category-banner {
+  background: transparent no-repeat center center fixed;
+  background-size: cover;
+  display: block;
+  position: relative;
+}
+
+.em-post-category-banner__title-wrapper {
+  background: rgba(255, 255, 255, .8);
+  display: inline-block;
+  color: #265301;
+  transform: skew(-20deg);
+}
+
+.em-post-category-banner__title {
+  transform: skew(20deg);
+  padding: em-spacing(base-spacing-unit);
+}

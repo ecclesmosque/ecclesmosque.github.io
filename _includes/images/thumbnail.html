@@ -1,0 +1,2 @@
+{% assign thumbnail = site.data.images | where: "id", include.image-id | first %}
+<span class="em-latest-posts__item-image em-latest-posts__item-image--{{thumbnail.id}}" {% if thumbnail %}style="background-image: url({{thumbnail.url}})"{% endif %}></span>
