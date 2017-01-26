@@ -2,9 +2,10 @@ $hero-min-height: 60vh;
 
 .em-hero {
   position: relative;
+  color: #424242;
 
   &::after {
-    background: #f5e7da no-repeat center center fixed;
+    background: #f5f5f5 no-repeat center center fixed;
     background-size: cover;
     bottom: 0;
     content: ' ';
@@ -32,7 +33,7 @@ $hero-min-height: 60vh;
 }
 
 .em-hero-title {
-  color: #f36523;
+  // color: #f36523;
 }
 
 @include mq($from: $gel-grid-margin-change) {
