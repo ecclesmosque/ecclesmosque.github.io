@@ -32,7 +32,7 @@ $hero-min-height: 60vh;
 }
 
 .em-hero-title {
-  // margin-top: 0;
+  color: #f36523;
 }
 
 @include mq($from: $gel-grid-margin-change) {
