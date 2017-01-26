@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1435,24 +1436,28 @@ body {
         line-height: 48px;
         line-height: 3rem; } }
 
-.em-trafalgar {
+.em-trafalgar,
+h1 {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 24px;
   line-height: 1.5rem; }
   @media (min-width: 20em) {
-    .em-trafalgar {
+    .em-trafalgar,
+    h1 {
       font-size: 24px;
       font-size: 1.5rem;
       line-height: 28px;
       line-height: 1.75rem; } }
   @media (min-width: 37.5em) {
-    .em-trafalgar {
+    .em-trafalgar,
+    h1 {
       font-size: 36px;
       font-size: 2.25rem;
       line-height: 40px;
       line-height: 2.5rem; }
-      .feature-no-touch .em-trafalgar {
+      .feature-no-touch .em-trafalgar,
+      .feature-no-touch h1 {
         font-size: 32px;
         font-size: 2rem;
         line-height: 36px;
@@ -1484,18 +1489,21 @@ body {
         line-height: 36px;
         line-height: 2.25rem; } }
 
-.em-double-pica {
+.em-double-pica,
+h2 {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 24px;
   line-height: 1.5rem; }
   @media (min-width: 37.5em) {
-    .em-double-pica {
+    .em-double-pica,
+    h2 {
       font-size: 26px;
       font-size: 1.625rem;
       line-height: 30px;
       line-height: 1.875rem; }
-      .feature-no-touch .em-double-pica {
+      .feature-no-touch .em-double-pica,
+      .feature-no-touch h2 {
         font-size: 24px;
         font-size: 1.5rem;
         line-height: 28px;
@@ -1521,18 +1529,21 @@ body {
         line-height: 28px;
         line-height: 1.75rem; } }
 
-.em-great-primer {
+.em-great-primer,
+h3 {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 22px;
   line-height: 1.375rem; }
   @media (min-width: 37.5em) {
-    .em-great-primer {
+    .em-great-primer,
+    h3 {
       font-size: 21px;
       font-size: 1.3125rem;
       line-height: 24px;
       line-height: 1.5rem; }
-      .feature-no-touch .em-great-primer {
+      .feature-no-touch .em-great-primer,
+      .feature-no-touch h3 {
         font-size: 20px;
         font-size: 1.25rem; } }
 
@@ -1556,24 +1567,28 @@ body {
         font-size: 20px;
         font-size: 1.25rem; } }
 
-.em-pica {
+.em-pica,
+h4 {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 20px;
   line-height: 1.25rem; }
   @media (min-width: 20em) {
-    .em-pica {
+    .em-pica,
+    h4 {
       font-size: 16px;
       font-size: 1rem;
       line-height: 20px;
       line-height: 1.25rem; } }
   @media (min-width: 37.5em) {
-    .em-pica {
+    .em-pica,
+    h4 {
       font-size: 18px;
       font-size: 1.125rem;
       line-height: 22px;
       line-height: 1.375rem; }
-      .feature-no-touch .em-pica {
+      .feature-no-touch .em-pica,
+      .feature-no-touch h4 {
         font-size: 16px;
         font-size: 1rem;
         line-height: 20px;
@@ -1719,23 +1734,334 @@ body {
         line-height: 22px;
         line-height: 1.375rem; } }
 
+body {
+  font-family: Helvetica, Arial, freesans, sans-serif; }
+
 .em-minion {
   line-height: 1.0625rem; }
 
-.em-module {
-  box-sizing: border-box; }
+@font-face {
+  font-family: 'em-icons';
+  src: url("/assets/fonts/em-icons.eot?24281290");
+  src: url("/assets/fonts/em-icons.eot?24281290#iefix") format("embedded-opentype"), url("/assets/fonts/em-icons.woff2?24281290") format("woff2"), url("/assets/fonts/em-icons.woff?24281290") format("woff"), url("/assets/fonts/em-icons.ttf?24281290") format("truetype"), url("/assets/fonts/em-icons.svg?24281290#em-icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'em-icons';
+    src: url('/assets/fonts/em-icons.svg?24281290#em-icons') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "em-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-location:before {
+  content: '\e800'; }
+
+/* '' */
+.icon-phone:before {
+  content: '\e801'; }
+
+/* '' */
+.icon-mail:before {
+  content: '\e802'; }
+
+/* '' */
+.icon-clock:before {
+  content: '\e803'; }
+
+/* '' */
+.icon-download:before {
+  content: '\e804'; }
+
+/* '' */
+.icon-phone-squared:before {
+  content: '\f098'; }
+
+/* '' */
+.icon-gplus-squared:before {
+  content: '\f0d4'; }
+
+/* '' */
+.icon-mail-alt:before {
+  content: '\f0e0'; }
+
+/* '' */
+.icon-direction:before {
+  content: '\f124'; }
+
+/* '' */
+.icon-youtube-squared:before {
+  content: '\f166'; }
+
+/* '' */
+.icon-facebook-official:before {
+  content: '\f230'; }
+
+/* '' */
+.icon-twitter-squared:before {
+  content: '\f304'; }
+
+/* '' */
+[class^="icon-"]::before, [class*=" icon-"]::before {
+  margin-left: 0;
+  margin-right: 0; }
+
+p {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 20px;
+  line-height: 1.25rem; }
+  @media (min-width: 20em) {
+    p {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 22px;
+      line-height: 1.375rem; } }
+  @media (min-width: 37.5em) {
+    p {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 24px;
+      line-height: 1.5rem; }
+      .feature-no-touch p {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 22px;
+        line-height: 1.375rem; } }
+
+a {
+  outline: none;
+  text-decoration: none; }
+  a:active {
+    color: #cdfeaa; }
+  a:link {
+    color: #265301; }
+  a:visited {
+    color: #437a16; }
+  a:focus {
+    outline-color: #9acd32;
+    outline-style: solid;
+    outline-width: 1px; }
+  a:hover {
+    color: #0073bb;
+    text-decoration: underline; }
 
 .em-module__content {
-  padding: 0 8px;
-  position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 32px 8px;
+  position: relative; }
+
+@media (min-width: 25em) {
+  .em-module__content {
+    padding: 32px 16px; } }
+
+.em-header-logo {
+  position: relative; }
+
+.em-header-logo::after {
+  content: "beta";
+  position: absolute;
+  background: #EE8E4A;
+  text-align: center;
+  font-size: 13px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  line-height: 13px;
+  margin-left: 8px;
+  padding: 2px 4px; }
+
+.em-button {
+  /* Structure */
+  display: inline-block;
+  zoom: 1;
+  line-height: normal;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  box-sizing: border-box;
+  padding: 8px; }
+
+/* Firefox: Get rid of the inner focus border */
+.em-button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/* Inherit .em-g styles */
+.em-button-group {
+  letter-spacing: -0.31em;
+  /* Webkit: collapse white-space between units */
+  text-rendering: optimizespeed;
+  /* Webkit: fixes text-rendering: optimizeLegibility */ }
+
+.opera-only :-o-prefocus,
+.em-button-group {
+  word-spacing: -0.43em; }
+
+.em-button-group .em-button {
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto; }
+
+.em-button {
+  color: #444;
+  /* rgba not supported (IE 8) */
+  color: rgba(0, 0, 0, 0.8);
+  /* rgba supported */
+  border: 1px solid #999;
+  /*IE 6/7/8*/
+  border: none transparent;
+  /*IE9 + everything else*/
+  background-color: #E6E6E6;
+  text-decoration: none;
+  border-radius: 2px; }
+
+a.em-button {
+  text-decoration: none; }
+
+.em-button-hover,
+.em-button:hover,
+.em-button:focus {
+  /* csslint ignore:start */
+  filter: alpha(opacity=90);
+  /* csslint ignore:end */
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1)); }
+
+.em-button:focus {
+  outline: 0; }
+
+.em-button-active,
+.em-button:active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+  border-color: #000\9; }
+
+.em-button[disabled],
+.em-button-disabled,
+.em-button-disabled:hover,
+.em-button-disabled:focus,
+.em-button-disabled:active {
+  border: none;
+  background-image: none;
+  /* csslint ignore:start */
+  filter: alpha(opacity=40);
+  /* csslint ignore:end */
+  opacity: 0.40;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none; }
+
+.em-button-hidden {
+  display: none; }
+
+.em-button-primary,
+.em-button-selected,
+a.em-button-primary,
+a.em-button-selected {
+  background-color: #0078e7;
+  color: #fff;
+  text-decoration: none; }
+
+/* Button Groups */
+.em-button-group .em-button {
+  margin: 0;
+  border-radius: 0;
+  border-right: 1px solid #111;
+  /* fallback color for rgba() for IE7/8 */
+  border-right: 1px solid rgba(0, 0, 0, 0.2); }
+
+.em-button-group .em-button:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px; }
+
+.em-button-group .em-button:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-right: none; }
+
+.em-button-success,
+.em-button-error,
+.em-button-warning,
+.em-button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
+
+.em-button-success {
+  background: #1cb841;
+  /* this is a green */ }
+
+.em-button-error {
+  background: #ca3c3c;
+  /* this is a maroon */ }
+
+.em-button-warning {
+  background: #df7514;
+  /* this is an orange */ }
+
+.em-button-secondary {
+  background: #42b8dd;
+  /* this is a light blue */ }
+
+.em-button-xsmall {
+  font-size: 70%; }
+
+.em-button-small {
+  font-size: 85%; }
+
+.em-button-large {
+  font-size: 110%; }
+
+.em-button-xlarge {
+  font-size: 125%; }
+
+.em-header {
+  background: #ffffff; }
+
+.em-header .em-module__content {
+  padding: 0 8px; }
 
 .em-header-logo {
   margin: 0;
   padding: 8px 0; }
 
-.em-header-logo a {
-  text-decoration: none; }
+a.em-header-logo__title {
+  text-decoration: none;
+  color: #888888; }
 
 .em-header-nav__control {
   top: 8px;
@@ -1781,5 +2107,241 @@ body {
 
 .em-header-nav-menu:target ~ .main-header .em-header-nav__control-close {
   display: block; }
+
+@media (min-width: 25em) {
+  .em-header .em-module__content {
+    padding: 0 16px; } }
+
+.em-hero {
+  position: relative;
+  color: #424242; }
+  .em-hero::after {
+    background: #f5f5f5 no-repeat center center fixed;
+    background-size: cover;
+    bottom: 0;
+    content: ' ';
+    left: 0;
+    top: 0;
+    right: 0;
+    opacity: .5;
+    position: absolute;
+    z-index: -1; }
+
+.em-hero .em-module__content {
+  padding: 0 8px; }
+
+.em-hero-content-wrapper {
+  display: table; }
+
+.em-hero-content {
+  display: table-cell;
+  vertical-align: middle; }
+
+@media (min-width: 25em) {
+  .em-hero .em-module__content {
+    padding: 0 16px; } }
+
+.em-timetable {
+  background: #e0e0e0; }
+
+.em-post-category-banner {
+  background: transparent no-repeat center center fixed;
+  background-size: cover;
+  display: block;
+  position: relative; }
+
+.em-post-category-banner__title-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  color: #265301;
+  transform: skew(-20deg); }
+
+.em-post-category-banner__title {
+  transform: skew(20deg);
+  padding: 8px; }
+
+.em-posts-featured {
+  background: #bdbdbd; }
+
+.em-latest-posts__item {
+  padding-bottom: 8px; }
+
+.em-latest-posts__item-link {
+  display: block;
+  border-radius: 4px;
+  background-color: #efefef;
+  overflow: hidden;
+  position: relative; }
+
+.em-latest-posts__item-link > span {
+  display: block; }
+
+.em-latest-posts__item-image {
+  width: 100%;
+  height: auto;
+  min-height: 180px;
+  background: top center no-repeat;
+  background-size: cover; }
+
+.em-latest-posts__item-title,
+.em-latest-posts__item-meta {
+  padding: 8px; }
+
+.em-latest-posts__item-meta-attribution {
+  color: #333;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.8);
+  left: 0;
+  padding: 4px 8px; }
+
+.em-latest-posts__item-meta-attribution::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-top: 25px solid rgba(255, 255, 255, 0.8);
+  border-right: 8px solid transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -8px; }
+
+aside .em-latest-posts__item-meta-attribution {
+  position: relative; }
+
+aside .em-latest-posts__item-meta-attribution::after {
+  display: none; }
+
+.em-latest-posts__item-link:hover .em-latest-posts__item-meta-published {
+  text-decoration: none; }
+
+.em-latest-posts__item-meta-published-icon {
+  margin-right: 4px; }
+
+@media (min-width: 25em) {
+  .em-latest-posts__item {
+    padding-bottom: 16px; } }
+
+@media (min-width: 37.5em) {
+  .em-latest-posts__item-title,
+  .em-latest-posts__item-meta {
+    padding: 8px 16px; } }
+
+.em-social-links {
+  background: #9e9e9e;
+  color: #fefefe; }
+
+.em-social-links a:link {
+  color: #fefefe; }
+
+.em-social-links-nav__item {
+  text-align: center; }
+
+.em-social-links-icon {
+  display: block;
+  font-size: 2em; }
+
+.em-footer {
+  background: #616161;
+  color: #f9f9f9; }
+
+.em-footer-contact {
+  background: #757575;
+  color: #f9f9f9;
+  position: relative; }
+
+.em-footer-contact a:link {
+  color: #f9f9f9; }
+
+.em-contacts-info_heading {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 22px;
+  line-height: 1.375rem; }
+  @media (min-width: 37.5em) {
+    .em-contacts-info_heading {
+      font-size: 21px;
+      font-size: 1.3125rem;
+      line-height: 24px;
+      line-height: 1.5rem; }
+      .feature-no-touch .em-contacts-info_heading {
+        font-size: 20px;
+        font-size: 1.25rem; } }
+
+.em-footer-info-addresses a {
+  color: #666666; }
+
+.em-contacts-info__email-heading,
+.em-contacts-info__tel-heading,
+.em-contacts-info__address-heading,
+.em-contacts-info__address-get-direction {
+  padding: 8px 0 4px; }
+
+.em-contacts-info__email-heading,
+.em-contacts-info__tel-heading,
+.em-contacts-info__address-heading {
+  font-weight: bold; }
+
+.em-footer-navigation-copyright {
+  padding: 24px 0; }
+
+.em-footer-info-addresses,
+.em-footer-nav-menu__items,
+.em-footer-copyright-details {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 20px;
+  line-height: 1.25rem; }
+  @media (min-width: 20em) {
+    .em-footer-info-addresses,
+    .em-footer-nav-menu__items,
+    .em-footer-copyright-details {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 22px;
+      line-height: 1.375rem; } }
+  @media (min-width: 37.5em) {
+    .em-footer-info-addresses,
+    .em-footer-nav-menu__items,
+    .em-footer-copyright-details {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 24px;
+      line-height: 1.5rem; }
+      .feature-no-touch .em-footer-info-addresses, .feature-no-touch
+      .em-footer-nav-menu__items, .feature-no-touch
+      .em-footer-copyright-details {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 22px;
+        line-height: 1.375rem; } }
+
+.em-footer-nav-menu__items {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.em-footer-nav-menu__item {
+  display: inline-block; }
+
+.em-footer-nav-menu__item-link {
+  display: inline-block;
+  padding: 0 8px 0 0;
+  color: #777777;
+  text-decoration: none;
+  width: 100%; }
+
+.em-footer-nav-menu__item-link,
+.em-footer-copyright-details {
+  min-height: 44px;
+  line-height: 44px; }
+
+@media (max-width: 24.99em) {
+  .em-footer-nav-menu__item {
+    width: 50%; } }
+
+@media (min-width: 56.25em) {
+  .em-footer-copyright-details {
+    text-align: right; } }
 
 /*# sourceMappingURL=app.css.map */
