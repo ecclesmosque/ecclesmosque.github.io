@@ -1,12 +1,60 @@
+$yellowgreen: #9acd32;
+$reef: #cdfeaa;
+$verdun-green: #265301;
+$bilbao: #437a16;
+$lochmara: #0073bb;
+
 p {
-    @include gel-typography('body-copy');
+  @include gel-typography('body-copy');
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  // padding: 2px 1px 0;
+
+  &:active {
+    color: $reef;
+  }
+
+  &:link {
+    color: $verdun-green;
+  }
+
+  &:visited {
+    color: $bilbao;
+  }
+
+  &:focus {
+    outline-color: $yellowgreen;
+    outline-style: solid;
+    outline-width: 1px;
+  }
+
+  &:hover {
+    color: $lochmara;
+    text-decoration: underline;
+  }
+}
+
+.em-module {
+  // something here
 }
 
 .em-module__content {
-    padding: em-spacing(quad-spacing-unit) em-spacing(base-spacing-unit);
-    position: relative;
-    margin: 0 auto;
-    max-width: $gel-grid-max-width-1280;
+  margin: 0 auto;
+  max-width: $gel-grid-max-width-1280;
+  padding: em-spacing(quad-spacing-unit) em-spacing(base-spacing-unit);
+  position: relative;
+}
+
+.em-social-links-nav__item {
+  text-align: center;
+}
+
+.em-social-links-icon {
+  display: block;
+  font-size: 2em;
 }
 
 @include mq($from: $gel-grid-margin-change) {

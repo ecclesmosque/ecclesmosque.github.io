@@ -1,7 +1,7 @@
 // em-icons.css Imports
 @import 'icons/em-icons';
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  margin-right: 0;
+[class^="icon-"]::before, [class*=" icon-"]::before {
   margin-left: 0;
+  margin-right: 0;
 }

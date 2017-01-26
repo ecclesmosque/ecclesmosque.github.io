@@ -1,78 +1,90 @@
 .em-footer {
-    background: #d7d7d7;
-    color: #999999;
+  background: #d7d7d7;
+  color: #999999;
 }
 
 .em-footer-contact {
-    background: #f0f0f0;
-    color: #666666;
+  background: #f0f0f0;
+  color: #666666;
+  position: relative;
 }
 
+// .em-footer-contact:before {
+//     content: " ";
+//     position: absolute;
+//     left: 0;
+//     top: -10%;
+//     width: 100%;
+//     height: 500%;
+//     transform: skewY(9deg);
+//     z-index: -1;
+//     background-color: #d41c6f;
+// }
+
 .em-contacts-info_heading {
-    @include gel-typography('great-primer');
+  @include gel-typography('great-primer');
 }
 
 .em-footer-info-addresses a {
-    color: #666666;
-    text-decoration: underline;
+  color: #666666;
 }
 
 .em-contacts-info__email-heading,
 .em-contacts-info__tel-heading,
 .em-contacts-info__address-heading,
 .em-contacts-info__address-get-direction {
-    @include gel-typography('pica');
-    padding: em-spacing(base-spacing-unit) 0 em-spacing(half-spacing-unit);
+  // @include gel-typography('pica');
+  padding: em-spacing(base-spacing-unit) 0 em-spacing(half-spacing-unit);
 }
 
 .em-contacts-info__email-heading,
 .em-contacts-info__tel-heading,
 .em-contacts-info__address-heading {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .em-footer-navigation-copyright {
-    padding: em-spacing(triple-spacing-unit) 0;
+  padding: em-spacing(triple-spacing-unit) 0;
 }
 
 .em-footer-info-addresses,
 .em-footer-nav-menu__items,
 .em-footer-copyright-details {
-    @include gel-typography('body-copy');
+  @include gel-typography('body-copy');
 }
 
 .em-footer-nav-menu__items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .em-footer-nav-menu__item {
-    display: inline-block;
+  display: inline-block;
 }
 
 .em-footer-nav-menu__item-link {
-    display: inline-block;
-    padding: 0 em-spacing(base-spacing-unit) 0 0;
-    color: #777777;
-    text-decoration: none;
-    width: 100%;
+  display: inline-block;
+  padding: 0 em-spacing(base-spacing-unit) 0 0;
+  color: #777777;
+  text-decoration: none;
+  width: 100%;
 }
 
 .em-footer-nav-menu__item-link,
 .em-footer-copyright-details {
-    min-height: $size-of-human-thumb;
-    line-height: $size-of-human-thumb;
+  min-height: $size-of-human-thumb;
+  line-height: $size-of-human-thumb;
 }
 
 @include mq($until: em-bp-s) {
-    .em-footer-nav-menu__item {
-        width: 50%;
-    }
+  .em-footer-nav-menu__item {
+    width: 50%;
+  }
 }
 
 @include mq($from: em-bp-l) {
-    .em-footer-copyright-details {
-        text-align: right;
-    }
+  .em-footer-copyright-details {
+    text-align: right;
+  }
 }

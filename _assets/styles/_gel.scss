@@ -7,12 +7,13 @@
 // GEL Settings
 $gel-namespace: 'em-';
 $gel-type-namespace: 'em-';
-$gel-breakpoint-prefix: 'em-bp-' !default;
-$gel-type-touch-class: 'feature-no-touch' !default;
-$gel-type-enable--font-family: false !default;
-$gel-type-enable--markup-output: true !default;
-$gel-layout-enable--box-sizing: true !default;
+$gel-breakpoint-prefix: 'em-bp-';
+$gel-type-touch-class: 'feature-no-touch';
+$gel-type-enable--font-family: true;
+$gel-type-enable--markup-output: true;
+$gel-layout-enable--box-sizing: true;
 $gel-grid-enable--markup-output: true;
+$gel-type-enable--base-elements: true;
 
 // GEL Imports
 @import 'node_modules/gel-sass-tools/sass-tools';

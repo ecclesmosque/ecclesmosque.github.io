@@ -1,12 +1,18 @@
-@import "settings";
-@import "variables";
-@import "functions";
+@import 'settings';
+@import 'variables';
+@import 'functions';
+// @import 'mixins';
 
-@import "reset";
-@import "gel";
-@import "fonts";
+@import 'reset';
+@import 'gel';
+@import 'fonts';
+// @import 'colors';
 
-@import "partials/base";
-@import "partials/header";
-@import "partials/hero";
-@import "partials/footer";
+@import 'partials/base';
+@import 'partials/beta-ribbon';
+@import 'partials/buttons';
+@import 'partials/header';
+@import 'partials/hero';
+@import 'partials/post-category-banner';
+@import 'partials/latest-posts';
+@import 'partials/footer';
