@@ -1,14 +1,12 @@
 ---
 layout: base
 ---
-<article class="page" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="page-header">
-    <h1 class="page-title" itemprop="name headline">{{ page.title }}</h1>
-  </header>
-
-  <div class="page-content" itemprop="articleBody">
+<section class="em-module em-post">
+  <div class="em-module__content">
+    <header class="page-header">
+      <h1 class="page-title" itemprop="name headline">{{ page.title }}</h1>
+    </header>
     {{ content }}
   </div>
-
-</article>
+</section>
