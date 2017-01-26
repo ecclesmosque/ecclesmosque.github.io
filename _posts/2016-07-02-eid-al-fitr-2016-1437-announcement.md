@@ -1,8 +1,9 @@
 ---
-layout: post
 title:  Eid al-Fitr Announcement 2016
 date:   2016-07-02 18:00:00 +0100
+thumbnail: least-i-forgot-ramadan
 categories: announcements
+tags: [Eid al-Fitr, 2016, 1437]
 ---
 
 **The Management Committee of the {{ site.title }} have agreed that Eid al-Fitr will be on Wednesday 6th July 2016.**

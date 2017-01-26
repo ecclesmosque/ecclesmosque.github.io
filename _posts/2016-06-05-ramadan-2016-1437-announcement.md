@@ -1,8 +1,9 @@
 ---
-layout: post
 title:  Ramadan 2016/1437 Announcement
 date:   2016-06-05 17:00:00 +0100
 categories: announcements
+thumbnail: ramadan-greetings
+tags: [ramadan, 2016, 1437, announcement]
 ---
 
 {{ site.subtitle }} would like to welcome in Ramadan 2016/1437AH. Ramadan Karim! We pray everyone has a beneficial and rewarding Ramadan, insha'Allah.
