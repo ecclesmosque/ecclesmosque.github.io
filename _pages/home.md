@@ -4,8 +4,6 @@ layout: home
 permalink: /
 ---
 
-## {{ site.subtitle }}
+<!--Jazakum Allahu Khair / thank you, for visiting **{{ site.title }}** website.-->
 
-Jazakum Allahu Khair, for visiting **{{ site.title }}** website.
-
-We are in the process of re-launching our site very soon. In shāʾallāh.
+<!--We are in the process of updating our site. Over the time we'll be adding more content In shāʾallāh (God willing).-->

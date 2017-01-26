@@ -1,5 +1,38 @@
+$hero-min-height: 60vh;
+
+.em-hero {
+  position: relative;
+
+  &::after {
+    background: url('../images/quran.jpg') no-repeat center center fixed;
+    background-size: cover;
+    bottom: 0;
+    content: ' ';
+    left: 0;
+    top: 0;
+    right: 0;
+    opacity: .5;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
 .em-hero .em-module__content {
   padding: 0 em-spacing(base-spacing-unit);
+}
+
+.em-hero-content-wrapper {
+  display: table;
+  // height: $hero-min-height;
+}
+
+.em-hero-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.em-hero-title {
+  // margin-top: 0;
 }
 
 @include mq($from: $gel-grid-margin-change) {
