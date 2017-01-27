@@ -1,9 +1,8 @@
 language: ruby
 rvm:
-- stable
+- 2.4.0
 
 install:
- - rvm install stable
  - nvm install stable
  - npm set progress=false && npm install
  - bundle install
