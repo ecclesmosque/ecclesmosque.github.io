@@ -3,6 +3,7 @@ rvm:
 - stable
 
 install:
+ - rvm install stable
  - nvm install stable
  - npm set progress=false && npm install
  - bundle install
