@@ -1,0 +1,20 @@
+{% if site.navigation.header %}
+<div class="em-header-nav">
+  <nav id="site-nav" class="em-header-nav-menu">
+    <ul class="mwt-header-nav">
+      {% for nav in site.navigation.header %}
+        {% include navigation/header-link.html %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="main-header em-header-nav__control">
+    <a href="#site-nav" class="em-header-nav__control-open">
+      {% include icons/menu-icon-open.svg %}
+    </a>
+    <a href="#" class="em-header-nav__control-close">
+      {% include icons/menu-icon-close.svg %}
+    </a>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,25 @@
+// 1. Increasing specificity because our CSS minifier doesn't allow us to redefine the line-height
+// 2. GEL Won't update the spec/code so we have to override the line-height due to issue in Windows.
+
+// Common Imports
+@import 'node_modules/sass-mq/mq';
+
+// GEL Settings
+$gel-namespace: 'em-';
+$gel-type-namespace: 'em-';
+$gel-breakpoint-prefix: 'em-bp-';
+$gel-type-touch-class: 'feature-no-touch';
+$gel-type-enable--font-family: true;
+$gel-type-enable--markup-output: true;
+$gel-layout-enable--box-sizing: true;
+$gel-grid-enable--markup-output: true;
+$gel-type-enable--base-elements: true;
+
+// GEL Imports
+@import 'node_modules/gel-sass-tools/sass-tools';
+@import 'node_modules/gel-grid/grid';
+@import 'node_modules/gel-typography/typography';
+
+.#{$gel-type-namespace}minion { // [1]
+  line-height: rem(17px); // [2]
+}

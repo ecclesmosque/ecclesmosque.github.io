@@ -1,0 +1,21 @@
+{% if page.url == "/" %}
+    {% assign seoTagName = 'h1' %}
+{% else %}
+    {% assign seoTagName = 'div' %}
+{% endif %}
+
+<header class="em-module em-header">
+  <div class="em-module__content">
+
+    <div class="em-header-identity">
+      <{{seoTagName}} class="em-header-logo em-canon">
+        <a class="em-header-logo__title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      </{{seoTagName}}>
+    </div>
+
+    {% include base/donate-btn.html %}
+
+    {% include navigation/header.html %}
+
+  </div>
+</header>

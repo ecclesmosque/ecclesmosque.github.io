@@ -1,7 +1,20 @@
+@import 'settings';
+@import 'variables';
+@import 'functions';
+// @import 'mixins';
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "node_modules/bootstrap/scss/bootstrap",
-        "cover",
-        "posts"
-;
+@import 'reset';
+@import 'gel';
+@import 'fonts';
+// @import 'colors';
+
+@import 'partials/base';
+@import 'partials/beta-ribbon';
+@import 'partials/buttons';
+@import 'partials/header';
+@import 'partials/hero';
+@import 'partials/timetable';
+@import 'partials/post-category-banner';
+@import 'partials/latest-posts';
+@import 'partials/social-links';
+@import 'partials/footer';

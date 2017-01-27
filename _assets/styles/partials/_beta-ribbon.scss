@@ -1,0 +1,18 @@
+.em-header-logo {
+  position: relative;
+}
+
+.em-header-logo::after {
+  content: "beta";
+  position: absolute;
+  background: #EE8E4A;
+  text-align: center;
+  font-size: 13px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  line-height: 13px;
+  margin-left: em-spacing(base-spacing-unit);
+  padding: 2px em-spacing(half-spacing-unit);
+}

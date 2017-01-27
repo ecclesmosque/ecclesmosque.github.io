@@ -1,0 +1,36 @@
+{% capture html_css_class %}em-{{ page.path | remove: page.name | remove: 'html' | remove: 'md' | slugify }}{% endcapture %}
+
+{% capture body_css_class %}em-modules {{ html_css_class }}__{{ page.name | default: page.title | remove: 'html' | remove: 'md' | slugify }}{% endcapture %}
+
+
+
+    {% include base/header.html %}
+    {{ content }}
+    {% include newsletter/signup.html %}
+    {% include social-links.html %}
+    {% include base/footer.html %}
+    {% include navigation/footer.html %}
+    {% include footer/scripts.html %}
+
+
+
+
+
+
+
+<div class="inner cover">
+    
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h2>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% include prayer-timetable-download-button.html %}
+
+</div>

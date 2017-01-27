@@ -1,0 +1,29 @@
+---
+layout: compress
+---
+
+{% capture block_css_class %}em-{{ page.path | split: '/' | first | slugify }}{% endcapture %}
+{% capture element_css_class %}{{ block_css_class }}__{{ page.name | default: 'post' | remove: 'html' | remove: 'md' | slugify }}{% endcapture %}
+
+{% if block_css_class contains 'posts' %}
+{% capture modifier_css_class %}{{ element_css_class }}--{{ page.title | remove: 'html' | remove: 'md' | slugify }}{% endcapture %}
+{% endif %}
+
+{% capture body_css_class %}em-modules,{{ element_css_class }},{{ modifier_css_class }}{% endcapture %}
+{% assign body_css_class=body_css_class| split:"," | uniq | join: " " %}
+
+<!DOCTYPE html>
+<html lang="en-GB" class="{{ block_css_class }}">
+  {% include base/head.html %}
+  <body class="{{ body_css_class }}">
+
+    {% include base/header.html %}
+    
+    {{ content }}
+
+    {% include social-links.html %}
+
+    {% include base/footer.html %}
+    
+  </body>
+</html>

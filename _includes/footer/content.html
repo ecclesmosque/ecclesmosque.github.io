@@ -1,0 +1,31 @@
+<section class="em-module em-footer-contact">
+  <div class="em-module__content">
+    
+    <div class="em-layout em-footer-info-addresses">
+      <div class="em-layout__item em-1/2@m em-1/3@l em-footer__column em-footer__column--info">
+        <h2 class="footer-heading">{{ site.title }}</h2>
+        <p>{{ site.description }}</p>
+        {% include charity-commission.html %}
+      </div>
+      <div class="em-layout__item em-1/2@m em-2/3@l em-footer__column em-footer__column--addresses">
+         {% include contacts.html %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="em-module em-footer">
+  <div class="em-module__content">
+    
+    <div class="em-layout em-footer-navigation-copyright">
+      <div class="em-layout__item em-1/2@l em-footer__column em-footer__column--navigation">
+        {% include navigation/footer.html %}
+      </div>
+      <div class="em-layout__item em-1/2@l em-footer__column em-footer__column--copyright">
+         <div class="em-footer-copyright-details">Copyright &copy; 2006&mdash;{{ site.time | date: '%Y' }} {{ site.title }}</div>
+      </div>
+    </div>
+
+  </div>
+</footer>

@@ -1,0 +1,82 @@
+.em-posts-featured {
+  background: #bdbdbd;
+}
+
+.em-latest-posts__item {
+  padding-bottom: em-spacing(base-spacing-unit);
+}
+
+.em-latest-posts__item-link {
+  display: block;
+  border-radius: em-spacing(half-spacing-unit);
+  background-color: #efefef;
+  overflow: hidden;
+  position: relative;
+}
+
+.em-latest-posts__item-link>span {
+  display: block;
+}
+
+.em-latest-posts__item-image {
+  width: 100%;
+  height: auto;
+  min-height: 180px;
+  background: top center no-repeat;
+  background-size: cover;
+}
+
+.em-latest-posts__item-title,
+.em-latest-posts__item-meta {
+  padding: em-spacing(base-spacing-unit);
+}
+
+.em-latest-posts__item-meta-attribution {
+  color: #333;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.8);
+  left: 0;
+  padding: em-spacing(half-spacing-unit) em-spacing(base-spacing-unit);
+}
+
+.em-latest-posts__item-meta-attribution::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-top: 25px solid rgba(255, 255, 255, 0.8);
+  border-right: em-spacing(base-spacing-unit) solid transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -(em-spacing(base-spacing-unit));
+}
+
+aside .em-latest-posts__item-meta-attribution {
+  position: relative;
+}
+
+aside .em-latest-posts__item-meta-attribution::after {
+  display: none;
+}
+
+.em-latest-posts__item-link:hover .em-latest-posts__item-meta-published {
+  text-decoration: none;
+}
+
+.em-latest-posts__item-meta-published-icon {
+  margin-right: em-spacing(half-spacing-unit);
+}
+
+@include mq($from: $gel-grid-margin-change) {
+  .em-latest-posts__item {
+    padding-bottom: em-spacing(double-spacing-unit);
+  }
+}
+
+@include mq($from: em-bp-m) {
+  .em-latest-posts__item-title,
+  .em-latest-posts__item-meta {
+    padding: em-spacing(base-spacing-unit) em-spacing(double-spacing-unit);
+  }
+}

@@ -1,0 +1,11 @@
+{% if site.navigation.footer %}
+<nav class="em-footer-nav-menu">
+  <ul class="em-footer-nav-menu__items">
+    {% for nav in site.navigation.footer %}
+    <li class="em-footer-nav-menu__item em-footer-nav-menu__item--{{ nav.title | slugify}}">
+      <a class="em-footer-nav-menu__item-link em-footer-nav-menu__item-link--{{ nav.title | slugify}} {% if page.url == nav.url %}em-footer-nav-menu__item-link--curent{% endif %}" href="{{ nav.url }}">{{ nav.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

@@ -1,0 +1,19 @@
+{% assign links = site.social-links %}
+{% if links.size > 0 %}
+<section class="em-module em-social-links">
+	<div class="em-module__content">
+		<nav class="em-social-links-nav">
+			<h2 class="em-social-links-nav__header">Find us elsewhere online</h2>
+			<ul class="em-social-links-nav__items em-social-links-icons em-layout">
+				{% for link in links %}
+				<li class="em-social-links-nav__item em-social-links-nav__item--{{ link.icon }} em-layout__item em-1/2@m em-1/{{ links.size }}@l">
+					<a class="em-social-links-nav__item-link em-social-links-nav__item-link--{{ link.icon }}" href="{{ link.url }}">
+						<i class="em-social-links-icon em-icons icon-{{ link.icon }}"></i><span class="em-social-links-nav__item-link-text">{{ link.label }}</span>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</section>
+{% endif %}

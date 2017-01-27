@@ -1,4 +1,7 @@
-{% assign download = site.data.timetable | first %}
-<p class="lead">
-    <a href="https://docs.google.com/uc?id={{download.guid}}&export=download" class="btn btn-lg btn-secondary">Download {{download.label}} Prayer timetable</a>
-</p>
+{% if include.for == null %}
+  {% assign download = site.data.timetable | first %}
+{% else %}
+  {% assign download = site.data.timetable | where:"id",include.for | first %}
+{% endif %}
+
+<a href="https://docs.google.com/uc?id={{download.guid}}&export=download" class="em-button em-button-primary em-button-xlarge"><i class="em-download-icon em-icons icon-download"></i> Download {{download.label}} Prayer Timetable</a>

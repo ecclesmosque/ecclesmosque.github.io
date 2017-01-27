@@ -1,14 +1,14 @@
 language: ruby
 rvm:
-- 2.2
+- 2.4.0
 
 install:
- - nvm install 6.2
+ - nvm install stable
  - npm set progress=false && npm install
  - bundle install
 
 script:
-  - ./node_modules/.bin/gulp
+  - ./node_modules/.bin/gulp build-prod
 
 env:
   global:

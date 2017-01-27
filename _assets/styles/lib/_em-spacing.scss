@@ -1,0 +1,4 @@
+
+@function em-spacing($spacing-unit) {
+  @return map-get($em-spacing, $spacing-unit);
+}
