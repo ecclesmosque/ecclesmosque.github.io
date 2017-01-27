@@ -85,6 +85,12 @@ gulp.task('serve', ['build'], function () {
   gulp.watch('_site/*.html').on('change', browserSync.reload);
 });
 
+gulp.task('serve-prod', ['setup-environment', 'build'], function () {
+  browserSync.init({
+    server: '_site'
+  });
+});
+
 gulp.task('images', function () {
   gulp.src('_assets/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
