@@ -188,7 +188,21 @@ gulp.task('icons-download', [], function (next) {
   ]);
 
   fontello.on('exit', function (code) {
-    next(code === 0 ? null : 'ERROR: fontello-cli process exited with code: ' + code);
+    // rename *.css files to _*.scss
+    if (code === 0) {
+      gulp.src('./_assets/styles/icons/**/*.css')
+      .pipe(rename(function (path) {
+        path.basename = '_' + path.basename;
+        path.extname = '.scss';
+      }))
+      .pipe(gulp.dest('./_assets/styles/icons/'))
+      .on('end', function () {
+        del.sync(['./_assets/styles/icons/**/*.css']);
+        next(null);
+      });
+    } else {
+      next('ERROR: fontello-cli process exited with code: ' + code);
+    }
   });
 });
 
