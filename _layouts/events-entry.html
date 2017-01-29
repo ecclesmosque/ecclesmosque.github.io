@@ -1,0 +1,31 @@
+---
+layout: base
+---
+
+{% include posts/category-banner.html image-id=page.thumbnail %}
+
+<section class="em-module em-post em-event">
+  <div class="em-module__content">
+    <div class="em-layout">
+      <div class="em-layout__item em-8/12@l">
+        <article class="em-post" itemscope itemtype="http://schema.org/BlogPosting">
+          <header class="post-header">
+            <h1 class="post-title em-canon" itemprop="name headline">{{ page.title }}</h1>
+            <p class="post-meta">
+              <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date_to_long_string }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+          </header>
+          <div class="post-content" itemprop="articleBody">
+            {{ content }}
+          </div>
+        </article>
+      </div>
+      <div class="em-layout__item em-4/12@l">
+        {% include events/meta-data.html event-id=page.id %}
+        <aside class="em-aside">
+          {% include events/latest.html %}
+          {% include posts/latest.html %}
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

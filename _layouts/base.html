@@ -3,7 +3,7 @@ layout: compress
 ---
 
 {% capture block_css_class %}em-{{ page.path | split: '/' | first | slugify }}{% endcapture %}
-{% capture element_css_class %}{{ block_css_class }}__{{ page.name | default: 'post' | remove: 'html' | remove: 'md' | slugify }}{% endcapture %}
+{% capture element_css_class %}{{ block_css_class }}__{{ page.name | default: 'entry' | remove: 'html' | remove: 'md' | slugify }}{% endcapture %}
 
 {% if block_css_class contains 'posts' %}
 {% capture modifier_css_class %}{{ element_css_class }}--{{ page.title | remove: 'html' | remove: 'md' | slugify }}{% endcapture %}

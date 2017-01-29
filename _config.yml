@@ -97,7 +97,16 @@ defaults:
     values:
       layout: posts-entry
       thumbnail: least-i-forgot-ramadan
+  -
+    scope:
+      type: events
+    values:
+      layout: events-entry
+      thumbnail: least-i-forgot-ramadan
 
+collections:
+  events:
+    output: true
 
 exclude:
   - Gemfile

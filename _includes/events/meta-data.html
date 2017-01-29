@@ -1,0 +1,55 @@
+{% assign event = site.events | where: "id", include.event-id | first %}
+{% if event %}
+
+<div class="em-events-meta em-events-meta--{{event.title | slugify}}">
+    
+
+    <div class="em-events-meta__items">
+        {% include images/event-poster.html image-id=event.poster %}
+<h2 class="em-events-meta__heading em-double-pica-bold">Events Details</h2>
+        <div class="em-events-meta__title em-great-primer">{{ event.title }}</div>
+
+        {% if event.cost %}
+        <meta itemprop="price" content="{{ event.cost }}"/>
+        <meta itemprop="priceCurrency" content="GBP" />
+        {% endif %}
+
+        {% if event.doorTime %}
+        <div class="em-events-meta__item-door-time">
+            <div class="em-events-meta__item-label">
+                Door Opens:
+            </div>
+            <div class="em-events-meta__item-value">
+                <i class="em-latest-posts__item-meta-published-icon em-icons icon-clock"></i><time itemprop="doorTime" datetime="{{ event.startDate | date_to_xmlschema }}">{{ event.startDate | date: "%I:%M %P" }}</time>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if event.startDate %}
+        <div class="em-events-meta__item-start-date">
+            <div class="em-events-meta__item-label">
+                Stat Date:
+            </div>
+            <div class="em-events-meta__item-value">
+                <time itemprop="startDate" datetime="{{ event.startDate | date_to_xmlschema }}">{{ event.startDate | date: "%A, %d %B %Y" }}</time>
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if event.endDate %}
+        <div class="em-events-meta__item-end-date">
+            <div class="em-events-meta__item-label">
+                End Date:
+            </div>
+            <div class="em-events-meta__item-value">
+                <time itemprop="endDate" datetime="{{ event.endDate | date_to_xmlschema }}">{{ event.endDate | date: "%A, %d %B %Y" }}</time>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+{% endif %}

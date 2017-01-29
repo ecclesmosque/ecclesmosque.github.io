@@ -1,0 +1,19 @@
+{% assign events = site.events | limit: 5 %}
+{% if events %}
+<h2 class="em-latest-posts__heading em-double-pica-bold">Recent Events</h2>
+<nav class="em-latest-posts">
+    <div class="em-layout em-latest-posts__items">
+        {% for entry in events %}
+        <div class="em-layout__item em-latest-posts__item em-latest-posts__item--{{entry.title | slugify}}">
+            <a class="em-latest-posts__item-link em-latest-posts__item-link--{{ entry.title | slugify}}" href="{{ entry.url }}">
+                <span class="em-latest-posts__item-title em-great-primer">{{ entry.title }}</span>
+                <div class="em-latest-posts__item-meta em-minion">
+                    <span class="em-latest-posts__item-meta-attribution">{{ entry.categories | first }}</span>
+                    <i class="em-latest-posts__item-meta-published-icon em-icons icon-clock"></i><time class="em-latest-posts__item-meta-published" datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date_to_long_string }}</time>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</nav>
+{% endif %}
