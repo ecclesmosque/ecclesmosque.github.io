@@ -1742,8 +1742,8 @@ body {
 
 @font-face {
   font-family: 'em-icons';
-  src: url("/assets/fonts/em-icons.eot?24281290");
-  src: url("/assets/fonts/em-icons.eot?24281290#iefix") format("embedded-opentype"), url("/assets/fonts/em-icons.woff2?24281290") format("woff2"), url("/assets/fonts/em-icons.woff?24281290") format("woff"), url("/assets/fonts/em-icons.ttf?24281290") format("truetype"), url("/assets/fonts/em-icons.svg?24281290#em-icons") format("svg");
+  src: url("/assets/fonts/em-icons.eot?37118307");
+  src: url("/assets/fonts/em-icons.eot?37118307#iefix") format("embedded-opentype"), url("/assets/fonts/em-icons.woff2?37118307") format("woff2"), url("/assets/fonts/em-icons.woff?37118307") format("woff"), url("/assets/fonts/em-icons.ttf?37118307") format("truetype"), url("/assets/fonts/em-icons.svg?37118307#em-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -1753,7 +1753,7 @@ body {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'em-icons';
-    src: url('/assets/fonts/em-icons.svg?24281290#em-icons') format('svg');
+    src: url('/assets/fonts/em-icons.svg?37118307#em-icons') format('svg');
   }
 }
 */
@@ -2143,6 +2143,51 @@ a.em-header-logo__title {
 
 .em-timetable {
   background: #e0e0e0; }
+
+.em-events-meta__title {
+  padding: 4px 8px; }
+
+.em-events-meta__image {
+  position: relative;
+  height: auto;
+  min-height: 180px;
+  background-size: cover;
+  padding-bottom: 56.25%; }
+
+.em-events-meta__image-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.em-events-meta__items {
+  display: table; }
+
+.em-events-meta__item-label,
+.em-events-meta__item-value {
+  display: table-cell;
+  padding: 4px 8px;
+  vertical-align: top; }
+
+.em-events-meta__item-label {
+  background: #efefef;
+  width: 110px; }
+
+.em-events-featured {
+  position: relative; }
+
+.em-events-featured::after {
+  content: "";
+  opacity: 0.125;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background: transparent top center no-repeat;
+  background-size: cover; }
 
 .em-post-category-banner {
   background: transparent no-repeat center center fixed;

@@ -23,7 +23,7 @@ var watchify = require('watchify');
 require('gulp-graph')(gulp);
 
 var config = {
-  jekyll: ['pages', 'posts', 'layouts', 'includes', 'data'],
+  jekyll: ['pages', 'posts', 'events', 'layouts', 'includes', 'data'],
   JEKYLL_ENV: 'development'
 };
 

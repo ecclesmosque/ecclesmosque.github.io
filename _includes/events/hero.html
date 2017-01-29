@@ -1,0 +1,27 @@
+{% for event in site.events limit:1 %}
+
+{% assign poster = site.data.images | where: "id", event.poster | first %}
+
+{% if poster %}
+<style>.em-events-featured::after { background-image: url({{poster.url}}); }</style>
+<meta itemprop="image" content="{{poster.url}}" />
+{% endif %}
+
+<section class="em-module em-events-featured">
+  <div class="em-module__content">
+    <div class="em-events-featured-content-wrapper" itemscope itemtype="http://schema.org/Event">
+      <div class="em-events-featured-content">
+        <h2 class="em-events-featured-title em-canon" itemprop="name">{{ event.title }}</h2>
+
+        <p class="em-events-featured-excerpt">{{ event.excerpt | strip_html }}</p>
+        
+        <p class="event-date" itemprop="startDate" content="{{ event.startDate }}">Door Opens: {{ event.startDate | date: "%I:%M %P on %A, %d %B %Y" }}</p>
+
+        <a href="{{event.url}}" itemprop="url" class="em-button em-button-primary em-button-xlarge" title="Find out more about {{ event.title }}">More information</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endfor %}

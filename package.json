@@ -2,7 +2,9 @@
   "name": "ecclesmosque.github.io",
   "version": "1.0.0",
   "description": "Eccles Mosque Website",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "mv node_modules/normalize.css/normalize.css node_modules/normalize.css/normalize.scss;"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ecclesmosque/ecclesmosque.github.io.git"
