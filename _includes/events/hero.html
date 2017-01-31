@@ -3,17 +3,19 @@
 {% assign poster = site.data.images | where: "id", event.poster | first %}
 
 {% if poster %}
-<style>.em-events-featured::after { background-image: url({{poster.url}}); }</style>
+<style>.em-events-hero::after { background-image: url({{poster.url}}); }</style>
 <meta itemprop="image" content="{{poster.url}}" />
 {% endif %}
 
-<section class="em-module em-events-featured">
+<section class="em-module em-events-hero">
   <div class="em-module__content">
-    <div class="em-events-featured-content-wrapper" itemscope itemtype="http://schema.org/Event">
-      <div class="em-events-featured-content">
-        <h2 class="em-events-featured-title em-canon" itemprop="name">{{ event.title }}</h2>
+    <div class="em-events-hero-content-wrapper" itemscope itemtype="http://schema.org/Event">
+      <div class="em-events-hero-content">
+        <h2 class="em-events-hero-title em-canon" itemprop="name">
+          <a class="em-events-hero-title__link" href="{{event.url}}" title="Find out more about {{ event.title }}">{{ event.title }}</a>
+        </h2>
 
-        <p class="em-events-featured-excerpt">{{ event.excerpt | strip_html }}</p>
+        <p class="em-events-hero-excerpt">{{ event.excerpt | strip_html }}</p>
         
         <p class="event-date" itemprop="startDate" content="{{ event.startDate }}">Door Opens: {{ event.startDate | date: "%I:%M %P on %A, %d %B %Y" }}</p>
 

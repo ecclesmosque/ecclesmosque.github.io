@@ -1,6 +1,6 @@
 {% assign poster = site.data.images | where: "id", include.image-id | first %}
 {% if poster %}
 <div class="em-events-meta__image em-events-meta__image--{{poster.id}}" style="background-image: url({{poster.url}})">
-    <a href="{{poster.url}}" class="em-events-meta__image-link"></a>
+    <a href="{{poster.url}}" itemprop="image" class="em-events-meta__image-link"></a>
 </div>
 {% endif %}

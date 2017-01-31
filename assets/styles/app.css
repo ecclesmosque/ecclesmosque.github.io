@@ -2174,10 +2174,10 @@ a.em-header-logo__title {
   background: #efefef;
   width: 110px; }
 
-.em-events-featured {
+.em-events-hero {
   position: relative; }
 
-.em-events-featured::after {
+.em-events-hero::after {
   content: "";
   opacity: 0.125;
   top: 0;
@@ -2188,6 +2188,10 @@ a.em-header-logo__title {
   z-index: -1;
   background: transparent top center no-repeat;
   background-size: cover; }
+
+.em-events-hero-title__link,
+.em-events-hero-title__link:link {
+  text-decoration: none; }
 
 .em-post-category-banner {
   background: transparent no-repeat center center fixed;
