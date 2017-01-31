@@ -2,9 +2,7 @@
   "name": "ecclesmosque.github.io",
   "version": "1.0.0",
   "description": "Eccles Mosque Website",
-  "scripts": {
-    "postinstall": "mv node_modules/normalize.css/normalize.css node_modules/normalize.css/normalize.scss;"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ecclesmosque/ecclesmosque.github.io.git"
@@ -22,7 +20,7 @@
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
     "browser-sync": "^2.18.5",
-    "browserify": "^13.1.0",
+    "browserify": "^14.0.0",
     "del": "^2.2.0",
     "gel-grid": "^3.0.2",
     "gel-typography": "^2.0.2",
@@ -40,7 +38,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-sass": "^3.0.0",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "normalize.css": "^5.0.0",

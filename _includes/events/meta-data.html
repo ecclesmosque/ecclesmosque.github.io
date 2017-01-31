@@ -1,13 +1,17 @@
 {% assign event = site.events | where: "id", include.event-id | first %}
 {% if event %}
 
-<div class="em-events-meta em-events-meta--{{event.title | slugify}}">
-    
+<div class="em-events-meta em-events-meta--{{ event.title | slugify }}">
 
     <div class="em-events-meta__items">
+
+        <h2 class="em-events-meta__heading em-double-pica-bold">Events Details</h2>
         {% include images/event-poster.html image-id=event.poster %}
-<h2 class="em-events-meta__heading em-double-pica-bold">Events Details</h2>
         <div class="em-events-meta__title em-great-primer">{{ event.title }}</div>
+        
+        <meta itemprop="name" content="{{ event.title }}">
+        <meta itemprop="url" content="{{ page.url | prepend: site.url }}" />
+        <meta itemprop="eventStatus" content="http://schema.org/EventRescheduled">
 
         {% if event.cost %}
         <meta itemprop="price" content="{{ event.cost }}"/>
@@ -46,6 +50,24 @@
             </div>
         </div>
         {% endif %}
+
+        <div class="em-events-meta__item-location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <div class="em-events-meta__item-label">
+                Location:
+            </div>
+            <div class="em-events-meta__item-value">
+                <div class="street-address" itemprop="name">{{ site.subtitle }}</div>
+                <div class="em-contacts-info__address-details" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <div class="street-address" itemprop="streetAddress">{{ site.contact.address.street }}</div>
+                    <span class="locality" itemprop="addressLocality">{{ site.contact.address.town }}</span>,
+                    <span class="locality" itemprop="addressRegion">{{ site.contact.address.city }}</span>
+                    <div class="postal-code" itemprop="postalCode">{{ site.contact.address.postcode }}</div>
+                    <div class="country-name" itemprop="addressCountry">{{ site.contact.address.country }}</div>
+                </div>
+                
+                <div class="em-contacts-info__address-get-direction"><i class="em-icons icon-direction"></i> <a href="https://www.google.co.uk/maps/dir/''/{{ site.contact.address.street }},+{{ site.contact.address.town }},+{{ site.contact.address.city }}+{{ site.contact.address.postcode }}" target="_google-maps">Get directions in Google Maps</a></div>
+            </div>
+        </div>
 
     </div>
 

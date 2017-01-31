@@ -1,6 +1,8 @@
 ---
 title:  Eccles Mosque Open Day &#35;VisitMyMosque 2017
 categories: events
+seo:
+  type: event
 thumbnail: visit-my-mosque-2017
 poster: visit-my-mosque-2017
 tags: [open-day, 2017, 1437, visit-my-mosque]
@@ -8,16 +10,15 @@ date:   2017-01-20 10:00:00 +0100
 startDate: 2017-02-05T12:00:00+0000
 doorTime: 2017-02-05T12:00:00+0000
 endDate: 2017-02-05T17:00:00+0000
-cost: Free
 offers:
-    - Guided Tours
-    - Observe Prayer
-    - Opportunity to ask questions
-    - Engaging discussion
-    - Finger buffet
-    - Books & Leaflets
-    - Henna/Mehndi Painting
-    - Arabic Calligraphy
+  - Guided Tours
+  - Observe Prayer
+  - Opportunity to ask questions
+  - Engaging discussion
+  - Finger buffet
+  - Books & Leaflets
+  - Henna/Mehndi Painting
+  - Arabic Calligraphy
 ---
 
 # You are cordially invited to visit Eccles Mosque Open Day on 5 February 2017.

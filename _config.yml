@@ -103,6 +103,8 @@ defaults:
     values:
       layout: events-entry
       thumbnail: least-i-forgot-ramadan
+      seo:
+        type: event
 
 collections:
   events:
