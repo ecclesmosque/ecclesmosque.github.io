@@ -20,8 +20,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var watchify = require('watchify');
 
-require('gulp-graph')(gulp);
-
 var config = {
   jekyll: ['pages', 'posts', 'events', 'layouts', 'includes', 'data'],
   JEKYLL_ENV: 'development'
@@ -50,7 +48,7 @@ gulp.task('jekyll-compile', [], function (next) {
 });
 
 gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (next) {
-  if (config.JEKYLL_ENV === 'production') {
+  if (isProduction()) {
     next(null);
   } else {
     var spawn = require('child_process').spawn;
@@ -110,8 +108,8 @@ gulp.task('styles', function () {
     .pipe(replace(/\.\.\/font\//igm, '/assets/fonts/')) // fix for https://github.com/fontello/fontello/issues/573
     .pipe(autoprefixer('last 2 versions'))
     .pipe(sourcemaps.init())
-    .pipe(gulpif(isProduction, rename({ suffix: '.min' })))
-    .pipe(gulpif(isProduction, cleanCSS()))
+    .pipe(gulpif(isProduction(), rename({ suffix: '.min' })))
+    .pipe(gulpif(isProduction(), cleanCSS()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('_site/assets/styles/')) // for BrowserSync
     .pipe(gulp.dest('assets/styles/')) // for pruduction
@@ -157,8 +155,8 @@ gulp.task('scripts', function () {
     .pipe(babel())
     .pipe(sourcemaps.init())
     // Add transformation tasks to the pipeline here.
-    .pipe(gulpif(isProduction, rename({ suffix: '.min' })))
-    .pipe(gulpif(isProduction, uglify()))
+    .pipe(gulpif(isProduction(), rename({ suffix: '.min' })))
+    .pipe(gulpif(isProduction(), uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/scripts/'))
     .pipe(browserSync.stream({match: '**/*.js'}));

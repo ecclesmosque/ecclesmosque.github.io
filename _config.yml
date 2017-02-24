@@ -65,6 +65,9 @@ social-links:
   - label: Like us on Facebook
     url: https://en-gb.facebook.com/EcclesMosque
     icon: facebook-official
+  - label: Follow us on Flickr
+    url: https://www.flickr.com/photos/ecclesmosque
+    icon: flickr
   - label: Follow us on Google+
     url: https://plus.google.com/100811637505570907565
     icon: gplus-squared
