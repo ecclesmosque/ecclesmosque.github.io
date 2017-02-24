@@ -1,4 +1,6 @@
-{% for event in site.events limit:1 %}
+{% assign event = site.events | sort: 'startDate' | reversed | first %}
+
+{% if event.startDate >= site.time %}
 
 {% assign poster = site.data.images | where: "id", event.poster | first %}
 
@@ -26,4 +28,4 @@
   </div>
 </section>
 
-{% endfor %}
+{% endif %}
