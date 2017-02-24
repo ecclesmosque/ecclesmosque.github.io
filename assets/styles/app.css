@@ -1742,8 +1742,8 @@ body {
 
 @font-face {
   font-family: 'em-icons';
-  src: url("/assets/fonts/em-icons.eot?37118307");
-  src: url("/assets/fonts/em-icons.eot?37118307#iefix") format("embedded-opentype"), url("/assets/fonts/em-icons.woff2?37118307") format("woff2"), url("/assets/fonts/em-icons.woff?37118307") format("woff"), url("/assets/fonts/em-icons.ttf?37118307") format("truetype"), url("/assets/fonts/em-icons.svg?37118307#em-icons") format("svg");
+  src: url("/assets/fonts/em-icons.eot?31795596");
+  src: url("/assets/fonts/em-icons.eot?31795596#iefix") format("embedded-opentype"), url("/assets/fonts/em-icons.woff2?31795596") format("woff2"), url("/assets/fonts/em-icons.woff?31795596") format("woff"), url("/assets/fonts/em-icons.ttf?31795596") format("truetype"), url("/assets/fonts/em-icons.svg?31795596#em-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -1753,7 +1753,7 @@ body {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'em-icons';
-    src: url('/assets/fonts/em-icons.svg?37118307#em-icons') format('svg');
+    src: url('/assets/fonts/em-icons.svg?31795596#em-icons') format('svg');
   }
 }
 */
@@ -1824,6 +1824,10 @@ body {
   content: '\f166'; }
 
 /* '' */
+.icon-flickr:before {
+  content: '\f16e'; }
+
+/* '' */
 .icon-facebook-official:before {
   content: '\f230'; }
 
