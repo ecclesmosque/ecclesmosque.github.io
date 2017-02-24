@@ -78,6 +78,12 @@
       "css": "download",
       "code": 59396,
       "src": "fontawesome"
+    },
+    {
+      "uid": "649004fb1ed50395a33c3780236ba8aa",
+      "css": "flickr",
+      "code": 61806,
+      "src": "fontawesome"
     }
   ]
 }
