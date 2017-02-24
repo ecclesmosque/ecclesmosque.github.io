@@ -48,7 +48,7 @@ gulp.task('jekyll-compile', [], function (next) {
 });
 
 gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (next) {
-  if (!isProduction()) {
+  if (isProduction()) {
     next(null);
   } else {
     var spawn = require('child_process').spawn;
