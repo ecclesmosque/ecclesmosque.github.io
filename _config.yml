@@ -79,6 +79,10 @@ social-links:
 # Build settings do not modify anything below this line
 # unless you know what you are doings
 
+# Featured Content
+featured:
+  updates: [] # we need to set this to an empty array so that we can filter all events and posts into this empty array
+
 # Outputting
 permalink: /:categories/:title/
 # paginate: 1
