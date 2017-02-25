@@ -1,13 +1,11 @@
 {% assign featured_updates = site.featured.updates %}
 
-{% for event in site.events | sort: 'startDate' | reversed | limit: 3 %}
-    {% featured_updates[event.startDate] = event %}
+{% for entry in site.events | sort: 'startDate' | reversed | limit: 3 %}
+    {% assign featured_updates = featured_updates | push: entry %}
 {% endfor %}
-{% for post in site.posts | limit: 3 %}
-    {% featured_updates[post.date] = post %}
+{% for entry in site.posts | limit: 3 %}
+    {% assign featured_updates = featured_updates | push: entry %}
 {% endfor %}
-
-{{ featured_updates }}
 
 {% if featured_updates %}
 <h2 class="em-latest-posts__heading em-double-pica-bold">Recent Updates</h2>
