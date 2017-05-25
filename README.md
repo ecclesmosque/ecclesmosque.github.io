@@ -15,8 +15,10 @@ This is repo contains the soruce code for The Eccles and Salford Islāmic Societ
 ## Getting Started
 
 Install node dependencies:
-
-* `npm install -g fontello-cli` -- to generate/update icons fonts.
+* `npm i -g gulp`
+* `npm i -g fontello-cli` -- to generate/update icons fonts.
+* `gulp icons-download` --Download icons fonts
+* `gulp` -- start development
 
 
 
