@@ -1,6 +1,5 @@
 ---
 title:  Eccles Mosque Open Day &#35;VisitMyMosque 2017
-categories: events
 seo:
   type: event
 thumbnail: visit-my-mosque-2017

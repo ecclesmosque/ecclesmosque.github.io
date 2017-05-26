@@ -1,4 +1,5 @@
-{% assign event = site.events | sort: 'startDate' | reversed | first %}
+
+{% assign event = site.categories.events | sort: 'startDate' | reversed | first %}
 
 {% if event.startDate >= site.time %}
 
