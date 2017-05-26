@@ -106,16 +106,16 @@ defaults:
       thumbnail: least-i-forgot-ramadan
   -
     scope:
-      type: events
+      path: events
     values:
       layout: events-entry
       thumbnail: least-i-forgot-ramadan
       seo:
         type: event
 
-collections:
-  events:
-    output: true
+# collections:
+#   events:
+#     output: true
 
 exclude:
   - Gemfile

@@ -1,4 +1,5 @@
-{% assign event = site.events | where: "id", include.event-id | first %}
+{% assign event = site.categories.events | where: "id", include.event-id | first %}
+
 {% if event %}
 
 <div class="em-events-meta em-events-meta--{{ event.title | slugify }}">

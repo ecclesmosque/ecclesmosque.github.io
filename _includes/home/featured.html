@@ -1,17 +1,9 @@
-{% assign featured_updates = site.featured.updates %}
 
-{% for entry in site.events | sort: 'startDate' | reversed | limit: 3 %}
-    {% assign featured_updates = featured_updates | push: entry %}
-{% endfor %}
-{% for entry in site.posts | limit: 3 %}
-    {% assign featured_updates = featured_updates | push: entry %}
-{% endfor %}
-
-{% if featured_updates %}
+{% if site.posts %}
 <h2 class="em-latest-posts__heading em-double-pica-bold">Recent Updates</h2>
 <nav class="em-latest-posts">
     <div class="em-layout gel-layout--equal em-latest-posts__items">
-        {% for entry in featured_updates | limit: 6 %}
+        {% for entry in site.posts | limit: 6 %}
         <div class="em-layout__item em-1/2@m em-1/3@l em-latest-posts__item em-latest-posts__item--{{entry.title | slugify}}">
             <a class="em-latest-posts__item-link em-latest-posts__item-link--{{ entry.title | slugify}}" href="{{ entry.url }}">
                 {% include images/thumbnail.html image-id=entry.thumbnail %}
