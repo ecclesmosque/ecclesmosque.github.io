@@ -26,7 +26,7 @@ We feel privileged, that as a pillar of the Eccles community, we provide a facil
 
 We would be honoured if you would accept our invitation to break bread with us and in essence ‘Taste Ramadan’ with us by partaking in a delicious and hearty meal cooked by our chefs on the premises; on Saturday 10th June 2017.
 
-The event will comprise of a meet and greet; a tour of the mosque, a look at the communal preparations for the breaking of the fast as well as a short presentation; followed by full meal and the opportunity for networking. We shall be grateful if you could kindly confirm your participation by email or via the contact number below and arrive on site for 8:30pm. This is so we can ensure you are seated and served in time for the breaking of the fast at approximately 9:30pm.
+The event will comprise of a meet and greet; a tour of the mosque, a look at the communal preparations for the breaking of the fast as well as a short presentation; followed by full meal and the opportunity for networking. We shall be grateful if you could kindly confirm your participation by email or via the contact number below and arrive on site for 8:30pm. This is so we can ensure you are seated and served in time for the breaking of the fast at approximately 9:36pm.
 
 If you have any specific dietary requirements please do let us know in advance and we will attempt to cater for your needs. If you have any further questions or queries please do not hesitate to contact me.
 
