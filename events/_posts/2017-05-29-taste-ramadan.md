@@ -3,9 +3,9 @@ title: Taste Ramadan - Invitation to Communal Dinner
 thumbnail: taste-ramadan
 poster: taste-ramadan
 tags: [taste, ramadan, 2017, 1438]
-date:   2017-05-29 15:00:00+0100
-startDate: 2017-06-10T20:00:00+0000
-doorTime: 2017-06-10T20:00:00+0000
+date:   2017-05-29 17:00:00+0100
+startDate: 2017-06-10T20:30:00+0000
+doorTime: 2017-06-10T20:30:00+0000
 endDate: 2017-06-10T22:00:00+0000
 offers:
   - Guided Tours
