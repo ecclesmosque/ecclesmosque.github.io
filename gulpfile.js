@@ -21,7 +21,7 @@ var uglify = require('gulp-uglify');
 var watchify = require('watchify');
 
 var config = {
-  jekyll: ['pages', 'posts', 'events', 'layouts', 'includes', 'data'],
+  jekyll: ['pages', 'posts', 'layouts', 'includes', 'data'],
   JEKYLL_ENV: 'development'
 };
 
@@ -40,7 +40,7 @@ gulp.task('jekyll-compile', [], function (next) {
   var envs = Object.create(process.env);
   envs.JEKYLL_ENV = config.JEKYLL_ENV;
 
-  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], { stdio: 'inherit', env: envs });
+  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', isProduction()?'--profile':'', '--incremental'], { stdio: 'inherit', env: envs });
 
   jekyll.on('exit', function (code) {
     next(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
@@ -73,7 +73,7 @@ gulp.task('serve', ['build'], function () {
   });
 
   config.jekyll.forEach(function (conentType) {
-    gulp.watch('_' + conentType + '/**/*.*', ['jekyll-compile']);
+    gulp.watch('**/_' + conentType + '/**/*.*', ['jekyll-compile']);
   });
 
   gulp.watch('_config.yml', ['jekyll-compile']);
