@@ -5,28 +5,51 @@
 
 - id: ramadan-greetings
   title: Ramadan Greetings
-  url: https://c1.staticflickr.com/9/8434/7602537598_aef9014b88_b.jpg
+  image:
+    small: https://c1.staticflickr.com/9/8434/7602537598_aef9014b88_n.jpg
+    medium: https://c1.staticflickr.com/9/8434/7602537598_aef9014b88_z.jpg
+    large: https://c1.staticflickr.com/9/8434/7602537598_aef9014b88_b.jpg
   credit:
     - name: Creative Commons Qatar
     - url: https://flic.kr/p/czNZys
 
 - id: least-i-forgot-ramadan
   title: Lest I Forget Ramadan...
-  url: https://c2.staticflickr.com/2/1396/1401017025_1790e2d08f_z.jpg
+  image:
+    small: https://c2.staticflickr.com/2/1396/1401017025_1790e2d08f_n.jpg
+    medium: https://c2.staticflickr.com/2/1396/1401017025_1790e2d08f_z.jpg
+    large: https://c2.staticflickr.com/2/1396/1401017025_1790e2d08f_b.jpg
   credit:
     - name: Steve Evans
     - url: https://flic.kr/p/38NzxX
 
 - id: aerial-view-of-a-black-and-white-geometric-islamic-pattern-in-stone
   title: Aerial view of a black and white geometric Islamic pattern in stone
-  url: https://c1.staticflickr.com/8/7674/17410786409_4059c46478_n.jpg
+  image:
+    small: https://c1.staticflickr.com/8/7674/17410786409_4059c46478_n.jpg
+    medium: https://c1.staticflickr.com/8/7674/17410786409_4059c46478_z.jpg
+    large: https://c1.staticflickr.com/8/7674/17410786409_4059c46478_b.jpg
   credit:
     - name: Azchael
     - url: https://flic.kr/p/swwQdz
 
 - id: visit-my-mosque-2017
   title: Ecles Mosque &#35;VisitMyMosque 2017
-  url: https://c1.staticflickr.com/1/495/31697952943_d862515650_b.jpg
+  image:
+    small: https://c1.staticflickr.com/1/495/31697952943_d862515650_n.jpg
+    medium: https://c1.staticflickr.com/1/495/31697952943_d862515650_z.jpg
+    large: https://c1.staticflickr.com/1/495/31697952943_d862515650_b.jpg
   credit:
     - name: Eccles Mosque
     - url: https://flic.kr/p/Qi3i54
+
+- id: press-releases
+  title: Press Releases
+  image:
+    small: https://c1.staticflickr.com/2/1375/1450704041_25586321d4_m.jpg
+    medium: https://c1.staticflickr.com/2/1375/1450704041_25586321d4_z.jpg
+    large: https://c1.staticflickr.com/2/1375/1450704041_25586321d4_b.jpg
+  credit:
+    - name: Brian Solis
+    - url: https://flic.kr/p/3dceLD
+
