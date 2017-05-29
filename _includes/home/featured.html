@@ -9,7 +9,7 @@
                 {% include images/thumbnail.html image-id=entry.thumbnail %}
                 <span class="em-latest-posts__item-title em-great-primer">{{ entry.title }}</span>
                 <span class="em-latest-posts__item-meta em-minion">
-                    <span class="em-latest-posts__item-meta-attribution">{{ entry.categories | first }}</span>
+                    <span class="em-latest-posts__item-meta-attribution">{{ entry.categories | first | replace: '-', ' ' }}</span>
                     <i class="em-latest-posts__item-meta-published-icon em-icons icon-clock"></i><time class="em-latest-posts__item-meta-published" datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date_to_long_string }}</time>
                 </span>
             </a>

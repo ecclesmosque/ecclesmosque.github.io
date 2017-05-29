@@ -8,7 +8,7 @@
             <a class="em-latest-posts__item-link em-latest-posts__item-link--{{ entry.title | slugify}}" href="{{ entry.url }}">
                 <span class="em-latest-posts__item-title em-great-primer">{{ entry.title }}</span>
                 <div class="em-latest-posts__item-meta em-minion">
-                    <span class="em-latest-posts__item-meta-attribution">{{ entry.categories | first }}</span>
+                    <span class="em-latest-posts__item-meta-attribution">{{ entry.categories | first | replace: '-', ' ' }}</span>
                     <i class="em-latest-posts__item-meta-published-icon em-icons icon-clock"></i><time class="em-latest-posts__item-meta-published" datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date_to_long_string }}</time>
                 </div>
             </a>

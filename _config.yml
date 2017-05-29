@@ -112,6 +112,14 @@ defaults:
       thumbnail: least-i-forgot-ramadan
       seo:
         type: event
+  -
+    scope:
+      path: press-releases
+    values:
+      layout: posts-entry
+      thumbnail: press-releases
+      seo:
+        type: press-releases
 
 # collections:
 #   events:
