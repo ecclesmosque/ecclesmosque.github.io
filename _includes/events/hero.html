@@ -1,13 +1,13 @@
 
-{% assign event = site.categories.events | sort: 'startDate' | reversed | first %}
+{% assign event = site.categories.events | first %}
 
 {% if event.startDate >= site.time %}
 
 {% assign poster = site.data.images | where: "id", event.poster | first %}
 
 {% if poster %}
-<style>.em-events-hero::after { background-image: url({{poster.url}}); }</style>
-<meta itemprop="image" content="{{poster.url}}" />
+<style>.em-events-hero::after { background-image: url({{poster.image.large}}); }</style>
+<meta itemprop="image" content="{{poster.image.midium}}" />
 {% endif %}
 
 <section class="em-module em-events-hero">

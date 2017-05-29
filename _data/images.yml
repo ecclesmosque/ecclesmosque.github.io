@@ -42,7 +42,6 @@
   credit:
     - name: Eccles Mosque
     - url: https://flic.kr/p/Qi3i54
-
 - id: press-releases
   title: Newspaper grape purple
   image:
@@ -52,4 +51,13 @@
   credit:
     - name: Brian Solis
     - url: https://flic.kr/p/ayWQ4v
+- id: taste-ramadan
+  title: Taste Ramadan
+  image:
+    small: https://c1.staticflickr.com/5/4222/34583171270_3af89edd8e_n.jpg
+    medium: https://c1.staticflickr.com/5/4222/34583171270_3af89edd8e_z.jpg
+    large: https://c1.staticflickr.com/5/4222/34583171270_3af89edd8e_b.jpg
+  credit:
+    - name: Eccles Mosque
+    - url: https://flic.kr/p/UFZMXC
 
