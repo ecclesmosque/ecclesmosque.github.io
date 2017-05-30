@@ -1,9 +1,9 @@
-{% assign posts = site.posts | limit: 5 %}
+{% assign posts = site.posts %}
 {% if posts %}
 <h2 class="em-latest-posts__heading em-double-pica-bold">Latest Updates</h2>
 <nav class="em-latest-posts">
     <div class="em-layout em-latest-posts__items">
-        {% for entry in posts %}
+        {% for entry in posts | limit: 5 %}
         <div class="em-layout__item em-latest-posts__item em-latest-posts__item--{{entry.title | slugify}}">
             <a class="em-latest-posts__item-link em-latest-posts__item-link--{{ entry.title | slugify}}" href="{{ entry.url }}">
                 <span class="em-latest-posts__item-title em-great-primer">{{ entry.title }}</span>
