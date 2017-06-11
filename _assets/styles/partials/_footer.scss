@@ -9,7 +9,16 @@
   position: relative;
 }
 
-.em-footer-contact a:link {
+.em-footer-info-addresses a {
+  color: #666666;
+}
+
+.em-footer-contact a:link,
+.em-footer-contact a:hover,
+.em-footer-contact a:visited,
+.em-footer-info-addresses a:link,
+.em-footer-info-addresses a:hover,
+.em-footer-info-addresses a:visited {
   color: #f9f9f9;
 }
 
@@ -29,9 +38,6 @@
   @include gel-typography('great-primer');
 }
 
-.em-footer-info-addresses a {
-  color: #666666;
-}
 
 .em-contacts-info__email-heading,
 .em-contacts-info__tel-heading,
