@@ -60,4 +60,13 @@
   credit:
     - name: Eccles Mosque
     - url: https://flic.kr/p/UFZMXC
+- id: taste-ramadan-2017
+  title: Taste Ramadan
+  image:
+    small: https://c1.staticflickr.com/5/4245/35116247651_a09b2bd91c_n.jpg
+    medium: https://c1.staticflickr.com/5/4245/35116247651_a09b2bd91c_z.jpg
+    large: https://c1.staticflickr.com/5/4245/35116247651_a09b2bd91c_b.jpg
+  credit:
+    - name: Azizur Rahman
+    - url: https://flic.kr/p/Vv6WZH
 
