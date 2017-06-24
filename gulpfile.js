@@ -30,7 +30,7 @@ function isProduction() {
 }
 
 gulp.task('clean', function () {
-  return del.sync(['_site', 'assets/styles', 'assets/scripts']);
+  return del.sync(['_site', 'assets/styles', 'assets/scripts', 'npm-debug.log']);
 });
 
 gulp.task('jekyll-compile', [], function (next) {
@@ -40,7 +40,7 @@ gulp.task('jekyll-compile', [], function (next) {
   var envs = Object.create(process.env);
   envs.JEKYLL_ENV = config.JEKYLL_ENV;
 
-  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', isProduction()?'--profile':'', '--incremental'], { stdio: 'inherit', env: envs });
+  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', !isProduction()?'--drafts':'', isProduction()?'--profile':'', '--incremental'], { stdio: 'inherit', env: envs });
 
   jekyll.on('exit', function (code) {
     next(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
@@ -48,7 +48,7 @@ gulp.task('jekyll-compile', [], function (next) {
 });
 
 gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (next) {
-  if (isProduction()) {
+  if (!isProduction()) {
     next(null);
   } else {
     var spawn = require('child_process').spawn;
