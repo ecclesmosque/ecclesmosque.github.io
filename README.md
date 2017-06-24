@@ -9,10 +9,19 @@
 
 ## What is this?
 
-This is repo contains the soruce code for The Eccles and Salford Islāmic Society website see the deployed website at [ecclesmosque.org.uk](https://ecclesmosque.org.uk/).
-
+This is repo contains the soruce code for The Eccles and Salford Islāmic Society website. See the deployed website at [ecclesmosque.org.uk](https://ecclesmosque.org.uk/).
 
 ## Getting Started
+The site is built using `Jekyll` and `github-pages` and hosted on [GitHub Pages](https://pages.github.com/).
+
+Install Jekyll and Bundler gems through RubyGems
+`gem install jekyll bundler`
+
+Install ruby rependencies:
+`bundle install`
+
+Time time to time you may need to update reuby gems. For example when we need to update [GitHub Pages](https://pages.github.com/) gem.
+`bundle update`
 
 Install node dependencies:
 * `npm i -g gulp`
@@ -20,11 +29,8 @@ Install node dependencies:
 * `gulp icons-download` --Download icons fonts
 * `gulp` -- start development
 
-
-
 ## How To Preview a draft post
-
-Normally (and on GitHub Pages) Jekyll will ignore the posts in the `_drafts` folder, publishing only the posts in the `_posts` folder. If you run Jekyll locally with the `--drafts` flag (e.g., `jekyll serve --drafts`), Jekyll will include any posts in the `_drafts` folder, just as if they were published post (but don't worry, only locally).
+Once you run `gulp` command it should load the default browser with development site. If it does not visit `http://localhost:3000` to view the site.
 
 ## License
 
