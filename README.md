@@ -29,6 +29,10 @@ Install node dependencies:
 * `gulp icons-download` --Download icons fonts
 * `gulp` -- start development
 
+## Production build
+To build a production version of the site run:
+`gulp build-prod`
+
 ## How To Preview a draft post
 Once you run `gulp` command it should load the default browser with development site. If it does not visit `http://localhost:3000` to view the site.
 
