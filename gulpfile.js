@@ -204,7 +204,7 @@ gulp.task('icons-download', [], function (next) {
   });
 });
 
-gulp.task('build', ['clean', 'jekyll-compile', 'html-proofer', 'styles', 'eslint', 'scripts']);
+gulp.task('build', ['clean', 'jekyll-compile', 'styles', 'eslint', 'scripts']); //'html-proofer',
 
 gulp.task('setup-environment', function () {
   config.JEKYLL_ENV = 'production';
