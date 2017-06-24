@@ -58,6 +58,8 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
         'htmlproofer',
         '--url-swap',
         '.*ecclesmosque.org.uk/:/',
+        '--internal-domains',
+        'ecclesmosque.org.uk,ecclesmosque.org',
         './_site'
       ], { stdio: 'inherit' });
 
@@ -204,7 +206,7 @@ gulp.task('icons-download', [], function (next) {
   });
 });
 
-gulp.task('build', ['clean', 'jekyll-compile', 'styles', 'eslint', 'scripts']); //'html-proofer',
+gulp.task('build', ['clean', 'html-proofer', 'jekyll-compile', 'styles', 'eslint', 'scripts']);
 
 gulp.task('setup-environment', function () {
   config.JEKYLL_ENV = 'production';

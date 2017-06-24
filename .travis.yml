@@ -1,6 +1,14 @@
 language: ruby
 rvm:
-- 2.4.0
+  - 2.4.0
+
+cache:
+  directories:
+  - $TRAVIS_BUILD_DIR/tmp/.htmlproofer
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 install:
  - nvm install stable
@@ -9,9 +17,5 @@ install:
 
 script:
   - ./node_modules/.bin/gulp build-prod
-
-env:
-  global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 sudo: false # route your build to the container-based infrastructure for a faster build
