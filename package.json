@@ -22,6 +22,7 @@
     "browser-sync": "^2.18.5",
     "browserify": "^14.0.0",
     "del": "^3.0.0",
+    "fontello-cli": "^0.4.0",
     "gel-grid": "^3.0.2",
     "gel-typography": "^2.0.2",
     "gulp": "^3.9.1",

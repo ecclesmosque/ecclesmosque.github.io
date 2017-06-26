@@ -40,7 +40,7 @@ gulp.task('jekyll-compile', [], function (next) {
   var envs = Object.create(process.env);
   envs.JEKYLL_ENV = config.JEKYLL_ENV;
 
-  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', !isProduction()?'--drafts':'', isProduction()?'--profile':'', '--incremental'], { stdio: 'inherit', env: envs });
+  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', !isProduction() ? '--drafts' : '', isProduction() ? '--profile' : '', '--incremental'], { stdio: 'inherit', env: envs });
 
   jekyll.on('exit', function (code) {
     next(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
@@ -115,7 +115,7 @@ gulp.task('styles', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('_site/assets/styles/')) // for BrowserSync
     .pipe(gulp.dest('assets/styles/')) // for pruduction
-    .pipe(browserSync.stream({match: '**/*.css'}));
+    .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
 gulp.task('eslint', function () {
@@ -161,7 +161,7 @@ gulp.task('scripts', function () {
     .pipe(gulpif(isProduction(), uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/scripts/'))
-    .pipe(browserSync.stream({match: '**/*.js'}));
+    .pipe(browserSync.stream({ match: '**/*.js' }));
 });
 
 gulp.task('icons-update', [], function (next) {
@@ -180,7 +180,7 @@ gulp.task('icons-update', [], function (next) {
 gulp.task('icons-download', [], function (next) {
   var spawn = require('child_process').spawn;
 
-  var fontello = spawn('fontello-cli', [
+  var fontello = spawn('./node_modules/.bin/fontello-cli', [
     'install',
     '--config', './_assets/icons/config.json',
     '--font', './assets/fonts',
@@ -191,15 +191,15 @@ gulp.task('icons-download', [], function (next) {
     // rename *.css files to _*.scss
     if (code === 0) {
       gulp.src('./_assets/styles/icons/**/*.css')
-      .pipe(rename(function (path) {
-        path.basename = '_' + path.basename;
-        path.extname = '.scss';
-      }))
-      .pipe(gulp.dest('./_assets/styles/icons/'))
-      .on('end', function () {
-        del.sync(['./_assets/styles/icons/**/*.css']);
-        next(null);
-      });
+        .pipe(rename(function (path) {
+          path.basename = '_' + path.basename;
+          path.extname = '.scss';
+        }))
+        .pipe(gulp.dest('./_assets/styles/icons/'))
+        .on('end', function () {
+          del.sync(['./_assets/styles/icons/**/*.css']);
+          next(null);
+        });
     } else {
       next('ERROR: fontello-cli process exited with code: ' + code);
     }
@@ -217,7 +217,7 @@ function terminate() {
   gulp.on('err', () => { process.exit(1); });
 }
 
-gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
+gulp.task('build-prod', ['setup-environment', 'icons-download', 'build'], function (next) {
   next(terminate());
 });
 
