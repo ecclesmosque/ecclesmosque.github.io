@@ -16,6 +16,7 @@ install:
  - bundle install
 
 script:
+  - ./node_modules/.bin/gulp icons-download
   - ./node_modules/.bin/gulp build-prod
 
 sudo: false # route your build to the container-based infrastructure for a faster build

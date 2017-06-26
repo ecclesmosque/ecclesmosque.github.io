@@ -217,7 +217,7 @@ function terminate() {
   gulp.on('err', () => { process.exit(1); });
 }
 
-gulp.task('build-prod', ['setup-environment', 'icons-download', 'build'], function (next) {
+gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
   next(terminate());
 });
 
