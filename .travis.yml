@@ -12,7 +12,7 @@ env:
 
 install:
  - nvm install stable
- - npm set progress=false && npm install
+ - npm set progress=false && npm install && npm i -g fontello-cli && gulp icons-download
  - bundle install
 
 script:
