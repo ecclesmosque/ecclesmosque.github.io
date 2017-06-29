@@ -19,6 +19,7 @@ var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var watchify = require('watchify');
+var spawn = require('child_process').spawn;
 
 var config = {
   jekyll: ['pages', 'posts', 'layouts', 'includes', 'data'],
@@ -34,8 +35,6 @@ gulp.task('clean', function () {
 });
 
 gulp.task('jekyll-compile', [], function (next) {
-  var spawn = require('child_process').spawn;
-
   // clone the actual env vars to avoid overrides
   var envs = Object.create(process.env);
   envs.JEKYLL_ENV = config.JEKYLL_ENV;
@@ -51,7 +50,6 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
   if (!isProduction()) {
     next(null);
   } else {
-    var spawn = require('child_process').spawn;
     var htmlproofer = spawn('bundle',
       [
         'exec',
@@ -64,7 +62,15 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
       ], { stdio: 'inherit' });
 
     htmlproofer.on('exit', function (code) {
-      if(code !== 0) {
+      if (code !== 0) {
+        console.log('ERROR: htmlproofer process exited with code: ' + code);
+        next();
+      }
+      next(null);
+    });
+
+    htmlproofer.on('error', function (code) {
+      if (code !== 0) {
         console.log('ERROR: htmlproofer process exited with code: ' + code);
         next();
       }
@@ -169,7 +175,6 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('icons-update', [], function (next) {
-  var spawn = require('child_process').spawn;
 
   var fontello = spawn('fontello-cli', [
     'open',
@@ -182,8 +187,6 @@ gulp.task('icons-update', [], function (next) {
 });
 
 gulp.task('icons-download', [], function (next) {
-  var spawn = require('child_process').spawn;
-
   var fontello = spawn('./node_modules/.bin/fontello-cli', [
     'install',
     '--config', './_assets/icons/config.json',
