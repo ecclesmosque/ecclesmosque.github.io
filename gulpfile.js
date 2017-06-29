@@ -64,15 +64,11 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
       ], { stdio: 'inherit' });
 
     htmlproofer.on('exit', function (code) {
-      next(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
-    });
-
-    htmlproofer.on('close', function (code) {
-      next(code === 0 ? null : 'ERROR: htmlproofer process closed with code: ' + code);
-    });
-    
-    htmlproofer.on('error', function (code) {
-      next(code === 0 ? null : 'ERROR: htmlproofer process errored with code: ' + code);
+      if(code !== 0) {
+        console.log('ERROR: htmlproofer process exited with code: ' + code);
+        next();
+      }
+      next(null);
     });
   }
 });
