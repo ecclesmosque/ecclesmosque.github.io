@@ -66,6 +66,14 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
     htmlproofer.on('exit', function (code) {
       next(code === 0 ? null : 'ERROR: htmlproofer process exited with code: ' + code);
     });
+
+    htmlproofer.on('close', function (code) {
+      next(code === 0 ? null : 'ERROR: htmlproofer process closed with code: ' + code);
+    });
+    
+    htmlproofer.on('error', function (code) {
+      next(code === 0 ? null : 'ERROR: htmlproofer process errored with code: ' + code);
+    });
   }
 });
 
