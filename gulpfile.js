@@ -64,15 +64,7 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
     htmlproofer.on('exit', function (code) {
       if (code !== 0) {
         console.log('ERROR: htmlproofer process exited with code: ' + code);
-        next();
-      }
-      next(null);
-    });
-
-    htmlproofer.on('error', function (code) {
-      if (code !== 0) {
-        console.log('ERROR: htmlproofer process exited with code: ' + code);
-        next();
+        this.emit('end');
       }
       next(null);
     });
