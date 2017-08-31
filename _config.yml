@@ -136,7 +136,7 @@ exclude:
 
 markdown: kramdown
 
-gems:
+plugins:
   - jekyll-feed
   # - jekyll-paginate
   - jekyll-redirect-from

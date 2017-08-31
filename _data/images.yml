@@ -3,6 +3,16 @@
 # http://theflyerpress.com/free-download-images-photos-of-islamic-architecture/
 # https://www.flickr.com/photos/tags/Arabic%20Caligraphy/
 
+- id: happy-eid-mubarak
+  title: Happy Eid Mubarak
+  image:
+    small: https://farm5.staticflickr.com/4152/4968155482_3c5fd07214_n.jpg
+    medium: https://farm5.staticflickr.com/4152/4968155482_3c5fd07214_z.jpg
+    large: https://farm5.staticflickr.com/4152/4968155482_3c5fd07214_b.jpg
+  credit:
+    - name: hafidz
+    - url: https://flic.kr/p/8z26x9
+
 - id: ramadan-greetings
   title: Ramadan Greetings
   image:
@@ -42,6 +52,7 @@
   credit:
     - name: Eccles Mosque
     - url: https://flic.kr/p/Qi3i54
+
 - id: press-releases
   title: Newspaper grape purple
   image:
@@ -51,6 +62,7 @@
   credit:
     - name: Brian Solis
     - url: https://flic.kr/p/ayWQ4v
+
 - id: taste-ramadan
   title: Taste Ramadan
   image:
@@ -60,6 +72,7 @@
   credit:
     - name: Eccles Mosque
     - url: https://flic.kr/p/UFZMXC
+
 - id: taste-ramadan-2017
   title: Taste Ramadan
   image:
