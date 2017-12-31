@@ -2,7 +2,10 @@
   "name": "ecclesmosque.github.io",
   "version": "1.0.0",
   "description": "Eccles Mosque Website",
-  "scripts": {},
+  "scripts": {
+    "clean": "rm -rf node_modules _site",
+    "start": "gulp serve"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ecclesmosque/ecclesmosque.github.io.git"
