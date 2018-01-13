@@ -4,7 +4,8 @@
   "description": "Eccles Mosque Website",
   "scripts": {
     "clean": "rm -rf node_modules _site",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "build-prod": "gulp build-prod"
   },
   "repository": {
     "type": "git",

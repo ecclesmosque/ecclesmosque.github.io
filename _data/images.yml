@@ -6,9 +6,12 @@
 - id: heritage-open-day
   title: Eccles Mosque Heritage Open Day 2017
   image:
-    small: https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/21106361_1767310419956187_8432780652124724133_n.jpg?oh=012e6a2934a5aebac1c6c6e60dba9a11&oe=5A4EB1DB
-    medium: https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/21106361_1767310419956187_8432780652124724133_n.jpg?oh=012e6a2934a5aebac1c6c6e60dba9a11&oe=5A4EB1DB
-    large: https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/21106361_1767310419956187_8432780652124724133_n.jpg?oh=012e6a2934a5aebac1c6c6e60dba9a11&oe=5A4EB1DB
+    small: https://farm5.staticflickr.com/4662/39664324101_a186208a6d_n.jpg
+    medium: https://farm5.staticflickr.com/4662/39664324101_a186208a6d_z.jpg
+    large: https://farm5.staticflickr.com/4662/39664324101_a186208a6d_b.jpg
+  credit:
+    - name: Eccles Mosque
+    - url: https://flic.kr/p/23r12EV
 
 - id: happy-eid-mubarak
   title: Happy Eid Mubarak
@@ -89,4 +92,3 @@
   credit:
     - name: Azizur Rahman
     - url: https://flic.kr/p/Vv6WZH
-
