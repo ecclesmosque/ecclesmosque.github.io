@@ -1,6 +1,6 @@
 <h1 align="center">Eccles Mosque</h1>
 <p align="center">
-     The Eccles and Salford Islāmic Society<br/>
+     The Eccles and Salford Islamic Society<br/>
     See http://ecclesmosque.org.uk/
 </p>
 
@@ -9,7 +9,7 @@
 
 ## What is this?
 
-This is repo contains the soruce code for The Eccles and Salford Islāmic Society website. See the deployed website at [ecclesmosque.org.uk](https://ecclesmosque.org.uk/).
+This is repository contains the source code for The Eccles and Salford Islamic Society website. See the deployed website at [https://ecclesmosque.org.uk](https://ecclesmosque.org.uk/).
 
 ## Getting Started
 The site is built using `Jekyll` and `github-pages` and hosted on [GitHub Pages](https://pages.github.com/).
@@ -17,10 +17,10 @@ The site is built using `Jekyll` and `github-pages` and hosted on [GitHub Pages]
 Install Jekyll and Bundler gems through RubyGems
 `gem install jekyll bundler`
 
-Install ruby rependencies:
+Install ruby dependencies:
 `bundle install`
 
-Time time to time you may need to update reuby gems. For example when we need to update [GitHub Pages](https://pages.github.com/) gem.
+Time time to time you may need to update ruby gems. For example when we need to update [GitHub Pages](https://pages.github.com/) gem.
 `bundle update`
 
 Install node dependencies:
