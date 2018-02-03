@@ -4,7 +4,7 @@
     See http://ecclesmosque.org.uk/
 </p>
 
-[![Build Status](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io.svg?branch=master)](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io)
+[![Build Status](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io.svg?branch=master)](https://travis-ci.org/ecclesmosque/ecclesmosque.github.io) [![Known Vulnerabilities](https://snyk.io/test/github/ecclesmosque/ecclesmosque.github.io/074eef445d6e8a31caf032bb9c11b95225f18114/badge.svg)](https://snyk.io/test/github/ecclesmosque/ecclesmosque.github.io/074eef445d6e8a31caf032bb9c11b95225f18114)
 
 
 ## What is this?
