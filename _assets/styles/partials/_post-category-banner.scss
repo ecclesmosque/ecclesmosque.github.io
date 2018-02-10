@@ -3,6 +3,18 @@
   background-size: cover;
   display: block;
   position: relative;
+
+  &::after {
+    background: #f5f5f5 no-repeat center center fixed;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    opacity: .5;
+    position: absolute;
+  }
 }
 
 .em-post-category-banner__title-wrapper {
