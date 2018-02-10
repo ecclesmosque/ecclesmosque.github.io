@@ -50,7 +50,7 @@ We would be honoured to have your presence on the day between {{ page.startDate 
 > It was so lovely. A very warm & welcoming atmosphere. So informative with absolutely no pressure. I'm so glad we went we learned loads of new things. Great idea to hold an open day ...credit to you all at the Mosque!! Thank you!!
 > -- Chloe H. 05/02/2017
 
-You can also find other mosques around UK taking part on the [Visit My Mosque Website](https://visitmymosque.org/find/).
+You can also find other mosques around UK taking part on the [Visit My Mosque Website](http://www.visitmymosque.org/find-my-mosque/).
 
 Yours in good faith,
 

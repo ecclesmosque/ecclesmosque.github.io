@@ -205,7 +205,7 @@ gulp.task('icons-download', [], function (next) {
   });
 });
 
-gulp.task('build', ['clean', 'html-proofer', 'jekyll-compile', 'styles', 'eslint', 'scripts']);
+gulp.task('build', ['clean', 'jekyll-compile', 'styles', 'eslint', 'scripts']);
 
 gulp.task('setup-environment', function () {
   config.JEKYLL_ENV = 'production';
@@ -217,6 +217,10 @@ function terminate() {
 }
 
 gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
+  next(terminate());
+});
+
+gulp.task('check-links', ['setup-environment', 'html-proofer'], function (next) {
   next(terminate());
 });
 
