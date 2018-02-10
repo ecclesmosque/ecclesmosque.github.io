@@ -20,7 +20,7 @@
 
         <p class="em-events-hero-excerpt">{{ event.excerpt | strip_html }}</p>
         
-        <p class="event-date" itemprop="startDate" content="{{ event.startDate }}">Door Opens: {{ event.startDate | date: "%I:%M %P on %A, %d %B %Y" }}</p>
+        <p class="event-date" itemprop="startDate" content="{{ event.startDate }}">Door Opens: {{ event.startDate | date: "%I:%M %P on %A, %d %B %Y" }}.</p>
 
         <a href="{{event.url}}" itemprop="url" class="em-button em-button-primary em-button-xlarge" title="Find out more about {{ event.title }}">More information</a>
 
