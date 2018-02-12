@@ -41,7 +41,7 @@ A family-friendly event: We want to better accept, honour, celebrate and facilit
 
 **No registration needed, just turn up!**
 
-We hope to give members of the local community an engaging insight into the life of the mosque and to promote greater understanding of Islam. We anticipate welcoming local people from all walks of life to visit the mosque and meet with its diverse Muslim congregation.
+This is a family-friendly event in which we extend a hand of friendship to the community as a whole. A great opportunity to learn more about what is Islam and what the Muslim community is really about.
 
 The open attitude of the mosque and its people make a major contribution in fostering interfaith and intercultural understanding in the local community.
 
