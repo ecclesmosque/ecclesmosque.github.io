@@ -1,0 +1,46 @@
+ {% if site.posts %}
+<header class="em-layout em-categories-header">
+  <div class="em-layout__item em-1/2@s">
+    <h2 class="em-categories__heading em-double-pica-bold">Recent Updates</h2>
+  </div>
+  <div class="em-layout__item em-1/2@s">
+    {%if site.categories %}
+      <nav class="em-categories-filter__links">
+          <span class="em-categories-filter__link">Filter:</span>
+          {% for category in site.categories %}
+            <a href="#category:{{ category[0] | slugify }}" class="em-categories-filter__link">{{ category[0] | replace: '-', ' ' }}</a>
+          {% endfor %}
+          <a href="#category:all" class="em-categories-filter__link">Show All</a>
+      </nav>
+      <style>
+        {% for category in site.categories %}
+          [id="category:{{ category[0] }}"]:target ~ :not([data-category~="{{ category[0] }}"]) {
+            display: none;
+          }
+        {% endfor %}
+      </style>
+      {% endif %}
+  </div>
+</header>
+<nav class="em-latest-posts">
+  <div class="em-layout gel-layout--equal em-latest-posts__items">
+    <a class="em-categories-filter__targets" id="category:all" />
+    {% for category in site.categories %}
+    <a class="em-categories-filter__targets" id="category:{{ category[0] | slugify }}" />
+    {% endfor %}
+    {% for entry in site.posts %}
+    <div class="em-layout__item em-1/2@m em-1/3@l em-latest-posts__item em-latest-posts__item--{{entry.title | slugify}}" data-category="{{ entry.categories | first | slugify}}">
+      <a class="em-latest-posts__item-link em-latest-posts__item-link--{{ entry.title | slugify}}" href="{{ entry.url }}">
+        {% include images/thumbnail.html image-id=entry.thumbnail %}
+        <span class="em-latest-posts__item-title em-great-primer">{{ entry.title }}</span>
+        <span class="em-latest-posts__item-meta em-minion">
+          <span class="em-latest-posts__item-meta-attribution">{{ entry.categories | first | replace: '-', ' ' }}</span>
+          <i class="em-latest-posts__item-meta-published-icon em-icons icon-clock"></i>
+          <time class="em-latest-posts__item-meta-published" datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date_to_long_string }}</time>
+        </span>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</nav>
+{% endif %}

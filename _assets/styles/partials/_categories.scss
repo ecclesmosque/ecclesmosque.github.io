@@ -1,0 +1,33 @@
+.em-categories-header {
+  padding-bottom: em-spacing(base-spacing-unit);
+}
+
+.em-categories__heading {
+  padding: 0;
+  margin: 0;
+}
+
+.em-categories-filter__links {
+  text-align: right;
+}
+
+.em-categories-filter__link:link,
+.em-categories-filter__link:hover,
+.em-categories-filter__link:visited,
+.em-categories-filter__link:active {
+  text-decoration: none;
+}
+
+.em-categories-filter__link {
+  text-transform: capitalize;
+  line-height: $size-of-human-thumb/2;
+  display: inline-block;
+  padding: em-spacing(half-spacing-unit) em-spacing(base-spacing-unit);
+  margin-bottom: em-spacing(half-spacing-unit);
+  background: white;
+  border-radius: 4px;
+}
+
+.em-categories-filter__targets {
+  position: fixed;
+}
