@@ -121,10 +121,6 @@ defaults:
       seo:
         type: press-releases
 
-# collections:
-#   events:
-#     output: true
-
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -138,7 +134,6 @@ markdown: kramdown
 
 plugins:
   - jekyll-feed
-  # - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
