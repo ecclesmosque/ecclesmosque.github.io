@@ -4,7 +4,6 @@ var babel = require('gulp-babel');
 var browserify = require('browserify');
 var browserSync = require('browser-sync').create();
 var buffer = require('vinyl-buffer');
-var cache = require('gulp-cache');
 var cleanCSS = require('gulp-clean-css');
 var del = require('del'); // rm -rf
 var eslint = require('gulp-eslint');
@@ -23,7 +22,11 @@ var spawn = require('child_process').spawn;
 
 var config = {
   jekyll: ['pages', 'posts', 'layouts', 'includes', 'data'],
-  JEKYLL_ENV: 'development'
+  JEKYLL_ENV: 'development',
+  domains: {
+    default: 'ecclesmosque.org.uk',
+    alias: ['ecclesmosque.org.uk', 'ecclesmosque.org']
+  }
 };
 
 function isProduction() {
@@ -34,34 +37,37 @@ gulp.task('clean', function () {
   return del.sync(['_site', 'assets/styles', 'assets/scripts', 'npm-debug.log']);
 });
 
-gulp.task('jekyll-compile', [], function (next) {
+gulp.task('jekyll-compile', ['scripts'], function (next) {
   // clone the actual env vars to avoid overrides
   var envs = Object.create(process.env);
   envs.JEKYLL_ENV = config.JEKYLL_ENV;
 
-  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', !isProduction() ? '--drafts' : '', isProduction() ? '--profile' : '', '--incremental'], { stdio: 'inherit', env: envs });
+  var jekyll = spawn('bundle',
+    ['exec', 'jekyll', 'build', !isProduction() ? '--drafts' : '', isProduction() ? '--profile' : '', '--incremental'],
+    { stdio: 'inherit', env: envs }
+  );
 
   jekyll.on('exit', function (code) {
     next(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
   });
 });
 
-gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (next) {
-  if (!isProduction()) {
-    next(null);
-  } else {
-    var htmlproofer = spawn('bundle',
+gulp.task('html-proofer', ['jekyll-compile', 'images', 'styles', 'scripts'], function (next) {
+  function doHTMLProof(next) {
+    var proofer = spawn('bundle',
       [
         'exec',
         'htmlproofer',
         '--url-swap',
-        '.*ecclesmosque.org.uk/:/',
+        '.*' + config.domains.default + '/:/',
         '--internal-domains',
-        'ecclesmosque.org.uk,ecclesmosque.org',
+        config.domains.alias.join(','),
         './_site'
-      ], { stdio: 'inherit' });
+      ],
+      { stdio: 'inherit' }
+    );
 
-    htmlproofer.on('exit', function (code) {
+    proofer.on('exit', function (code) {
       if (code !== 0) {
         console.log('ERROR: htmlproofer process exited with code: ' + code);
         this.emit('end');
@@ -69,9 +75,15 @@ gulp.task('html-proofer', ['jekyll-compile', 'styles', 'scripts'], function (nex
       next(null);
     });
   }
+
+  if (!isProduction()) {
+    next(null);
+  } else {
+    return doHTMLProof(next);
+  }
 });
 
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', ['compile'], function () {
   browserSync.init({
     server: '_site'
   });
@@ -84,10 +96,12 @@ gulp.task('serve', ['build'], function () {
   gulp.watch('_assets/styles/**/*.scss', ['styles']);
   gulp.watch('_assets/scripts/**/*.js', ['eslint', 'scripts']);
 
-  gulp.watch('_site/*.html').on('change', browserSync.reload);
+  gulp.watch('assets/**/*.js', ['jekyll-compile']);
+
+  gulp.watch('_site/**/*').on('change', browserSync.reload);
 });
 
-gulp.task('serve-prod', ['setup-environment', 'build'], function () {
+gulp.task('serve-prod', ['setup-environment', 'compile'], function () {
   browserSync.init({
     server: '_site'
   });
@@ -95,7 +109,13 @@ gulp.task('serve-prod', ['setup-environment', 'build'], function () {
 
 gulp.task('images', function () {
   gulp.src('_assets/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log('Task - images:', error);
+        this.emit('end');
+      }
+    }))
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('assets/images/'));
 });
 
@@ -143,7 +163,7 @@ gulp.task('scripts', function () {
     cache: {},
     packageCache: {},
     plugin: [watchify],
-    entries: '_assets/scripts/entry.js',
+    entries: '_assets/scripts/app.js',
     debug: true
   });
 
@@ -205,7 +225,7 @@ gulp.task('icons-download', [], function (next) {
   });
 });
 
-gulp.task('build', ['clean', 'jekyll-compile', 'styles', 'eslint', 'scripts']);
+gulp.task('compile', ['clean', 'eslint', 'scripts', 'images', 'styles', 'jekyll-compile']);
 
 gulp.task('setup-environment', function () {
   config.JEKYLL_ENV = 'production';
@@ -216,15 +236,15 @@ function terminate() {
   gulp.on('err', () => { process.exit(1); });
 }
 
-gulp.task('build-prod', ['setup-environment', 'build'], function (next) {
+gulp.task('build', ['setup-environment', 'compile'], function (next) {
+  next(terminate());
+});
+
+gulp.task('test', ['setup-environment', 'compile', 'html-proofer'], function (next) {
   next(terminate());
 });
 
 gulp.task('check-links', ['setup-environment', 'html-proofer'], function (next) {
-  next(terminate());
-});
-
-gulp.task('test', ['build'], function (next) {
   next(terminate());
 });
 
