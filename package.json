@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Eccles Mosque Website",
   "scripts": {
-    "clean": "rm -rf node_modules _site .sass-cache",
+    "clean": "rm -rf _site .sass-cache",
     "start": "./node_modules/.bin/gulp serve",
     "build": "./node_modules/.bin/gulp build",
     "test": "./node_modules/.bin/gulp test",
