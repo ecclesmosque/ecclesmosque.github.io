@@ -3,7 +3,7 @@
   <div class="em-module__content">
     <div class="em-post-category-banner__title-wrapper">
       <div class="em-post-category-banner__title em-double-pica">
-        {{ page.categories | first | replace: '-', ' ' | capitalize }}
+        <a href="/categories/#category:{{ page.categories | first | slugify }}">{{ page.categories | first | replace: '-', ' ' | capitalize }}</a>
       </div>
     </div>
   </div>
