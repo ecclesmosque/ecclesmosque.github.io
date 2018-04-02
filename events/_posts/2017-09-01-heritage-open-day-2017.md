@@ -27,7 +27,7 @@ A great opportunity to meet the Muslim community and learn more about the true j
 
 We also have Mosque tours and short presentations on the history of various Muslim communities and their roots. We hope events like this can build better understanding and genuine friendships - avoiding throwing the baby out with the bathwater especially when things are getting a wee bit murky around us :).
 
-Eccles Mosque Heritage Open Day is part of the [Heritage Open Days](https://www.heritageopendays.org.uk/visiting/event/eccles-mosque) initiative.
+Eccles Mosque Heritage Open Day is part of the [Heritage Open Days](https://www.heritageopendays.org.uk) initiative.
 
 Heritage Open Days are England's largest festival of history and culture, bringing together over 2,500 organisations, 5,000 events and 40,000 volunteers. Every year for four days in September, places across the country throw open their doors to celebrate their heritage, community and history. It’s your chance to see hidden places and try out new experiences – and it’s all FREE.
 
