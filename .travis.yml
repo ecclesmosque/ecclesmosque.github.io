@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.4.0
+  - 2.4
 
 cache:
   directories:
@@ -11,8 +11,8 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 install:
- - nvm install stable
- - npm set progress=false && npm install
+ - nvm install lts/carbon
+ - npm install
  - bundle install
 
 script:
