@@ -25,9 +25,12 @@
   },
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
+    "ajv": "^6.4.0",
+    "ajv-keywords": "^3.2.0",
     "babel-core": "^6.26.0",
     "browser-sync": "^2.18.5",
-    "browserify": "^16.1.1",
+    "browserify": "^16.2.0",
+    "browserify-shim": "^3.8.14",
     "del": "^3.0.0",
     "fontello-cli": "^0.4.0",
     "gel-grid": "^4.0.0",
