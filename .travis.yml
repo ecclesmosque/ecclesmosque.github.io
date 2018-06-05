@@ -16,7 +16,7 @@ install:
  - bundle install
 
 script:
-  - ./node_modules/.bin/gulp icons-download
+  - npm run download-icons
   - npm run build
   - npm run check-links
 

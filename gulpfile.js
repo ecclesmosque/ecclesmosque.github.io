@@ -186,7 +186,7 @@ gulp.task('scripts', function () {
     .pipe(browserSync.stream({ match: '**/*.js' }));
 });
 
-gulp.task('icons-update', [], function (next) {
+gulp.task('update-icons', [], function (next) {
 
   var fontello = spawn('fontello-cli', [
     'open',
@@ -198,7 +198,7 @@ gulp.task('icons-update', [], function (next) {
   });
 });
 
-gulp.task('icons-download', [], function (next) {
+gulp.task('download-icons', [], function (next) {
   var fontello = spawn('./node_modules/.bin/fontello-cli', [
     'install',
     '--config', './_assets/icons/config.json',
