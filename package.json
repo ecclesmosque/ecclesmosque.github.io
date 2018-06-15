@@ -36,7 +36,7 @@
     "fontello-cli": "^0.4.0",
     "gel-grid": "^4.0.0",
     "gel-typography": "^2.0.2",
-    "gulp": "^4.0.0",
+    "gulp": "3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-browserify": "^0.5.1",
