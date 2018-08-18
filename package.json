@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
-    "ajv": "^6.4.0",
+    "ajv": "^6.5.3",
     "ajv-keywords": "^3.2.0",
     "babel-core": "^6.26.0",
     "browser-sync": "^2.24.5",
@@ -41,7 +41,7 @@
     "gulp-babel": "^7.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-cache": "^1.0.2",
-    "gulp-clean-css": "^3.0.3",
+    "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.0",
     "gulp-eslint": "^5.0.0",
     "gulp-if": "^2.0.2",
