@@ -4,4 +4,4 @@
   {% assign download = site.data.timetable | where:"id",include.for | first %}
 {% endif %}
 
-<a href="https://docs.google.com/uc?id={{download.guid}}&export=download" class="em-button em-button-primary em-button-xlarge"><i class="em-download-icon em-icons icon-download"></i> Download {{download.label}} Prayer Timetable</a>
+<a href="https://docs.google.com/uc?id={{download.guid}}&export=download" class="em-timetable-download-button em-button em-button-primary em-button-xlarge" data-timetable-guid="{{download.guid}}" data-timetable-uri="https://docs.google.com/uc?id=$guid&export=download"><i class="em-download-icon em-icons icon-download"></i> Download <span class="em-timetable-month-label">{{download.label}}</span> Prayer Timetable</a>
