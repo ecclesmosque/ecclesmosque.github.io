@@ -8,7 +8,8 @@
     "build": "./node_modules/.bin/gulp build",
     "test": "./node_modules/.bin/gulp test",
     "download-icons": "./node_modules/.bin/gulp download-icons",
-    "check-links": "./node_modules/.bin/gulp check-links"
+    "update-icons": "./node_modules/.bin/gulp update-icons",
+    "check-links": "./node_modules/.bin/gulp checkLinks"
   },
   "repository": {
     "type": "git",
@@ -27,35 +28,29 @@
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "ajv": "^6.5.4",
-    "ajv-keywords": "^3.2.0",
-    "babel-core": "^6.26.0",
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
-    "browserify-shim": "^3.8.14",
     "del": "^3.0.0",
     "fontello-cli": "^0.4.0",
     "gel-grid": "^4.0.0",
-    "gel-typography": "^2.0.2",
-    "gulp": "3.9.1",
+    "gel-sass-tools": "^1.2.1",
+    "gel-typography": "^2.0.5",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-browserify": "^0.5.1",
-    "gulp-cache": "^1.0.2",
     "gulp-clean-css": "^3.10.0",
-    "gulp-concat": "^2.6.0",
     "gulp-eslint": "^5.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-plumber": "^1.2.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.2.0",
-    "gulp-uglify": "^3.0.0",
-    "normalize.css": "^8.0.0",
-    "vinyl-buffer": "^1.0.0",
+    "gulp-uglify": "^3.0.1",
+    "normalize-scss": "^7.0.1",
+    "sass-mq": "^5.0.0",
+    "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
-    "watchify": "^3.7.0"
-  }
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {}
 }
