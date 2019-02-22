@@ -1,4 +1,3 @@
-
 var autoprefixer = require('gulp-autoprefixer');
 var babel = require('gulp-babel');
 var browserify = require('browserify');
@@ -8,7 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 var del = require('del'); // rm -rf
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
-var gulpif = require('gulp-if');
+var gulpIf = require('gulp-if');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
@@ -59,8 +58,8 @@ gulp.task('scripts', function () {
     .pipe(babel())
     .pipe(sourcemaps.init())
     // Add transformation tasks to the pipeline here.
-    .pipe(gulpif(isProduction(), rename({ suffix: '.min' })))
-    .pipe(gulpif(isProduction(), uglify()))
+    .pipe(gulpIf(isProduction(), rename({ suffix: '.min' })))
+    .pipe(gulpIf(isProduction(), uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/scripts/'))
     .pipe(browserSync.stream({ match: '**/*.js' }));
@@ -105,8 +104,8 @@ gulp.task('styles', function () {
     .pipe(replace(/\.\.\/font\//igm, '/assets/fonts/')) // fix for https://github.com/fontello/fontello/issues/573
     .pipe(autoprefixer('last 2 versions'))
     .pipe(sourcemaps.init())
-    .pipe(gulpif(isProduction(), rename({ suffix: '.min' })))
-    .pipe(gulpif(isProduction(), cleanCSS()))
+    .pipe(gulpIf(isProduction(), rename({ suffix: '.min' })))
+    .pipe(gulpIf(isProduction(), cleanCSS()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('_site/assets/styles/')) // for BrowserSync
     .pipe(gulp.dest('assets/styles/')) // for pruduction
