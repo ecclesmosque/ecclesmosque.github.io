@@ -46,23 +46,28 @@ gulp.task('scripts', function () {
     debug: true
   });
 
-  return b.bundle()
-    .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-      }
-    }))
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(babel())
-    .pipe(sourcemaps.init())
-    // Add transformation tasks to the pipeline here.
-    .pipe(gulpIf(isProduction(), rename({ suffix: '.min' })))
-    .pipe(gulpIf(isProduction(), uglify()))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/scripts/'))
-    .pipe(browserSync.stream({ match: '**/*.js' }));
+  function bundle() {
+    return b.bundle()
+      .pipe(plumber({
+        errorHandler: function (error) {
+          console.log(error.message);
+          this.emit('end');
+        }
+      }))
+      .pipe(source('app.js'))
+      .pipe(buffer())
+      .pipe(babel())
+      .pipe(sourcemaps.init())
+      // Add transformation tasks to the pipeline here.
+      .pipe(gulpIf(isProduction(), rename({ suffix: '.min' })))
+      .pipe(gulpIf(isProduction(), uglify()))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('assets/scripts/'))
+      .pipe(browserSync.stream({ match: '**/*.js' }));
+  }
+
+  b.on('update', bundle);
+  return bundle();
 });
 
 gulp.task('jekyll-compile', gulp.series('scripts', function (next) {
