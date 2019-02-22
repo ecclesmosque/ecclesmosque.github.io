@@ -9,7 +9,7 @@
     "test": "./node_modules/.bin/gulp test",
     "download-icons": "./node_modules/.bin/gulp download-icons",
     "update-icons": "./node_modules/.bin/gulp update-icons",
-    "check-links": "./node_modules/.bin/gulp checkLinks"
+    "check-links": "./node_modules/.bin/gulp check-links"
   },
   "repository": {
     "type": "git",
