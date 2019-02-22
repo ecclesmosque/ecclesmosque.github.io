@@ -42,7 +42,7 @@ gulp.task('scripts', function () {
   var b = browserify({
     cache: {},
     packageCache: {},
-    plugin: [watchify],
+    plugin: !isProduction() ? [watchify] : [],
     entries: '_assets/scripts/app.js',
     debug: true
   });
