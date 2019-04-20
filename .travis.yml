@@ -11,6 +11,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 install:
+ - gem install bundler
  - nvm install lts/dubnium
  - npm install
  - bundle install
