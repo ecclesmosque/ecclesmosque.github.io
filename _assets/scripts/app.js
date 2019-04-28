@@ -11,7 +11,8 @@
   }
 
   function isCurrentMonth(entry) {
-    return entry.id === getYearMonthFormatted(Today);
+    var entryYearMonth = entry.id.substring(0, 7);
+    return entryYearMonth === getYearMonthFormatted(Today);
   }
 
   var emTimetableDownloadButton = document.querySelector('.em-timetable-download-button');
