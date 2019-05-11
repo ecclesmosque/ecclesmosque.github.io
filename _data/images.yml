@@ -3,12 +3,22 @@
 # http://theflyerpress.com/free-download-images-photos-of-islamic-architecture/
 # https://www.flickr.com/photos/tags/Arabic%20Caligraphy/
 
+- id: taste-ramadan-2019
+  title: Taste Ramadan 2019
+  image:
+    small: https://live.staticflickr.com/65535/47036813204_e239704feb_n.jpg
+    medium: https://live.staticflickr.com/65535/47036813204_e239704feb_z.jpg
+    large: https://live.staticflickr.com/65535/47036813204_e239704feb_b.jpg
+  credit:
+    - name: Eccles Mosque
+    - url: https://flic.kr/p/22RWbrn
+
 - id: visit-my-mosque-2019
   title: Eccles Mosque &#35;VisitMyMosque 2019
   image:
-    small: //c1.staticflickr.com/8/7825/46272834975_8310e02985_n.jpg
-    medium: //c1.staticflickr.com/8/7825/46272834975_8310e02985_z.jpg
-    large: //c1.staticflickr.com/8/7825/46272834975_8310e02985_b.jpg
+    small: https://c1.staticflickr.com/8/7825/46272834975_8310e02985_n.jpg
+    medium: https://c1.staticflickr.com/8/7825/46272834975_8310e02985_z.jpg
+    large: https://c1.staticflickr.com/8/7825/46272834975_8310e02985_b.jpg
   credit:
     - name: Eccles Mosque
     - url: https://flic.kr/p/22RWbrn
