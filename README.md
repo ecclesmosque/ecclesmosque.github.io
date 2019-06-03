@@ -11,6 +11,10 @@
 
 This is repository contains the source code for The Eccles and Salford Islamic Society website. See the deployed website at [https://ecclesmosque.org.uk](https://ecclesmosque.org.uk/).
 
+## Prerequisite
+- [Ruby Version Manager (RVM)](https://rvm.io/)
+- [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm)
+
 ## Getting Started
 The site is built using `Jekyll` and `github-pages` and hosted on [GitHub Pages](https://pages.github.com/).
 
