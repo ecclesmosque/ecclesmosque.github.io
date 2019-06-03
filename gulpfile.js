@@ -167,6 +167,11 @@ gulp.task('eslint', function () {
 
 gulp.task('compile', gulp.series('clean', 'eslint', 'scripts', 'images', 'styles', 'jekyll-compile'));
 
+gulp.task('update-assets', function () {
+  return gulp.src(['assets/**/*'])
+    .pipe(gulp.dest('_site/assets/'));
+});
+
 gulp.task('serve', gulp.series('compile', function (next) {
   browserSync.init({
     server: '_site'
@@ -180,7 +185,7 @@ gulp.task('serve', gulp.series('compile', function (next) {
   gulp.watch('_assets/styles/**/*.scss', gulp.series('styles'));
   gulp.watch('_assets/scripts/**/*.js', gulp.series('eslint', 'scripts'));
 
-  gulp.watch('assets/**/*.js', gulp.series('jekyll-compile'));
+  gulp.watch('assets/**/*.*', gulp.series('update-assets'));
 
   gulp.watch('_site/**/*').on('change', browserSync.reload);
 
