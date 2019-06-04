@@ -19,6 +19,11 @@
 
   if (emTimetableDownloadButton) {
     var emLatestTimetable = (window.em_timetable.filter(isCurrentMonth))[0];
+
+    if (emLatestTimetable === undefined) {
+      return;
+    }
+
     var emTimetableDownloadButtonGuid = emTimetableDownloadButton.dataset.timetableGuid;
 
     if (emLatestTimetable.guid !== emTimetableDownloadButtonGuid) {
