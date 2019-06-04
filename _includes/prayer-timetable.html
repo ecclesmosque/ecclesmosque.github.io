@@ -1,7 +1,13 @@
 {% assign currentMonth = site.time | date: "%Y-%m" %}
+{% assign currentMonthTimetable = site.data.timetable | where: "id", currentMonth | first %}
+
+{% if currentMonthTimetable.id == currentMonth %}
+
 <section class="em-module em-timetable">
   <div class="em-module__content">
     <h2>Prayer Timetable</h2>
     {% include prayer-timetable-download-button.html for=currentMonth %}
   </div>
 </section>
+
+{% endif %}
