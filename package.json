@@ -27,9 +27,9 @@
   },
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "browser-sync": "^2.26.5",
-    "browserify": "^16.2.3",
+    "@babel/core": "^7.5.5",
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.5.0",
     "del": "^4.1.1",
     "fontello-cli": "^0.4.0",
     "gel-grid": "^4.0.0",
@@ -49,7 +49,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "normalize-scss": "^7.0.1",
-    "sass-mq": "^5.0.0",
+    "sass-mq": "^5.0.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.0"
