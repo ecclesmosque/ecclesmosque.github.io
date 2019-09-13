@@ -1,4 +1,4 @@
-name: The Eccles and Salford Islamic Society - Website CI
+name: GitHub Actions Workflow
 
 on: [push]
 
