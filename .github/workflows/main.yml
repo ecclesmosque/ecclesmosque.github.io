@@ -22,7 +22,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v1
       with:
-          node-version: lts/dubnium
+          node-version: 10
     - name: npm install, build, and test
       run: |
         npm install
