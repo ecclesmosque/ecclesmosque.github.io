@@ -31,7 +31,7 @@
     "browser-sync": "^2.26.7",
     "browserify": "^16.5.0",
     "del": "^5.1.0",
-    "fontello-cli": "^0.4.0",
+    "fontello-cli": "paulyoung/fontello-cli",
     "gel-grid": "^4.0.0",
     "gel-sass-tools": "^1.2.1",
     "gel-typography": "^2.0.5",
