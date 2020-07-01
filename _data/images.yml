@@ -3,6 +3,16 @@
 # http://theflyerpress.com/free-download-images-photos-of-islamic-architecture/
 # https://www.flickr.com/photos/tags/Arabic%20Caligraphy/
 
+- id: covid-19-sars-cov-2
+  title: Novel Coronavirus SARS-CoV-2
+  image:
+    small: https://live.staticflickr.com/65535/49643893178_91c0b93ca9_n.jpg
+    medium: https://live.staticflickr.com/65535/49643893178_91c0b93ca9_z.jpg
+    large: https://live.staticflickr.com/65535/49643893178_91c0b93ca9_b.jpg
+  credit:
+    - name: NIH Image Gallery
+    - url: https://www.flickr.com/photos/nihgov/
+
 - id: eid-salah-at-home-2020
   title: Eid Salah at Home
   image:
