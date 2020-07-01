@@ -1,3 +1,7 @@
+- id: 2020-07
+  label: July 2020
+  guid: 1dolKZ_vwtR08as7GwK-0ewZ0CjybNcbf
+
 - id: 2020-06
   label: June 2020
   guid: 1YGIKrMOFnPSWvpQPgEBsuMZXwEz52Jwj
@@ -33,7 +37,7 @@
 - id: 2019-10
   label: October 2019
   guid: 1FpDU3SLDWRhUyuFWS4nTz0lduH1gQdL3
-  
+
 - id: 2019-09
   label: September 2019
   guid: 1VmYexV703eNTjP2jwj6IvHNv8Oenqmre
@@ -57,11 +61,11 @@
 - id: 2019-04
   label: April 2019
   guid: 1xq-SzcU3vV27Aph_9Q-KsciEpWQFXX7u
-  
+
 - id: 2019-03
   label: March 2019
   guid: 1NTAMfr6blntDin-3SqAAoYVCMjvUQ6UA
-  
+
 - id: 2019-02
   label: February 2019
   guid: 1cEbKov1NmnIADjXHn47Tk8NxPA3dy8pS
