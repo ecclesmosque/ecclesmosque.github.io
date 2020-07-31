@@ -1,11 +1,15 @@
-{% assign announcement = site.posts | first %} {% assign time_timestamp="now"
-|date: "%s" %} {% assign published_timestamp=announcement.date | date: "%s" %}
-{% assign daysOld = time_timestamp| minus: published_timestamp | divided_by:
-3600 | divided_by: 24 | round %} {% if daysOld <= 15 %} {% assign poster =
-site.data.images | where: "id", announcement.thumbnail | first %}{% if poster %}
+{% assign announcement = site.posts | first %}
+{% assign time_timestamp="now" |date: "%s" %}
+{% assign published_timestamp=announcement.date | date: "%s" %}
+{% assign daysOld = time_timestamp| minus: published_timestamp | divided_by: 3600 | divided_by: 24 | round %}
+
+{% if daysOld <= 15 %}
+
+{% assign poster = site.data.images | where: "id", announcement.thumbnail | first %}
+{% if poster %}
 <style>
   .em-announcements-hero::after {
-    background-image: url({{poster.image.large}});
+    background-image: url("{{poster.image.large}}");
   }
 </style>
 <meta itemprop="image" content="{{poster.image.medium}}" />
@@ -13,32 +17,19 @@ site.data.images | where: "id", announcement.thumbnail | first %}{% if poster %}
 
 <section class="em-module em-announcements-hero">
   <div class="em-module__content">
-    <div
-      class="em-announcements-hero-content-wrapper"
-      itemscope
-      itemtype="http://schema.org/Event"
-    >
+    <div class="em-announcements-hero-content-wrapper" itemscope itemtype="http://schema.org/Event">
       <div class="em-announcements-hero-content">
         <h2 class="em-announcements-hero-title em-canon" itemprop="name">
-          <a
-            class="em-announcements-hero-title__link"
-            href="{{announcement.url}}"
-            title="Find out more about {{ announcement.title }}"
-            >{{ announcement.title }}</a
-          >
+          <a class="em-announcements-hero-title__link" href="{{announcement.url}}"
+            title="Find out more about {{ announcement.title }}">{{ announcement.title }}</a>
         </h2>
 
         <p class="em-announcements-hero-excerpt">
           {{ announcement.summary | strip_html }}
         </p>
 
-        <a
-          href="{{announcement.url}}"
-          itemprop="url"
-          class="em-button em-button-primary em-button-xlarge"
-          title="Find out more about {{ announcement.title }}"
-          >More information</a
-        >
+        <a href="{{announcement.url}}" itemprop="url" class="em-button em-button-primary em-button-xlarge"
+          title="Find out more about {{ announcement.title }}">More information</a>
       </div>
     </div>
   </div>

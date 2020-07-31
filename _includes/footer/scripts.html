@@ -1,5 +1,5 @@
 {% if isProduction %}
-    {% include google/tagmanager.html %}
+{% include google/tagmanager.html %}
 {% endif %}
 
 <script> var em_timetable = {{ site.data.timetable | slice: 0, 3 | jsonify }};</script>

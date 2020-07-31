@@ -13,9 +13,9 @@ layout: compress
     <!-- <link rel="icon" href="../../favicon.ico"> -->
     {% seo %}
     {% feed_meta %}
-    
+
     {% if jekyll.environment == "production" %}
-      {% assign isMin = '.min' %}
+    {% assign isMin = '.min' %}
     {% endif %}
 
     <!-- Bootstrap core CSS + our css in single bundle -->
@@ -36,7 +36,8 @@ layout: compress
 
     <div class="mastfoot">
         <div class="inner">
-            <p>Copyright &copy; 2006&mdash;{{ site.time | date: '%Y' }} {{ site.title }}. Registered Charity Number <strong>{{ site.charity.number }}</strong>.</p>
+            <p>Copyright &copy; 2006&mdash;{{ site.time | date: '%Y' }} {{ site.title }}. Registered Charity Number
+                <strong>{{ site.charity.number }}</strong>.</p>
         </div>
     </div>
 
