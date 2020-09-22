@@ -20,5 +20,3 @@ script:
   - npm run download-icons
   - npm run build
   - npm run check-links
-
-sudo: false # route your build to the container-based infrastructure for a faster build
