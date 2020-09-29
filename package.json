@@ -32,7 +32,7 @@
     "browserify": "^16.5.2",
     "del": "^6.0.0",
     "fontello-cli": "^0.5.0",
-    "gel-grid": "^4.0.0",
+    "gel-grid": "^4.1.0",
     "gel-sass-tools": "^1.2.1",
     "gel-typography": "^3.0.0",
     "gulp": "^4.0.2",
