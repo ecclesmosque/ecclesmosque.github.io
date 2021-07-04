@@ -20,7 +20,7 @@
 
 .em-categories-filter__link {
   text-transform: capitalize;
-  line-height: $size-of-human-thumb/2;
+  line-height: $size-of-human-thumb*0.5;
   display: inline-block;
   padding: em-spacing(half-spacing-unit) em-spacing(base-spacing-unit);
   margin-bottom: em-spacing(half-spacing-unit);
