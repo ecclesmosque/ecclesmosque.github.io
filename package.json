@@ -30,7 +30,7 @@
     "@babel/core": "^7.17.10",
     "browser-sync": "^2.27.9",
     "browserify": "^17.0.0",
-    "del": "^6.0.0",
+    "del": "^6.1.0",
     "fontello-cli": "^0.6.2",
     "gel-grid": "^5.1.0",
     "gel-sass-tools": "^2.1.0",
