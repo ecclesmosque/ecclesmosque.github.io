@@ -1,6 +1,7 @@
 .em-eid-prayer {
   position: relative;
   text-shadow: #fff 0px 0px 4px;
+  box-shadow: inset 0px 0px 20px 10px rgb(0 0 0 / 0.4);
 
   &::before {
     content: "";
