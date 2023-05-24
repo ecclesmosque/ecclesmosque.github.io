@@ -28,7 +28,7 @@
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
     "@babel/core": "^7.21.8",
-    "browser-sync": "^2.29.1",
+    "browser-sync": "^2.29.3",
     "browserify": "^17.0.0",
     "del": "^6.1.1",
     "fontello-cli": "^0.6.2",
