@@ -48,7 +48,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "normalize-scss": "^7.0.1",
     "sass": "^1.62.1",
     "sass-mq": "^6.0.0",
