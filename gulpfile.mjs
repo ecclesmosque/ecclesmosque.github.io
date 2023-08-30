@@ -1,25 +1,35 @@
-var autoprefixer = require("gulp-autoprefixer");
-var babel = require("gulp-babel");
-var browserify = require("browserify");
-var browserSync = require("browser-sync").create();
-var buffer = require("vinyl-buffer");
-var cleanCSS = require("gulp-clean-css");
-var del = require("del"); // rm -rf
-var eslint = require("gulp-eslint");
-var gulp = require("gulp");
-var gulpIf = require("gulp-if");
-var imagemin = require("gulp-imagemin");
-var plumber = require("gulp-plumber");
-var rename = require("gulp-rename");
-var replace = require("gulp-replace");
-var sass = require("gulp-sass")(require("sass"));
-var source = require("vinyl-source-stream");
-var sourcemaps = require("gulp-sourcemaps");
-var uglify = require("gulp-uglify");
-var watchify = require("watchify");
-var childProcess = require("child_process");
+import gulp from "gulp";
 
-var config = {
+import autoprefixer from "gulp-autoprefixer";
+import babel from "gulp-babel";
+import browserify from "browserify";
+
+// var browserSync = require("browser-sync").create();
+import browserSync from "browser-sync";
+const browser = browserSync.create();
+
+import buffer from "vinyl-buffer";
+import cleanCSS from "gulp-clean-css";
+import { deleteAsync, deleteSync } from "del";
+import eslint from "gulp-eslint";
+import gulpIf from "gulp-if";
+import imagemin from "gulp-imagemin";
+import plumber from "gulp-plumber";
+import rename from "gulp-rename";
+import replace from "gulp-replace";
+// var sass = require("gulp-sass")(require("sass"));
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
+const sass = gulpSass(dartSass);
+
+import source from "vinyl-source-stream";
+import sourcemaps from "gulp-sourcemaps";
+import uglify from "gulp-uglify";
+import watchify from "watchify";
+
+import { exec, spawn } from "node:child_process";
+
+const config = {
   jekyll: ["pages", "posts", "layouts", "includes", "data"],
   JEKYLL_ENV: "development",
   domains: {
@@ -33,7 +43,7 @@ function isProduction() {
 }
 
 gulp.task("clean", function () {
-  return del(["_site", "assets/styles", "assets/scripts", "npm-debug.log"]);
+  return deleteAsync(["_site", "assets/styles", "assets/scripts", "npm-debug.log"]);
 });
 
 gulp.task("scripts", function () {
@@ -82,24 +92,20 @@ gulp.task(
     var envs = Object.create(process.env);
     envs.JEKYLL_ENV = config.JEKYLL_ENV;
 
-    return childProcess
-      .spawn(
-        "bundle",
-        [
-          "exec",
-          "jekyll",
-          "build",
-          !isProduction() ? "--drafts" : "",
-          isProduction() ? "--profile" : "",
-          "--incremental",
-        ],
-        { stdio: "inherit", env: envs }
-      )
-      .on("exit", function (code) {
-        next(
-          code === 0 ? null : "ERROR: Jekyll process exited with code: " + code
-        );
-      });
+    return spawn(
+      "bundle",
+      [
+        "exec",
+        "jekyll",
+        "build",
+        !isProduction() ? "--drafts" : "",
+        isProduction() ? "--profile" : "",
+        "--incremental",
+      ],
+      { stdio: "inherit", env: envs }
+    ).on("exit", function (code) {
+      next(code === 0 ? null : "ERROR: Jekyll process exited with code: " + code);
+    });
   })
 );
 
@@ -114,9 +120,7 @@ gulp.task("images", function () {
         },
       })
     )
-    .pipe(
-      imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })
-    )
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest("assets/images/"));
 });
 
@@ -144,41 +148,37 @@ gulp.task("styles", function () {
     .pipe(browserSync.stream({ match: "**/*.css" }));
 });
 
-gulp.task(
-  "html-proofer",
-  gulp.series("jekyll-compile", "images", "styles", "scripts"),
-  function (next) {
-    function doHTMLProof(next) {
-      var proofer = childProcess.spawn(
-        "bundle",
-        [
-          "exec",
-          "htmlproofer",
-          "--url-swap",
-          ".*" + config.domains.default + "/:/",
-          "--internal-domains",
-          config.domains.alias.join(","),
-          "./_site",
-        ],
-        { stdio: "inherit" }
-      );
+gulp.task("html-proofer", gulp.series("jekyll-compile", "images", "styles", "scripts"), function (next) {
+  function doHTMLProof(next) {
+    var proofer = spawn(
+      "bundle",
+      [
+        "exec",
+        "htmlproofer",
+        "--url-swap",
+        ".*" + config.domains.default + "/:/",
+        "--internal-domains",
+        config.domains.alias.join(","),
+        "./_site",
+      ],
+      { stdio: "inherit" }
+    );
 
-      proofer.on("exit", function (code) {
-        if (code !== 0) {
-          console.log("ERROR: htmlproofer process exited with code: " + code);
-          this.emit("end");
-        }
-        next(null);
-      });
-    }
-
-    if (!isProduction()) {
+    proofer.on("exit", function (code) {
+      if (code !== 0) {
+        console.log("ERROR: htmlproofer process exited with code: " + code);
+        this.emit("end");
+      }
       next(null);
-    } else {
-      return doHTMLProof(next);
-    }
+    });
   }
-);
+
+  if (!isProduction()) {
+    next(null);
+  } else {
+    return doHTMLProof(next);
+  }
+});
 
 gulp.task("eslint", function () {
   // ESLint ignores files with "node_modules" paths.
@@ -200,17 +200,7 @@ gulp.task("eslint", function () {
   );
 });
 
-gulp.task(
-  "compile",
-  gulp.series(
-    "clean",
-    "eslint",
-    "scripts",
-    "images",
-    "styles",
-    "jekyll-compile"
-  )
-);
+gulp.task("compile", gulp.series("clean", "eslint", "scripts", "images", "styles", "jekyll-compile"));
 
 gulp.task("update-assets", function () {
   return gulp.src(["assets/**/*"]).pipe(gulp.dest("_site/assets/"));
@@ -224,10 +214,7 @@ gulp.task(
     });
 
     config.jekyll.forEach(function (contentType) {
-      gulp.watch(
-        "**/_" + contentType + "/**/*.*",
-        gulp.series("jekyll-compile")
-      );
+      gulp.watch("**/_" + contentType + "/**/*.*", gulp.series("jekyll-compile"));
     });
 
     gulp.watch("_config.yml", gulp.series("jekyll-compile"));
@@ -247,34 +234,22 @@ gulp.task("setup-environment", function (next) {
   next();
 });
 
-gulp.task(
-  "serve-prod",
-  gulp.series("setup-environment", "compile"),
-  function () {
-    browserSync.init({
-      server: "_site",
-    });
-  }
-);
+gulp.task("serve-prod", gulp.series("setup-environment", "compile"), function () {
+  browserSync.init({
+    server: "_site",
+  });
+});
 
 gulp.task("update-icons", function (next) {
-  var fontello = childProcess.spawn("fontello-cli", [
-    "open",
-    "--config",
-    "./_assets/icons/config.json",
-  ]);
+  var fontello = exec("fontello-cli", ["open", "--config", "./_assets/icons/config.json"]);
 
   fontello.on("exit", function (code) {
-    next(
-      code === 0
-        ? null
-        : "ERROR: fontello-cli process exited with code: " + code
-    );
+    next(code === 0 ? null : "ERROR: fontello-cli process exited with code: " + code);
   });
 });
 
 gulp.task("download-icons", function (next) {
-  var fontello = childProcess.spawn("./node_modules/.bin/fontello-cli", [
+  var fontello = exec("./node_modules/.bin/fontello-cli", [
     "install",
     "--config",
     "./_assets/icons/config.json",
@@ -297,7 +272,7 @@ gulp.task("download-icons", function (next) {
         )
         .pipe(gulp.dest("./_assets/styles/icons/"))
         .on("end", function () {
-          del.sync(["./_assets/styles/icons/**/*.css"]);
+          deleteSync(["./_assets/styles/icons/**/*.css"]);
           next(null);
         });
     } else {
@@ -307,7 +282,6 @@ gulp.task("download-icons", function (next) {
 });
 
 gulp.task("check-links", gulp.series("setup-environment", "html-proofer"));
-
-exports.build = gulp.series("setup-environment", "compile");
-exports.test = gulp.series("setup-environment", "compile", "html-proofer");
-exports.default = gulp.series("serve");
+gulp.task("build", gulp.series("setup-environment", "compile"));
+gulp.task("test", gulp.series("setup-environment", "compile", "html-proofer"));
+gulp.task("default", gulp.series("serve"));
