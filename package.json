@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
-    "@babel/core": "^7.22.11",
+    "@babel/core": "^7.22.15",
     "@biere/normalize-scss": "^7.0.1",
     "browser-sync": "^2.29.3",
     "browserify": "^17.0.0",
