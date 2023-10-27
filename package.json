@@ -34,7 +34,7 @@
     "del": "^7.1.0",
     "fontello-cli": "^0.6.2",
     "gel-grid": "^6.0.1",
-    "gel-sass-tools": "^3.0.1",
+    "gel-sass-tools": "^3.1.2",
     "gel-typography": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
