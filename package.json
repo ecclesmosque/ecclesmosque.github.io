@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.23.5",
     "@biere/normalize-scss": "^7.0.1",
-    "browser-sync": "^2.29.3",
+    "browser-sync": "^3.0.2",
     "browserify": "^17.0.0",
     "del": "^7.1.0",
     "fontello-cli": "^0.6.2",
