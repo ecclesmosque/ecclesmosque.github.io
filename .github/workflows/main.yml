@@ -44,6 +44,7 @@ jobs:
 
       - name: Code Style
         run: |
+          ls -la
           npm run lint --if-present
 
       - name: Compile website
