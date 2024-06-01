@@ -9,8 +9,8 @@
 title: Eccles Mosque
 subtitle: The Eccles and Salford Islāmic Society
 description: Eccles and Salford Islāmic Society also known as The Eccles Mosque.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ecclesmosque.org.uk" # the base hostname & protocol for your site
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://ecclesmosque.org.uk' # the base hostname & protocol for your site
 enforce_ssl: ecclesmosque.org.uk
 
 charitycommission:
@@ -28,36 +28,35 @@ contact:
     country: United Kingdom
 
 # author:
-  # twitter: EcclesMosque
+# twitter: EcclesMosque
 # twitter:
-  # username: EcclesMosque
-
+# username: EcclesMosque
 
 # navigation settings
 # navigation:
 #   header:
 #     - title: Home
 #       url: /
-    # - title: About us
-    #   url: /about-us/
-    # - title: Projects
-    #   url: /projects/
-    #   nav: 'site.projects'
-    # - title: Get Involved
-    #   url: /get-involved/
-    # - title: Donate
-    #   url: /donate/
-    # - title: Contact us
-    #   url: /contact-us/
-  # footer:
-  #   - title: About us
-  #     url: /about-us/
-  #   - title: Contact us
-  #     url: /contact-us/
-  #   - title: Privacy
-  #     url: /privacy/
-  #   - title: Terms of Service
-  #     url: /terms/
+# - title: About us
+#   url: /about-us/
+# - title: Projects
+#   url: /projects/
+#   nav: 'site.projects'
+# - title: Get Involved
+#   url: /get-involved/
+# - title: Donate
+#   url: /donate/
+# - title: Contact us
+#   url: /contact-us/
+# footer:
+#   - title: About us
+#     url: /about-us/
+#   - title: Contact us
+#     url: /contact-us/
+#   - title: Privacy
+#     url: /privacy/
+#   - title: Terms of Service
+#     url: /terms/
 
 social-links:
   - label: Follow us on Twitter
@@ -72,7 +71,6 @@ social-links:
   - label: Watch, Share and Subscribe on YouTube
     url: https://www.youtube.com/channel/UCAg5HU_BAlEU2Oo0tlhq96g?sub_confirmation=1
     icon: youtube-squared
-
 
 # Build settings do not modify anything below this line
 # unless you know what you are doings
@@ -91,27 +89,23 @@ include:
   - _pages
 
 defaults:
-  -
-    scope:
+  - scope:
       type: pages
     values:
       layout: page
-  -
-    scope:
+  - scope:
       type: posts
     values:
       layout: posts-entry
       thumbnail: least-i-forgot-ramadan
-  -
-    scope:
+  - scope:
       path: events
     values:
       layout: events-entry
       thumbnail: least-i-forgot-ramadan
       seo:
         type: event
-  -
-    scope:
+  - scope:
       path: press-releases
     values:
       layout: posts-entry
@@ -120,11 +114,11 @@ defaults:
         type: press-releases
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - gulpfile.js
+  - Gemfile*
+  - gulpfile.*
+  - eslint*
   - node_modules
-  - package.json
+  - package*
   - README.md
   - vendor
 
