@@ -29,15 +29,16 @@ offers:
 A family-friendly event: We want to better accept, honour, celebrate and facilitate the hand of friendship. A great opportunity to learn more about the true joy Muslims are and their amazing contributions.
 
 **We have a range of _free activities_ from**
-* Guided Tours
-* Observe Prayer
-* Opportunity to ask questions
-* Engaging discussion
-* Finger buffet
-* Books & Leaflets
-* Henna Painting
-* Arabic Calligraphy
-* And much more!
+
+- Guided Tours
+- Observe Prayer
+- Opportunity to ask questions
+- Engaging discussion
+- Finger buffet
+- Books & Leaflets
+- Henna Painting
+- Arabic Calligraphy
+- And much more!
 
 **No registration needed, just turn up!**
 
@@ -53,7 +54,6 @@ We would be honoured to have your presence on the day between {{ page.startDate 
 You can also find other mosques around UK taking part on the [Visit My Mosque Website](http://www.visitmymosque.org/find-my-mosque/).
 
 Yours in good faith,
-
 
 Tahir Mahmood<br />
 07870172361

@@ -19,7 +19,7 @@ Dear Neighbour,
 
 We hope that this message reaches you in the best of health & happiness.
 
-Come and discover a wonderful mix of different cultures, traditions and experiences of the Eccles Mosque community. 
+Come and discover a wonderful mix of different cultures, traditions and experiences of the Eccles Mosque community.
 
 We have a range of activities from elegant henna designs and calligraphy artists to traditional clothes (perfect for selfies disclaimer selfie stick not included), religious artefacts, yummy food, traditional singing and many other delights.
 
@@ -32,7 +32,7 @@ Eccles Mosque Heritage Open Day is part of the [Heritage Open Days](https://www.
 Heritage Open Days are England's largest festival of history and culture, bringing together over 2,500 organisations, 5,000 events and 40,000 volunteers. Every year for four days in September, places across the country throw open their doors to celebrate their heritage, community and history. It’s your chance to see hidden places and try out new experiences – and it’s all FREE.
 
 > It was so lovely. A very warm & welcoming atmosphere. So informative with absolutely no pressure. I'm so glad we went we learned loads of new things. Great idea to hold an open day ...credit to you all at the Mosque!! Thank you!!
--- Chloe Henshall 05/02/2017
+> -- Chloe Henshall 05/02/2017
 
 If you have any specific dietary requirements please do let us know in advance and we will attempt to cater for your needs. If you have any further questions or queries please do not hesitate to contact me.
 

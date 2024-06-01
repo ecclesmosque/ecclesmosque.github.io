@@ -4,19 +4,22 @@ date:   2017-05-23 10:00:00 +0100
 tags: [terror, attack, manchester, arena]
 ---
 
-The Greater Manchester Muslim Community is saddened and horrified by reports of yet another terror attack, this time in our very city at the Manchester Arena yesterday.  Our thoughts are with the victims and their families and our emergency services who are at the forefront of dealing with this tragic incident.
+The Greater Manchester Muslim Community is saddened and horrified by reports of yet another terror attack, this time in our very city at the Manchester Arena yesterday. Our thoughts are with the victims and their families and our emergency services who are at the forefront of dealing with this tragic incident.
 
 This is and will always be a mindless and unjustifiable act, targeting the innocent and young in this indiscriminate manner. The perpetrators, whoever they may be, must bear the full consequences of their actions.
 
 We note that GMP are treating this as a Terrorist Incident and offer any support that they may need at this difficult time, we urge our communities to remain calm and alert. We would also urge all to support our emergencies services in this difficult hour.
 
 **Qadir Cohan-Chair Manchester Council of Mosques commented**
+
 > “Today, we wake up to the sad news of an terror attack at the heart of our city that has killed many innocent individuals, tragically some are our very young who were at the concert with friends and families. Manchester communities are strong and resilient and will no doubt deal with this latest tragedy in the usual Mancunian way working together and not allowing anyone to hijack this tragic event for their own agenda. We ask all communities to be extra vigilant over the coming weeks and support our police service with any information that they may have to prevent any further incidents.”
 
 **Tahir Mahmood-Rochdale Council Mosques commented**
+
 > “We are horrified by this attack and the loss of all lives and injuries to all victims. This tragedy has struck at the heart of our communities and we will work with all concerned to ensure that we help the victims and emergency services in dealing with the aftermath”.
 
 **Imteyaz Ali- Bolton Council Mosques commented**
+
 > “We are shocked at the tragic news of this terror attack at the heart of Manchester City Centre, the tragic loss of life and the sheer scale is difficult to comprehend. We ask for all to stay calm and support our emergency services in whatever way they can to help them in this hour”.
 
 ## This statement is issued by the following organisations:
@@ -41,7 +44,7 @@ The Rochdale Council of Mosques has been working with communities in Rochdale si
 
 For more information, please contact:
 
-* Mr Yousef Dar (Stockport Muslims) 07833 494 088
-* Mr Ibrahim Kala (BCoM) 07525 048 346
-* Mr Dobir Miah (RCM) 07764 614 031
-* Mr Qadir Chohan (Chair of MCOM) 07904 092 748
+- Mr Yousef Dar (Stockport Muslims) 07833 494 088
+- Mr Ibrahim Kala (BCoM) 07525 048 346
+- Mr Dobir Miah (RCM) 07764 614 031
+- Mr Qadir Chohan (Chair of MCOM) 07904 092 748
