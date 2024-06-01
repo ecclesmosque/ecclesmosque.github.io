@@ -42,12 +42,13 @@ jobs:
         run: |
           npm ci
 
-      - name: Code Style
-        run: |
-          ls -la
-          npm run lint --if-present
+      - name: Formatting Rules
+        run: npm run prettier --if-present
+
+      - name: Code-Quality Rules
+        run: npm run lint --if-present
 
       - name: Compile website
         run: |
           npm run build --if-present
-          npm run test
+          npm run test --if-present
