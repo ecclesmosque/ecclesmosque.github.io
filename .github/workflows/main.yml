@@ -37,10 +37,10 @@ jobs:
         continue-on-error: true
         run: npm list
 
-      - name: Install npm dependencies
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: Install npm dependencies
         run: |
-          npm install
-          npm run download-icons
+          npm ci
 
       - name: Code Style
         run: |
