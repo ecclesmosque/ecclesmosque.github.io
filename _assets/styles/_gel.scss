@@ -20,6 +20,7 @@ $gel-type-enable--base-elements: true;
 @import 'node_modules/gel-grid/grid';
 @import 'node_modules/gel-typography/typography';
 
-.#{$gel-type-namespace}minion { // [1]
-  line-height: rem(17px); // [2]
+// [1]
+.#{$gel-type-namespace}minion {
+  line-height: toRem(17px); // [2]
 }
