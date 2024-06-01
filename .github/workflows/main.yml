@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-
 
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
+        name: List the state of node modules cache
         continue-on-error: true
         run: npm list
 

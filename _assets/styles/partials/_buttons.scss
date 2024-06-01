@@ -1,72 +1,74 @@
 .em-button {
-    /* Structure */
-    display: inline-block;
-    zoom: 1;
-    line-height: normal;
-    // white-space: nowrap;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    -webkit-user-drag: none;
-    user-select: none;
-    box-sizing: border-box;
-    padding: em-spacing(base-spacing-unit);
+  /* Structure */
+  display: inline-block;
+  zoom: 1;
+  line-height: normal;
+  // white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  box-sizing: border-box;
+  padding: em-spacing(base-spacing-unit);
 }
 
 /* Firefox: Get rid of the inner focus border */
 .em-button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 }
 
 /* Inherit .em-g styles */
 .em-button-group {
-    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
-    // *letter-spacing: normal; /* reset IE < 8 */
-    // *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
-    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+  letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+  // *letter-spacing: normal; /* reset IE < 8 */
+  // *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+  text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
 }
 
 .opera-only :-o-prefocus,
 .em-button-group {
-    word-spacing: -0.43em;
+  word-spacing: -0.43em;
 }
 
 .em-button-group .em-button {
-    letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align: top;
-    text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
 }
 
 .em-button {
-    color: #444; /* rgba not supported (IE 8) */
-    color: rgba(0, 0, 0, 0.80); /* rgba supported */
-    border: 1px solid #999;  /*IE 6/7/8*/
-    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
-    background-color: #E6E6E6;
-    text-decoration: none;
-    border-radius: 2px;
+  color: #444; /* rgba not supported (IE 8) */
+  color: rgba(0, 0, 0, 0.8); /* rgba supported */
+  border: 1px solid #999; /*IE 6/7/8*/
+  border: none rgba(0, 0, 0, 0); /*IE9 + everything else*/
+  background-color: #e6e6e6;
+  text-decoration: none;
+  border-radius: 2px;
 }
 a.em-button {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .em-button-hover,
 .em-button:hover,
 .em-button:focus {
-    /* csslint ignore:start */
-    filter: alpha(opacity=90);
-    /* csslint ignore:end */
-    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+  /* csslint ignore:start */
+  filter: alpha(opacity=90);
+  /* csslint ignore:end */
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
 }
 .em-button:focus {
-    outline: 0;
+  outline: 0;
 }
 .em-button-active,
 .em-button:active {
-    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
-    border-color: #000\9;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.15) inset,
+    0 0 6px rgba(0, 0, 0, 0.2) inset;
+  border-color: #000\9;
 }
 
 .em-button[disabled],
@@ -74,90 +76,89 @@ a.em-button {
 .em-button-disabled:hover,
 .em-button-disabled:focus,
 .em-button-disabled:active {
-    border: none;
-    background-image: none;
-    /* csslint ignore:start */
-    filter: alpha(opacity=40);
-    /* csslint ignore:end */
-    opacity: 0.40;
-    cursor: not-allowed;
-    box-shadow: none;
-    pointer-events: none;
+  border: none;
+  background-image: none;
+  /* csslint ignore:start */
+  filter: alpha(opacity=40);
+  /* csslint ignore:end */
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
 }
 
 .em-button-hidden {
-    display: none;
+  display: none;
 }
 
 .em-button-primary,
 .em-button-selected,
 a.em-button-primary,
 a.em-button-selected {
-    background-color: rgb(0, 120, 231);
-    color: #fff;
-    text-decoration: none;
+  background-color: rgb(0, 120, 231);
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Button Groups */
 .em-button-group .em-button {
-    margin: 0;
-    border-radius: 0;
-    border-right: 1px solid #111;  /* fallback color for rgba() for IE7/8 */
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-
+  margin: 0;
+  border-radius: 0;
+  border-right: 1px solid #111; /* fallback color for rgba() for IE7/8 */
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .em-button-group .em-button:first-child {
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 .em-button-group .em-button:last-child {
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-right: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-right: none;
 }
 
 .em-button-success,
 .em-button-error,
 .em-button-warning,
 .em-button-secondary {
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .em-button-success {
-    background: rgb(28, 184, 65);
-    /* this is a green */
+  background: rgb(28, 184, 65);
+  /* this is a green */
 }
 
 .em-button-error {
-    background: rgb(202, 60, 60);
-    /* this is a maroon */
+  background: rgb(202, 60, 60);
+  /* this is a maroon */
 }
 
 .em-button-warning {
-    background: rgb(223, 117, 20);
-    /* this is an orange */
+  background: rgb(223, 117, 20);
+  /* this is an orange */
 }
 
 .em-button-secondary {
-    background: rgb(66, 184, 221);
-    /* this is a light blue */
+  background: rgb(66, 184, 221);
+  /* this is a light blue */
 }
 
 .em-button-xsmall {
-    font-size: 70%;
+  font-size: 70%;
 }
 
 .em-button-small {
-    font-size: 85%;
+  font-size: 85%;
 }
 
 .em-button-large {
-    font-size: 110%;
+  font-size: 110%;
 }
 
 .em-button-xlarge {
-    font-size: 125%;
+  font-size: 125%;
 }

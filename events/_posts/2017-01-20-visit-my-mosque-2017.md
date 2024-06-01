@@ -32,6 +32,5 @@ We would be honoured to have your presence on the day between 12 pm and 5 pm. In
 
 Yours in good faith,
 
-
 Azizur Rahman <br/>
 Eccles Mosque &#35;VisitMyMosque Organiser

@@ -7,13 +7,13 @@
 }
 
 .em-header-logo {
-    margin: 0;
-    padding: em-spacing(base-spacing-unit) 0;
+  margin: 0;
+  padding: em-spacing(base-spacing-unit) 0;
 }
 
 a.em-header-logo__title {
-    text-decoration: none;
-    color: #888888;
+  text-decoration: none;
+  color: #888888;
 }
 
 .em-header-nav__control {
@@ -49,13 +49,12 @@ a.em-header-logo__title {
   fill: currentColor;
 }
 
-
 .em-header-nav__control-close {
   display: none;
 }
 
 .em-header-nav-menu {
-  display: none
+  display: none;
 }
 
 .em-header-nav-menu:target {
@@ -64,10 +63,10 @@ a.em-header-logo__title {
 
 .em-header-nav-menu:target ~ .main-header {
   .em-header-nav__control-open {
-     display: none;
+    display: none;
   }
   .em-header-nav__control-close {
-     display: block;
+    display: block;
   }
 }
 
