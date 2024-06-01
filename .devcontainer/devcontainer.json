@@ -18,7 +18,8 @@
         "eamodio.gitlens",
         "github.vscode-github-actions",
         "esbenp.prettier-vscode",
-        "mechatroner.rainbow-csv"
+        "mechatroner.rainbow-csv",
+        "Shopify.theme-check-vscode"
       ]
     }
   },
