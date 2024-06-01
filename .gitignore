@@ -4,10 +4,10 @@ _site/
 .jekyll-metadata
 node_modules/
 
-assets/**/*.map
-assets/scripts/app.js
-assets/styles/app.css
-assets/styles/app.css.map
+assets/
+
 _assets/styles/icons
 
 .fontello-session
+
+vendor
