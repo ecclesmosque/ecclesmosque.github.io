@@ -1,4 +1,5 @@
 module.exports = {
+  ignores: ['node_modules/', 'coverage', 'bower_components', 'vendor/'],
   env: {
     jasmine: true,
     node: true,
