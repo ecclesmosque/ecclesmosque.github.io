@@ -42,6 +42,9 @@ jobs:
         run: |
           npm ci
 
+      - name: Download icon fonts
+        run: npm run download-icons --if-present
+
       - name: Formatting Rules
         run: npm run prettier --if-present
 
