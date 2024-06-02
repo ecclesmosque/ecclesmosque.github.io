@@ -12,7 +12,7 @@ import buffer from 'vinyl-buffer';
 import cleanCSS from 'gulp-clean-css';
 import { deleteAsync, deleteSync } from 'del';
 import gulpIf from 'gulp-if';
-import imagemin from 'gulp-imagemin';
+// import imagemin from 'gulp-imagemin';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import replace from 'gulp-replace';
@@ -109,18 +109,22 @@ gulp.task(
 );
 
 gulp.task('images', function () {
-  return gulp
-    .src('_assets/images/**/*')
-    .pipe(
-      plumber({
-        errorHandler: function (error) {
-          console.log('Task - images:', error);
-          this.emit('end');
-        },
-      })
-    )
-    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('assets/images/'));
+  return (
+    // We have no images to minimize at the moment so return
+    gulp.src('.')
+    // gulp
+    //   .src('_assets/images/**/*')
+    //   .pipe(
+    //     plumber({
+    //       errorHandler: function (error) {
+    //         console.log('Task - images:', error);
+    //         this.emit('end');
+    //       },
+    //     })
+    //   )
+    //   .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    //   .pipe(gulp.dest('assets/images/'))
+  );
 });
 
 gulp.task('styles', function () {
