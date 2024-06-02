@@ -60,7 +60,7 @@
     "gulp-uglify": "^3.0.2",
     "node-sass": "^9.0.0",
     "normalize-scss": "^8.0.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.0",
     "sass": "^1.77.3",
     "sass-mq": "^6.0.0",
     "vinyl-buffer": "^1.0.1",
