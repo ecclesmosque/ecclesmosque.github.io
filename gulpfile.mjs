@@ -26,7 +26,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import watchify from 'watchify';
 
-import { exec, spawn } from 'node:child_process';
+import { spawn } from 'node:child_process';
 
 const config = {
   jekyll: ['pages', 'posts', 'layouts', 'includes', 'data'],
@@ -224,7 +224,7 @@ gulp.task('serve-prod', gulp.series('setup-environment', 'compile'), function ()
 });
 
 gulp.task('update-icons', function (next) {
-  var fontello = exec('fontello-cli', ['open', '--config', './_assets/icons/config.json']);
+  var fontello = spawn('fontello-cli', ['open', '--config', './_assets/icons/config.json']);
 
   fontello.on('exit', function (code) {
     next(code === 0 ? null : 'ERROR: fontello-cli process exited with code: ' + code);
@@ -232,7 +232,7 @@ gulp.task('update-icons', function (next) {
 });
 
 gulp.task('download-icons', function (next) {
-  var fontello = exec('./node_modules/.bin/fontello-cli', [
+  var fontello = spawn('./node_modules/.bin/fontello-cli', [
     'install',
     '--config',
     './_assets/icons/config.json',
