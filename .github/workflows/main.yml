@@ -48,6 +48,7 @@ jobs:
         run: |
           mkdir -p _assets/styles/icons
           npm run download-icons --if-present
+          ls -la _assets/styles/icons
 
       - name: Formatting Rules
         run: npm run prettier --if-present
