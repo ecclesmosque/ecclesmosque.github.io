@@ -46,7 +46,6 @@ jobs:
 
       - name: Download icon fonts
         run: |
-          mkdir -p _assets/styles/icons
           npm run download-icons --if-present
           ls -la _assets/styles/icons
 
