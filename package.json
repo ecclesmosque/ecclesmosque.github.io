@@ -61,7 +61,7 @@
     "node-sass": "^9.0.0",
     "normalize-scss": "^8.0.0",
     "prettier": "^3.3.1",
-    "sass": "^1.77.3",
+    "sass": "^1.77.5",
     "sass-mq": "^6.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
