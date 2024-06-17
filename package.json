@@ -32,7 +32,7 @@
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
     "@babel/core": "^7.24.7",
-    "@eslint/js": "^9.4.0",
+    "@eslint/js": "^9.5.0",
     "@shopify/prettier-plugin-liquid": "^1.5.0",
     "browser-sync": "^3.0.2",
     "browserify": "^17.0.0",
