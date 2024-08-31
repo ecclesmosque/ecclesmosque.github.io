@@ -226,7 +226,12 @@ gulp.task('download-icons', function (next) {
     './_assets/styles/icons',
   ]);
 
-  fontello.on('exit', function (code) {
+  fontello.stdout.on('data', function (data) {
+    console.log(data.toString());
+  });
+
+  fontello.on('exit', function (code, stdout, stderr) {
+    console.log({ stdout, stderr });
     // rename *.css files to _*.scss
     if (code === 0) {
       gulp
