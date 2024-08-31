@@ -41,7 +41,7 @@ see [How to add/remove icons from the icon font](_assets/icons/README.md)
 ## Production build
 
 To build a production version of the site run:
-`gulp build-prod`
+`npm run build`
 
 ## How To Preview a draft post
 
