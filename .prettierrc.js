@@ -1,5 +1,5 @@
 module.exports = {
-  printWidth: 120,
+  printWidth: 160,
   tabWidth: 2,
   useTabs: false,
   semi: true,
@@ -15,5 +15,4 @@ module.exports = {
   endOfLine: 'lf',
   embeddedLanguageFormatting: 'off',
   singleAttributePerLine: false,
-  plugins: ['@shopify/prettier-plugin-liquid'],
 };
