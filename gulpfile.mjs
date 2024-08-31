@@ -91,18 +91,10 @@ gulp.task(
     var envs = Object.create(process.env);
     envs.JEKYLL_ENV = config.JEKYLL_ENV;
 
-    return spawn(
-      'bundle',
-      [
-        'exec',
-        'jekyll',
-        'build',
-        !isProduction() ? '--drafts' : '',
-        isProduction() ? '--profile' : '',
-        '--incremental',
-      ],
-      { stdio: 'inherit', env: envs }
-    ).on('exit', function (code) {
+    return spawn('bundle', ['exec', 'jekyll', 'build', !isProduction() ? '--drafts' : '', isProduction() ? '--profile' : '', '--incremental'], {
+      stdio: 'inherit',
+      env: envs,
+    }).on('exit', function (code) {
       next(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
     });
   })
@@ -155,15 +147,7 @@ gulp.task('html-proofer', gulp.series('jekyll-compile', 'images', 'styles', 'scr
   function doHTMLProof(next) {
     var proofer = spawn(
       'bundle',
-      [
-        'exec',
-        'htmlproofer',
-        '--url-swap',
-        '.*' + config.domains.default + '/:/',
-        '--internal-domains',
-        config.domains.alias.join(','),
-        './_site',
-      ],
+      ['exec', 'htmlproofer', '--url-swap', '.*' + config.domains.default + '/:/', '--internal-domains', config.domains.alias.join(','), './_site'],
       { stdio: 'inherit' }
     );
 
