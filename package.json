@@ -53,7 +53,7 @@
     "gulp-uglify": "^3.0.2",
     "normalize-scss": "^8.0.0",
     "prettier": "^3.3.3",
-    "sass": "^1.77.8",
+    "sass": "^1.79.3",
     "sass-mq": "^6.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
