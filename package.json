@@ -30,7 +30,7 @@
   "homepage": "https://github.com/ecclesmosque/ecclesmosque.github.io#readme",
   "devDependencies": {
     "@babel/core": "^7.27.1",
-    "@eslint/js": "^9.25.1",
+    "@eslint/js": "^9.26.0",
     "browser-sync": "^3.0.4",
     "browserify": "^17.0.1",
     "del": "^8.0.0",
