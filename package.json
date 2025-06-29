@@ -40,7 +40,7 @@
     "gel-sass-tools": "^4.0.0",
     "gel-typography": "^6.0.0",
     "globals": "^16.2.0",
-    "gulp": "^5.0.0",
+    "gulp": "^5.0.1",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
