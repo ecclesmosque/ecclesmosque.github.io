@@ -52,7 +52,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "normalize-scss": "^8.0.0",
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.4",
     "sass": "^1.94.0",
     "sass-mq": "^7.0.0",
     "vinyl-buffer": "^1.0.1",
