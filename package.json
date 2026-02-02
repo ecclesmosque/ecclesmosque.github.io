@@ -39,7 +39,7 @@
     "gel-grid": "^7.1.1",
     "gel-sass-tools": "^4.1.1",
     "gel-typography": "^6.1.1",
-    "globals": "^17.0.0",
+    "globals": "^17.3.0",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^10.0.0",
     "gulp-babel": "^8.0.0",
