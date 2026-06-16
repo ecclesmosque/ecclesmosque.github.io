@@ -37,7 +37,7 @@
     "eslint": "^10.5.0",
     "fontello-cli": "^0.6.2",
     "gel-grid": "^7.1.4",
-    "gel-sass-tools": "^4.1.6",
+    "gel-sass-tools": "^4.1.7",
     "gel-typography": "^6.1.7",
     "globals": "^17.6.0",
     "gulp": "^5.0.1",
