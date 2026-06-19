@@ -42,7 +42,7 @@
     "globals": "^17.6.0",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^10.0.0",
-    "gulp-babel": "^8.0.0",
+    "gulp-babel": "^8.1.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.0",
